@@ -10,8 +10,3 @@
   static_files: \1
   upload: (.*)
 
-
-handlers:
-- url: /.*
-  script: helloworld.php
-
