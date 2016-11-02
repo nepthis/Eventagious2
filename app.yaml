@@ -4,8 +4,8 @@
 
  handlers:
  - url: /
-   static_files: www/index2.html
-   upload: www/index2.html
+   static_files: www/index.html
+   upload: www/index.html
 
  - url: /(.*)
    static_files: www/\1
