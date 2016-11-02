@@ -7,6 +7,10 @@
    static_files: www/index.html
    upload: www/index.html
 
+ handlers:
+ - url: /
+   script: helloworld.php
+
  - url: /(.*)
    static_files: www/\1
    upload: www/(.*)
