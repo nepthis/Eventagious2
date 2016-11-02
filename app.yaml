@@ -2,6 +2,16 @@
  api_version: 1
  threadsafe: true
 
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+  
+- url: /(.*)
+  static_files: \1
+  upload: (.*)
+
+
 handlers:
 - url: /.*
   script: helloworld.php
+
