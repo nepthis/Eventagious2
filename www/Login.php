@@ -1,28 +1,17 @@
 <?php
    session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+   env_variables:
+   # Replace project, instance, database, user and password with the values obtained
+   # when configuring your Cloud SQL instance.
+   MYSQL_DSN: mysql:unix_socket=/cloudsql/mysqldatabase;dbname=DATABASE
+   MYSQL_USER: root
+   MYSQL_PASSWORD: 'root'
+   // Create connection
+   $conn = new mysqli(null, "root", 'root', "DATABASE", null, "/cloudsql/mysqldatabase"));
+
+   // Check connection
+   if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+   } 
+   echo "Connected successfully";
 ?>
