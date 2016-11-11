@@ -39,8 +39,7 @@
   </head>
 
   <body>
-
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -52,52 +51,52 @@
           <a class="navbar-brand" href="index.html">Eventagious</a>
           <a class="navbar-brand" href="myPage.html">My Page</a>
           <a class="navbar-brand" href="map.html">Maps</a>
-          <a class="navbar-brand" href="about.html">about</a>
+          <a class="navbar-brand" href="about.html">About</a>
           <a class="navbar-brand" href="event.html">Events</a>
         </div>
       </div>
     </nav>
 
-
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Welcome to Eventagious</h1>
-           <div class="col-sm-3 col-md-3 ">
-        		<form class="navbar-form" role="search">
-	        		<div class="input-group">
-	            		<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-	           			<div class="input-group-btn">
-	                		<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-	            		</div>
-	        		</div>
-        		</form>
-        	</div>
-        </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+  <!--  <div class="jumbotron">
+      <div class="container">
+        <div id="map" style="height: 450px; width:1000px; text-align: center ; "></div>
       </div>
-
+    </div>
+ 
+     <div class = "jumbotron" style="text-align: center ;" >
+      <divclass class="container">
+        <iframe 
+        width= "1000" 
+        height="450" 
+        frameborder="0" style="border:0" 
+        src="https://www.google.com/maps/embed/v1/view?zoom=14&center=65.6180%2C22.1402&key=AIzaSyBr96hmDNAfQIb1HA1Z6Q84kCNUOpEDbxE" allowfullscreen>
+        </iframe>
+      </div>
+     </div>
+-->
+   <div class="jumbotron">
+      <div class="container">
+        <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
+        <h1>Welcome to Event</h1>
+        <p>Detta är en korkad test som ingen vad vad vi ska ha den till men va faN!. Heja TRUMP!.</p>
+      </div>
+    </div>
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Event 1</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Event 2</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Event 3</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
+     <div class="row">
+	   	 <div class="col-lg-6">
+	        <h2>Event 1</h2>
+	        <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
+	        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
+	     	<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+	     </div>
+	     <div class="col-lg-6">
+	     	<img src="assets/img/Afterski.jpg" style="width: 100%; height: 100%">
+	     </div>
+	   </div>
+	</div>
 
       <hr>
 
@@ -130,7 +129,17 @@
           center: {lat: -34.397, lng: 150.644},
           zoom: 14
         });
-        var infoWindow = new google.maps.InfoWindow({map: map});
+	
+
+        var pos2 = {
+              lat: 65.619179,
+              lng: 22.138556
+            };
+        var marker = new google.maps.Marker({
+         	position: pos2,
+         	map: map,
+         	title: 'Uluru (Ayers Rock)'
+       	});
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -140,21 +149,25 @@
               lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+          	//Marker for you position
+			var myMarker = new google.maps.Marker({
+	         	position: pos,
+	         	map: map,
+	         	title: 'My position'
+       		});
             map.setCenter(pos);
           }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, myMarker, map.getCenter());
           });
         } else {
           // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+          handleLocationError(false, myMarker, map.getCenter());
         }
       }
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
+      function handleLocationError(browserHasGeolocation, myMarker, pos) {
+        myMarker.setPosition(pos);
+        myMarker.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
