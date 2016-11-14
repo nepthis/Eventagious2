@@ -1,10 +1,10 @@
  runtime: php55
  api_version: 1
- threadsafe: true
 
-handlers:
-- url: /
-  script: www/index.php
+ handlers:
+ - url: .*
+   script: www/index.php
 
-- url: /index\.html
-  script: www/index.php
+ - url: /(.*)
+   static_files: www/\1
+   upload: www/(.*)
