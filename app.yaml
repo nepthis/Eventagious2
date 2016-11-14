@@ -4,4 +4,4 @@ api_version: 1
 
  handlers:
  - url: /.*
-   script: www/Test.php
+   script: www/Templates/Test.php
