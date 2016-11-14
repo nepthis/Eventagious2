@@ -43,6 +43,10 @@
       $db= null;
       try{
          $db = new pdo(mysql:unix_socket=/cloudsql/eventagious3:mysql;dbname=EventagiousProject', 'root', 'root123');
+         die(json_encode(
+              array('outcome' => true, 'message' => 'Is connected.')
+              )
+          );
       }catch(PDOException $ex){
           die(json_encode(
               array('outcome' => false, 'message' => 'Unable to connect.')
