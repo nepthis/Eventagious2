@@ -1,3 +1,2 @@
 # Eventagious2
-Public repository for our dynamic webpage project in the course M7011E by Viktor Carlsson and Christain Uhlan
 This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to create events as well as those who want to attend events. On this site, users will be able to make an event and specify what kind of event it is, where it's located, make a description of the event and put a cool picture to lure people. All the code is written in HTML, CSS, Javascript and PHP. We are currently using Google App Engine to power the site, both front-end and back-end with a MySQL-server setup.
