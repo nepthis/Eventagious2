@@ -40,81 +40,86 @@
 
   <body>
 
+    <div id= "header">
+
+      <?php
+           /*env_variables:
+          # Replace project, instance, database, user and password with the values obtained
+          # when configuring your Cloud SQL instance.
+          MYSQL_DSN: mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 'root123'*/
 
 
-    <?php
-         /*env_variables:
-        # Replace project, instance, database, user and password with the values obtained
-        # when configuring your Cloud SQL instance.
-        MYSQL_DSN: mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject
-        MYSQL_USER: root
-        MYSQL_PASSWORD: 'root123'*/
+        //$app['database'] = function () use ($app) {
+          // Connect to CloudSQL from App Engine.
+          $dsn = 'mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject';
+          $user = 'root';
+          $password = 'root123');
+          if (!isset($dsn, $user) || false === $password) {
+              throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
+          }
+
+        $db = new PDO($dsn, $user, $password);
+
+        //return $db;
+        //};
+      ?>
 
 
-      //$app['database'] = function () use ($app) {
-        // Connect to CloudSQL from App Engine.
-        $dsn = 'mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject';
-        $user = 'root';
-        $password = 'root123');
-        if (!isset($dsn, $user) || false === $password) {
-            throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
-        }
-
-      $db = new PDO($dsn, $user, $password);
-
-      //return $db;
-      //};
-    ?>
-
-
-   <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Eventagious</a>
-          <a class="navbar-brand" href="myPage.html">My Page</a>
-          <a class="navbar-brand" href="map.html">Maps</a>
-          <a class="navbar-brand" href="about.html">about</a>
-          <a class="navbar-brand" href="event.html">Events</a>
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Eventagious</a>
+            <a class="navbar-brand" href="myPage.html">My Page</a>
+            <a class="navbar-brand" href="map.html">Maps</a>
+            <a class="navbar-brand" href="about.html">about</a>
+            <a class="navbar-brand" href="event.html">Events</a>
+          </div>
         </div>
-      </div>
-    </nav>
-
-
-    <div class="container">
-        <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
+      </nav>
     </div>
 
 
+    <div id="content">
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Event 1</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Event 2</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Event 3</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
-        </div>
+      <div class="container">
+          <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
       </div>
 
+
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Event 1</h2>
+            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Event 2</h2>
+            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+         </div>
+          <div class="col-md-4">
+            <h2>Event 3</h2>
+            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
+            <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="footer">
       <hr>
 
       <footer>
@@ -198,6 +203,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
     </script>
-
+    </div>
   </body>
 </html>
