@@ -1,5 +1,5 @@
 <?php   
-include("templates/header.htm");   
+include("templates/header.php");   
 
 // Set the default name 
 $action = 'index'; 
@@ -8,10 +8,11 @@ $disallowed_paths = array('header', 'footer');
 if (!empty($_GET['action'])) { 
     $tmp_action = basename($_GET['action']); 
     // If it's not a disallowed path, and if the file exists, update $action 
-    if (!in_array($tmp_action, $disallowed_paths) && file_exists("www/Templates/{$tmp_action}.htm")) 
+    if (!in_array($tmp_action, $disallowed_paths) && file_exists("Templates/{$tmp_action}.php")){
         $action = $tmp_action; 
+      }
 } 
 // Include $action 
-include("templates/$action.htm"); 
+include("templates/{$action}.php"); 
 
-include("templates/footer.htm");
+include("templates/footer.php");
