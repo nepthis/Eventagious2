@@ -3,4 +3,4 @@
 
  handlers:
  - url: /.*
-   script: www/Templates/Test.php
+   script: www/index.php

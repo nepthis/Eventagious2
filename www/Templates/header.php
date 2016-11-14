@@ -48,15 +48,16 @@
 
         //$app['database'] = function () use ($app) {
           // Connect to CloudSQL from App Engine.
+/*
           $dsn = 'mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject';
           $user = 'root';
-          $password = 'root123');
+          $password = 'root123';
           if (!isset($dsn, $user) || false === $password) {
               throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
           }
 
         $db = new PDO($dsn, $user, $password);
-
+*/
         //return $db;
         //};
       ?>

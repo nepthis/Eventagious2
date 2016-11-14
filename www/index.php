@@ -1,7 +1,7 @@
 <?php  
 echo '<p>Hello World</p>'; 
-include("Templates/Test.php");   
-/*
+include("Templates/header.php");   
+
 // Set the default name 
 $action = 'index'; 
 // Specify some disallowed paths 
