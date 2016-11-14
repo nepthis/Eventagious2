@@ -83,19 +83,19 @@
           <h2>Event 1</h2>
           <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Event 2</h2>
           <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>Event 3</h2>
           <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
         </div>
       </div>
 
@@ -126,11 +126,25 @@
       // locate you.
 
       function initMap() {
+
+      	var mapObject = ["Test", 65.619179, 22.138556]
+      	var mapObject2 = ["Test2", 65.619099, 22.141174]
+      	var mapObject3 = ["Test3", 65.620003, 22.149404]
+
+      	var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 14
         });
-        var infoWindow = new google.maps.InfoWindow({map: map});
+
+
+        for (var i = mapCord.length - 1; i >= 0; i--) {
+        	var marker = new google.maps.Marker({
+         	position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
+         	map: map,
+         	title: mapCord[i][0]
+       		});
+        }
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -140,24 +154,30 @@
               lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+          	//Marker for you position
+			var myMarker = new google.maps.Marker({
+	         	position: pos,
+	         	map: map,
+	         	title: 'My position'
+       		});
             map.setCenter(pos);
           }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, myMarker, map.getCenter());
           });
         } else {
           // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+          handleLocationError(false, myMarker, map.getCenter());
         }
       }
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
+      function handleLocationError(browserHasGeolocation, myMarker, pos) {
+        myMarker.setPosition(pos);
+        myMarker.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">

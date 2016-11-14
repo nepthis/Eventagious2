@@ -57,24 +57,7 @@
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-  <!--  <div class="jumbotron">
-      <div class="container">
-        <div id="map" style="height: 450px; width:1000px; text-align: center ; "></div>
-      </div>
-    </div>
- 
-     <div class = "jumbotron" style="text-align: center ;" >
-      <divclass class="container">
-        <iframe 
-        width= "1000" 
-        height="450" 
-        frameborder="0" style="border:0" 
-        src="https://www.google.com/maps/embed/v1/view?zoom=14&center=65.6180%2C22.1402&key=AIzaSyBr96hmDNAfQIb1HA1Z6Q84kCNUOpEDbxE" allowfullscreen>
-        </iframe>
-      </div>
-     </div>
--->
+
    <div class="jumbotron">
       <div class="container">
         <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
@@ -118,28 +101,32 @@
 
     <!-- Maps scrips -->
 
-    <script>
+    <script type="text/javascript" >
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
 
       function initMap() {
+
+      	var mapObject = ["Test", 65.619179, 22.138556]
+      	var mapObject2 = ["Test2", 65.619099, 22.141174]
+      	var mapObject3 = ["Test3", 65.620003, 22.149404]
+
+      	var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 14
         });
-	
 
-        var pos2 = {
-              lat: 65.619179,
-              lng: 22.138556
-            };
-        var marker = new google.maps.Marker({
-         	position: pos2,
+
+        for (var i = mapCord.length - 1; i >= 0; i--) {
+        	var marker = new google.maps.Marker({
+         	position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
          	map: map,
-         	title: 'Uluru (Ayers Rock)'
-       	});
+         	title: mapCord[i][0]
+       		});
+        }
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -171,6 +158,11 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+
+
+
+
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
