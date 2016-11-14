@@ -10,3 +10,10 @@
  - url: /(.*)
    static_files: www/\1
    upload: www/(.*)
+
+env_variables:
+  # Replace project, instance, database, user and password with the values obtained
+  # when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject
+  MYSQL_USER: root
+  MYSQL_PASSWORD: 'root123'
