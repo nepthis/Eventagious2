@@ -1,6 +1,6 @@
 <?php   
-include("templates/header.php");   
-
+include("Templates/header.php");   
+/*
 // Set the default name 
 $action = 'index'; 
 // Specify some disallowed paths 
@@ -13,6 +13,6 @@ if (!empty($_GET['action'])) {
       }
 } 
 // Include $action 
-include("templates/{$action}.php"); 
+include("Templates/{$action}.php"); 
 
-include("templates/footer.php");
+include("Templates/footer.php");
