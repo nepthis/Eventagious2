@@ -10,5 +10,6 @@
  - url: /(.*)
    static_files: www/\1
    upload: www/(.*)
+   
 beta_settings:
       cloud_sql_instances: "EventagiousProject"
