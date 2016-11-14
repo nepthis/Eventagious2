@@ -1,5 +1,5 @@
 <?php   
-include("Templates/Test.php");   
+require_once("Templates/Test.php");   
 /*
 // Set the default name 
 $action = 'index'; 
