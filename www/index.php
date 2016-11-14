@@ -1,5 +1,6 @@
-<?php   
-require_once("Templates/Test.php");   
+<?php  
+echo '<p>Hello World</p>'; 
+include("Templates/Test.php");   
 /*
 // Set the default name 
 $action = 'index'; 

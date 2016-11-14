@@ -71,11 +71,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Eventagious</a>
-            <a class="navbar-brand" href="myPage.html">My Page</a>
-            <a class="navbar-brand" href="map.html">Maps</a>
-            <a class="navbar-brand" href="about.html">about</a>
-            <a class="navbar-brand" href="event.html">Events</a>
+            <a class="navbar-brand" href="index.php">Eventagious</a>
+            <a class="navbar-brand" href="myPage.php">My Page</a>
+            <a class="navbar-brand" href="map.php">Maps</a>
+            <a class="navbar-brand" href="about.php">about</a>
+            <a class="navbar-brand" href="event.php">Events</a>
           </div>
         </div>
       </nav>
