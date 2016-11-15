@@ -1,5 +1,5 @@
 <?php  
-echo '<p>Hello World</p>'; 
+
 include("Templates/header.php");   
 
 // Set the default name 
@@ -14,6 +14,7 @@ if (!empty($_GET['action'])) {
       }
 } 
 // Include $action 
-include("Templates/{$action}.php"); 
+$tempString = "Templates/" .$action . ".php"; 
+include($tempString); 
 
 include("Templates/footer.php");

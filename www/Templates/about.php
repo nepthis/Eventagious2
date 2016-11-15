@@ -8,8 +8,8 @@
            both front-end and back-end with a MySQL-server setup. </p>
         <p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
-        <a class="btn btn-primary btn-lg" href="map.html" role="button">Map &raquo;</a>
-        <a class="btn btn-primary btn-lg" href="index.html" role="button">Register &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="index.php?action=index" role="button">Register &raquo;</a>
         </p>
       </div>
     </div>

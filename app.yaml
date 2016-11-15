@@ -2,5 +2,9 @@
  api_version: 1
 
  handlers:
+ - url: /assets
+   static_dir: www/assets
+
  - url: /.*
-   script: www/index.php
+   script: www/main.php
+
