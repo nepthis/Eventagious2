@@ -5,6 +5,9 @@
  - url: /assets
    static_dir: www/assets
 
+ - url: /login
+   script: www/login.php
+
  - url: /.*
    script: www/main.php
 
