@@ -46,6 +46,7 @@
   <body>
   <?php
   $db = new Db();  
+  $rows = $db -> select("SELECT `name`,`email` FROM `users` WHERE id=5");
   ?>
   <center>
   <div class="input-group" style="content: ">

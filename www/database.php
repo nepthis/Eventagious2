@@ -37,7 +37,7 @@ class Db {
         if(!isset(self::$connection)) {
             // Load configuration as an array. Use the actual location of your configuration file
             $config = parse_ini_file('./config.ini'); 
-            self::$connection = new mysqli('mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql',$config['username'],$config['password'],$config['dbname']);
+            self::$connection = new PDO($config['dsn'],$config['username'],$config['password']);
         }
 
         // If connection was not successful, handle the error
