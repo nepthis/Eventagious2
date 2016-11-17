@@ -73,8 +73,10 @@
 			  </ul>
 			</div>
 
+  
+		      <button class="btn btn-primary" type="button">Go!</button>
 
-		      <button class="btn btn-default" type="button">Go!</button>
+
 		  </div>
 	  </center>
   </form>

@@ -32,11 +32,21 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <?php
+    include "database.php"; 
+
+    ?>
+
+
+
   </head>
 
            
 
   <body>
+  <?php
+  $db = new Db();  
+  ?>
   <center>
   <div class="input-group" style="content: ">
       <div class="media-left">
@@ -56,7 +66,9 @@
         <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
       </div>
 
-      <button class="btn btn-default" type="button">Go!</button>
+      <a class="btn btn-primary" href="http://localhost:8080/register" role="button">Register</a>
+      <button class="btn btn-primary" type="button">Go!</button>
+
   </div>
   </center>
 
