@@ -46,7 +46,11 @@
   <body>
   <?php
   $db = new Db();  
-  $rows = $db -> select("SELECT `name`,`email` FROM `users` WHERE id=5");
+  $db2 = $db -> connect();
+  
+  if $db2==false{
+    echo "Fel i db!";
+  }
   ?>
   <center>
   <div class="input-group" style="content: ">

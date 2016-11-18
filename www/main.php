@@ -2,7 +2,7 @@
 session_start();
 
  if (!isset($_SESSION['login'])) {
-      //header('Location: http://localhost:8080/login');
+      //header('Location: https://eventagious3.appspot.com/login');
       //exit;
     }
 
