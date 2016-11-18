@@ -35,9 +35,11 @@ class Db {
     public function connect() {    
         // Try and connect to the database
         if(!isset(self::$connection)) {
+            echo "test db1";
             // Load configuration as an array. Use the actual location of your configuration file
             $config = parse_ini_file('./config.ini'); 
             self::$connection = new PDO($config['dsn'],$config['username'],$config['password']);
+            echo "test db2";
         }
 
         // If connection was not successful, handle the error

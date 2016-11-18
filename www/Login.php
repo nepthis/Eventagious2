@@ -47,10 +47,7 @@
   <?php
   $db = new Db();  
   $db2 = $db -> connect();
-  
-  if $db2==false{
-    echo "Fel i db!";
-  }
+
   ?>
   <center>
   <div class="input-group" style="content: ">
