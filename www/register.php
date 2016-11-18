@@ -37,15 +37,20 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <?php
-    //include "database.php"; 
-    $db = new Db();  
-    $db2 = $db -> connect();
+    include "database.php"; 
     ?>
   </head>
 
            
 
   <body>
+    <?php
+    echo "Test i body";
+      $db = new Db();  
+      $db2 = $db -> connect();
+    ?>
+
+
   <form>
 	  <center>
 		  <div class="input-group" style="content: ">
