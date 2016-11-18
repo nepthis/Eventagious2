@@ -34,7 +34,9 @@
 
     <?php
     include "database.php"; 
-
+    /*$db = new Db();  
+    $db2 = $db -> connect();
+*/
     ?>
 
 
@@ -44,11 +46,7 @@
            
 
   <body>
-  <?php
-  $db = new Db();  
-  $db2 = $db -> connect();
 
-  ?>
   <center>
   <div class="input-group" style="content: ">
       <div class="media-left">
