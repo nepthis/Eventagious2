@@ -33,7 +33,7 @@
     <![endif]-->
 
     <?php
-    include "database.php"; 
+    //include "database.php"; 
     /*$db = new Db();  
     $db2 = $db -> connect();
 */
