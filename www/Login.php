@@ -32,20 +32,18 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <?php
-    //include "database.php"; 
-    /*$db = new Db();  
-    $db2 = $db -> connect();
-*/
-    ?>
+    <?php include "database.php";?>
 
 
 
   </head>
-
-           
-
   <body>
+    <?php
+    echo "Test i login";
+    $db = new Db();  
+    $db2 = $db -> connect();
+    echo "Test efter db är skapad";
+    ?>
 
   <center>
   <div class="input-group" style="content: ">
