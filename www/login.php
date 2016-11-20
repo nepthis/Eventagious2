@@ -47,6 +47,10 @@
       Detta är ett test!
       <?php
        $Test = $db -> select("SELECT '*' FROM 'User' Where UserID = 1");
+       echo "Test ifrån php";
+       if $Test == false{
+        echo "Fel i select";
+       }
        echo $Test[0];
       ?>
     </div>
