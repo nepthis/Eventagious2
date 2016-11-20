@@ -46,8 +46,8 @@
     <div>
       Detta är ett test!
       <?php
-       echo ($db -> select('Select * FROM User'));
-       $Test = $db -> select('Select * FROM User');
+       echo ($db2 -> select("SELECT * FROM User"));
+       $Test = $db2 -> select("SELECT * FROM User");
        echo $Test;
       ?>
     </div>
