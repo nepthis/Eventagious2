@@ -40,13 +40,13 @@
   <body>
     <?php
     $db = new Db();  
-    $db2 = $db -> connect();
+
     ?>
 
     <div>
       Detta är ett test!
       <?php
-       $Test = $db2 -> select("SELECT * FROM User");
+       $Test = $db -> select("SELECT * FROM User");
        echo $Test;
       ?>
     </div>
