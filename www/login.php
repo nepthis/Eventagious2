@@ -44,8 +44,11 @@
     ?>
 
     <div>
+      Detta är ett test!
       <?php
-       echo $db -> select('* FROM User');
+       echo ($db -> select('* FROM User'));
+       $Test = $db -> select('* FROM User');
+       echo $Test;
       ?>
     </div>
   <center>
