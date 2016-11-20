@@ -72,6 +72,7 @@ class Db {
      * @return bool False on failure / array Database rows on success
      */
     public function select($query) {
+        $connection = $this -> connect();
         $rows = array();
         $result = $this -> query($query);
         if($result === false) {
