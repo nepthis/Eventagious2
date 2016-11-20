@@ -39,12 +39,15 @@
   </head>
   <body>
     <?php
-    echo "Test i login";
     $db = new Db();  
     $db2 = $db -> connect();
-    echo "Test efter db är skapad";
     ?>
 
+    <div>
+      <?php
+       echo $db -> query(SELECT * FROM User);
+      ?>
+    </div>
   <center>
   <div class="input-group" style="content: ">
       <div class="media-left">
