@@ -45,7 +45,7 @@
 
     <div>
       <?php
-       echo $db -> query(SELECT * FROM User);
+       echo $db -> select('* FROM User');
       ?>
     </div>
   <center>
