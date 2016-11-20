@@ -47,7 +47,7 @@
       Detta är ett test!
       <?php
        $Test = $db -> select("SELECT '*' FROM 'User' Where UserID = 1");
-       echo $Test;
+       print_r($Test);
       ?>
     </div>
   <center>
