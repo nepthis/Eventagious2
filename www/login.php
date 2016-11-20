@@ -47,9 +47,9 @@
       Detta är ett test!
       <?php
         echo "Test ifrån php";
-       $Test = $db -> select("SELECT '*' FROM 'User' Where UserID = 1");
+       $Test = $db -> select("SELECT '*' FROM 'User'");
 
-       if ($Test == false){
+       if ($Test === false){
         echo "Fel i select";
        }
        echo $Test[0];
