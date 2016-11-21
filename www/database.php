@@ -40,7 +40,8 @@ class Db {
             try{
             self::$connection = new PDO($config['dsn'],$config['username'],$config['password']);
             }
-            catch (PDOException $err) { 
+            catch (PDOException $e) { 
+                echo $e->getMessage();
                 echo "får fel i connect";
             }
         }
