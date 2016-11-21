@@ -46,6 +46,7 @@ class Db {
             echo "Fel vid skapninga av db";
             return false;
         }
+        echo "Connect går igenom";
         return self::$connection;
     }
 
