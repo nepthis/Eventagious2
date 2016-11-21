@@ -36,17 +36,20 @@ class Db {
         // Try and connect to the database
         if(!isset(self::$connection)) {
             // Load configuration as an array. Use the actual location of your configuration file
-            $config = parse_ini_file('./config.ini'); 
+            $config = parse_ini_file('./config.ini');
+            try{
             self::$connection = new PDO($config['dsn'],$config['username'],$config['password']);
+            }
+            catch (PDOException $err) { 
+                echo "får fel i connect";
+            }
         }
 
         // If connection was not successful, handle the error
         if(self::$connection === false) {
             // Handle error - notify administrator, log to a file, show an error screen, etc.
-            echo "Fel vid skapninga av db";
             return false;
         }
-        echo "Connect går igenom";
         return self::$connection;
     }
 
