@@ -81,9 +81,12 @@ class Db {
         $rows = array();
         $result = $this -> query($query);
         if($result === false) {
+            echo "  Det blir false i selsct!  ";
             return false;
         }
         while ($row = $result -> fetch_assoc()) {
+            echo "  Resultat  ";
+            echo $row;
             $rows[] = $row;
         }
         return $rows;
