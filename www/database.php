@@ -38,7 +38,7 @@ class Db {
             // Load configuration as an array. Use the actual location of your configuration file
             $config = parse_ini_file('./config.ini');
             try{
-            self::$connection = new PDO($config['dsn'],$config['username'],$config['password']);
+            self::$connection = new mysqli($config['dsn'],$config['username'],$config['password'],$config['dbname']);
             }
             catch (PDOException $e) { 
                 echo $e->getMessage();
