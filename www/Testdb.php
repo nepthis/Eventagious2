@@ -8,6 +8,6 @@
  $db = new PDO($dsn,$user,$pass);
  echo "test av db";
  $res = $db -> query("SELECT 1337");
- echo $res;
+ print_r($res);
 
  ?>
