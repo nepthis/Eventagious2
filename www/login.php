@@ -52,13 +52,17 @@
         $db = new Db();
 
         echo "Test ifrån php";
-       $Test = $db -> select("SELECT 1337");
-       //$Test = $db -> query("SELECT * FROM User");
-       if ($Test === false){
+       //$Test = $db -> select("SELECT 1337");
+       $res = $db -> query("SELECT Name  FROM User WHERE UserID=1");
+       if ($res === false){
         echo "Fel i select";
        }
-       echo "string";
-       echo $Test[0];
+
+      foreach($res as $row) {
+      echo 'row';
+      print_r($row);
+      }
+
       ?>
     </div>
   <center>
