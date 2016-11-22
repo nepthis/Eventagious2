@@ -1,5 +1,5 @@
 <?php
-
+        error_reporting(E_ALL);
            /*env_variables:
           # Replace project, instance, database, user and password with the values obtained
           # when configuring your Cloud SQL instance.

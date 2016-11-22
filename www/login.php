@@ -32,21 +32,25 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <?php include "database.php";
-    error_reporting(E_ALL);?>
+    <?php //include "database.php";
+    //error_reporting(E_ALL);?>
 
 
 
   </head>
   <body>
     <?php
-    $db = new Db();  
+    //$db = new Db();  
 
     ?>
 
     <div>
       Detta är ett test!
       <?php
+        error_reporting(E_ALL);
+        include "database.php";
+        $db = new Db();
+        
         echo "Test ifrån php";
        $Test = $db -> select("SELECT 'Name' FROM 'User'");
        //$Test = $db -> query("SELECT * FROM User");
