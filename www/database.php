@@ -37,6 +37,7 @@ class Db {
         if(!isset(self::$connection)) {
             // Load configuration as an array. Use the actual location of your configuration file
             $config = parse_ini_file('./config.ini');
+            echo $config['dsn'];
             try{
             self::$connection = new PDO($config['dsn'],$config['username'],$config['password']);
             }
