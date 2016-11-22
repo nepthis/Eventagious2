@@ -47,8 +47,8 @@
       Detta är ett test!
       <?php
         echo "Test ifrån php";
-       //$Test = $db -> select("SELECT * FROM User");
-       $Test = $db -> query(show databases);
+       $Test = $db -> select('SELECT 'Name' FROM 'User';');
+       //$Test = $db -> query("SELECT * FROM User");
        if ($Test === false){
         echo "Fel i select";
        }
