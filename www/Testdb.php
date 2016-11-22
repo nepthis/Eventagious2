@@ -12,7 +12,7 @@
 
 echo 'hej';
 
- for($res as $row) {
+ foreach($res as $row) {
  	echo 'row';
  	print_r($row);
  }
