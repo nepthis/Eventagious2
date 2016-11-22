@@ -32,8 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <?php //include "database.php";
-    //error_reporting(E_ALL);?>
+    <?php include "database.php";?>
 
 
 
@@ -45,14 +44,10 @@
     ?>
 
     <div>
-      Detta är ett test!
       <?php
         error_reporting(E_ALL);
-        include "database.php";
-        $db = new Db();
 
         echo "Test ifrån php";
-       //$Test = $db -> select("SELECT 1337");
        $res = $db -> query("SELECT Name  FROM User WHERE UserID=1");
        if ($res === false){
         echo "Fel i select";
