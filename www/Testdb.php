@@ -9,9 +9,10 @@
  $UserId = 1;
  $sth = $db->prepare('SELECT name
     FROM User
-    WHERE UserID = :UserID');
- $sth->execute(array(':UserID' => $UserId));
-
+    WHERE UserID = :?');
+ $sth->bindParam(1, $UserId), PDO::PARAM_INT);
+ //$sth->execute(array(':UserID' => $UserId));
+ $sth->execute();
 
  echo "test av db";
  //$res = ($db -> query("SELECT Name  FROM User WHERE UserID=1"));
