@@ -50,13 +50,14 @@
         error_reporting(E_ALL);
         include "database.php";
         $db = new Db();
-        
+
         echo "Test ifrån php";
-       $Test = $db -> select("SELECT 'Name' FROM 'User'");
+       $Test = $db -> select("SELECT 1337");
        //$Test = $db -> query("SELECT * FROM User");
        if ($Test === false){
         echo "Fel i select";
        }
+       echo "string";
        echo $Test[0];
       ?>
     </div>
