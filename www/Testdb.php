@@ -9,8 +9,8 @@
  $UserId = 1;
  $sth = $db->prepare('SELECT name
     FROM User
-    WHERE UserID = :?');
- $sth->bindParam(1, $UserId), PDO::PARAM_INT);
+    WHERE UserID = :UserId');
+ $sth->bindParam(':UserId' => $UserId, PDO::PARAM_INT);
  //$sth->execute(array(':UserID' => $UserId));
  $sth->execute();
 
