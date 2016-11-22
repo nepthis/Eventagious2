@@ -6,6 +6,5 @@
  $user = 'root';
  $pass = 'root123';
 
- echo "Detta är i databse";
  $db = new PDO($dsn,$user,$pass);
 ?>

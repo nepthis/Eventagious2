@@ -38,10 +38,6 @@
 
   </head>
   <body>
-    <?php
-    //$db = new Db();  
-
-    ?>
 
     <div>
       <?php
