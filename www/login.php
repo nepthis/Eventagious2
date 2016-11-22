@@ -32,7 +32,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <?php include "database.php";?>
+    <?php include "database.php";
+    error_reporting(E_ALL);?>
 
 
 
