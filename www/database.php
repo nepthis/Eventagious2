@@ -1,4 +1,5 @@
-<?php
+<?php/*
+
         error_reporting(E_ALL);
            /*env_variables:
           # Replace project, instance, database, user and password with the values obtained
@@ -21,7 +22,7 @@
 
         return $db;
         };*/
-
+/*
 
 class Db {
     // The database connection
@@ -31,7 +32,7 @@ class Db {
      * Connect to the database
      * 
      * @return bool false on failure / mysqli MySQLi object instance on success
-     */
+     *//*
     public function connect() {    
         // Try and connect to the database
         if(!isset(self::$connection)) {
@@ -59,7 +60,7 @@ class Db {
      *
      * @param $query The query string
      * @return mixed The result of the mysqli::query() function
-     */
+     *//*
     public function query($query) {
         // Connect to the database
         $connection = $this -> connect();
@@ -75,7 +76,7 @@ class Db {
      *
      * @param $query The query string
      * @return bool False on failure / array Database rows on success
-     */
+     *//*
     public function select($query) {
         $connection = $this -> connect();
         $rows = array();
@@ -96,7 +97,7 @@ class Db {
      * Fetch the last error from the database
      * 
      * @return string Database error message
-     */
+     *//*
     public function error() {
         $connection = $this -> connect();
         return $connection -> error;
@@ -107,7 +108,7 @@ class Db {
      *
      * @param string $value The value to be quoted and escaped
      * @return string The quoted and escaped string
-     */
+     *//*
     public function quote($value) {
         $connection = $this -> connect();
         return "'" . $connection -> real_escape_string($value) . "'";
