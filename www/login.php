@@ -11,6 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
+
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
@@ -26,6 +27,8 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
+    <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -40,7 +43,11 @@
 
   </head>
   <body>
-
+    <?php
+        if (!empty($error_msg)) {
+            echo $error_msg;
+        }
+    ?>
   <center>
   <div class="input-group" style="content: ">
       <div class="media-left">
@@ -51,6 +58,35 @@
          <img class="media-object" style="height: 50px" src="assets/img/google.jpg" alt="">
         </a>
       </div>
+
+      <form action="https://eventagious3.appspot.com/login" 
+                method="post" 
+                name="registration_form">
+            Username: <input type='text' 
+                name='username' 
+                id='username' /><br>
+            Email: <input type="text" name="email" id="email" /><br>
+            Password: <input type="password"
+                             name="password" 
+                             id="password"/><br>
+            Confirm password: <input type="password" 
+                                     name="confirmpwd" 
+                                     id="confirmpwd" /><br>
+            <input type="button" 
+                   value="Register" 
+                   onclick="return regformhash(this.form,
+                                   this.form.username,
+                                   this.form.email,
+                                   this.form.password,
+                                   this.form.confirmpwd);" /> 
+        </form>
+
+
+
+
+
+
+
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">@</span>
         <input type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1">
@@ -94,7 +130,8 @@
    
         if (login($email, $password, $db) == true) {
             // Login success 
-            header('Location: ../protected_page.php');
+          echo "login funkar";
+            //header('Location: ../index.php');
         } else {
           // Login failed
           echo "fel i inlog"; 
