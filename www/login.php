@@ -32,30 +32,15 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <?php include "database.php";?>
+    <?php include "database.php";
+    include "PHPscript.php";
+    sec_session_start();?>
 
 
 
   </head>
   <body>
 
-    <div>
-      <?php
-        error_reporting(E_ALL);
-
-        echo "Test ifrån php";
-       $res = $db -> query("SELECT Name  FROM User WHERE UserID=1");
-       if ($res === false){
-        echo "Fel i select";
-       }
-
-      foreach($res as $row) {
-      echo 'row';
-      print_r($row);
-      }
-
-      ?>
-    </div>
   <center>
   <div class="input-group" style="content: ">
       <div class="media-left">
@@ -68,11 +53,11 @@
       </div>
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+        <input type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1">
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+        <input type="text" class="form-control" placeholder="p" aria-describedby="sizing-addon1">
       </div>
 
       <a class="btn btn-primary" href="http://localhost:8080/register" role="button">Register</a>
@@ -101,6 +86,26 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
+    <?php
+      //p = password...
+      if (isset($_POST['email'], $_POST['p'])) {
+      $email = $_POST['email'];
+      $password = $_POST['p']; // The hashed password.
+   
+        if (login($email, $password, $db) == true) {
+            // Login success 
+            header('Location: ../protected_page.php');
+        } else {
+          // Login failed
+          echo "fel i inlog"; 
+          //header('Location: ../index.php?error=1');
+        }
+      } else {
+      // The correct POST variables were not sent to this page. 
+      echo 'Invalid Request';
+      }
+
+    ?>
 
 
 

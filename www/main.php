@@ -1,7 +1,10 @@
 <?php  
-session_start();
+include "PHPscript.php";
 
- if (!isset($_SESSION['login'])) {
+sec_session_start();
+
+
+if (!isset($_SESSION['login'])) {
       //header('Location: https://eventagious3.appspot.com/login');
       //exit;
     }
@@ -25,3 +28,10 @@ $tempString = "Templates/" .$action . ".php";
 include($tempString); 
 
 include("Templates/footer.php");
+
+
+
+
+
+
+ 
