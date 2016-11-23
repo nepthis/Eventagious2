@@ -37,6 +37,7 @@
 
     <?php include "database.php";
     include "PHPscript.php";
+    include "process_login.php";
     sec_session_start();?>
 
 
@@ -59,31 +60,15 @@
         </a>
       </div>
 
-      <form action="https://eventagious3.appspot.com/login" 
-                method="post" 
-                name="registration_form">
-            Username: <input type='text' 
-                name='username' 
-                id='username' /><br>
-            Email: <input type="text" name="email" id="email" /><br>
-            Password: <input type="password"
+      <form action="includes/process_login.php" method="post" name="login_form">                      
+            Email: <input type="text" name="email" />
+            Password: <input type="password" 
                              name="password" 
-                             id="password"/><br>
-            Confirm password: <input type="password" 
-                                     name="confirmpwd" 
-                                     id="confirmpwd" /><br>
+                             id="password"/>
             <input type="button" 
-                   value="Register" 
-                   onclick="return regformhash(this.form,
-                                   this.form.username,
-                                   this.form.email,
-                                   this.form.password,
-                                   this.form.confirmpwd);" /> 
+                   value="Login" 
+                   onclick="formhash(this.form, this.form.password);" /> 
         </form>
-
-
-
-
 
 
 
@@ -97,8 +82,7 @@
       </div>
 
       <a class="btn btn-primary" href="http://localhost:8080/register" role="button">Register</a>
-      <button class="btn btn-primary" type="button">Go!</button>
-
+      
   </div>
   </center>
 
@@ -122,27 +106,6 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-    <?php
-      //p = password...
-      if (isset($_POST['email'], $_POST['p'])) {
-      $email = $_POST['email'];
-      $password = $_POST['p']; // The hashed password.
-   
-        if (login($email, $password, $db) == true) {
-            // Login success 
-          echo "login funkar";
-            //header('Location: ../index.php');
-        } else {
-          // Login failed
-          echo "fel i inlog"; 
-          //header('Location: ../index.php?error=1');
-        }
-      } else {
-      // The correct POST variables were not sent to this page. 
-      echo 'Invalid Request';
-      }
-
-    ?>
 
 
 

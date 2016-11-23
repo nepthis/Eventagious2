@@ -53,6 +53,34 @@
 
   <form>
 	  <center>
+
+      <form action="https://eventagious3.appspot.com/register" 
+                method="post" 
+                name="registration_form">
+            Username: <input type='text' 
+                name='username' 
+                id='username' /><br>
+            Email: <input type="text" name="email" id="email" /><br>
+            Password: <input type="password"
+                             name="password" 
+                             id="password"/><br>
+            Confirm password: <input type="password" 
+                                     name="confirmpwd" 
+                                     id="confirmpwd" /><br>
+            <input type="button" 
+                   value="Register" 
+                   onclick="return regformhash(this.form,
+                                   this.form.username,
+                                   this.form.email,
+                                   this.form.password,
+                                   this.form.confirmpwd);" /> 
+        </form>
+
+
+
+
+
+
 		  <div class="input-group" style="content: ">
 		      <div class="input-group input-group-lg">
 		        <span class="input-group-addon" id="sizing-addon1">@</span>
