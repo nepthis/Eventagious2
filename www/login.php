@@ -61,7 +61,7 @@
         </a>
       </div>
 
-      <form action="login.php" method="post" name="login_form">                      
+      <form action="login" method="post" name="login_form">                      
             Email: <input type="text" name="email" />
             Password: <input type="password" 
                              name="password" 
