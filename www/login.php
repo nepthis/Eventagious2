@@ -28,6 +28,7 @@
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+    <script type="text/JavaScript" src="assets/js/forms.js"></script> 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
