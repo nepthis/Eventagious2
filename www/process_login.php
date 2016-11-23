@@ -10,7 +10,7 @@
         if (login($email, $password, $db) == true) {
             // Login success 
           echo "login funkar";
-            header('Location: ../index.php');
+            header('Location: https://eventagious3.appspot.com/index.php');
         } else {
           // Login failed
           echo "fel i inlog"; 
@@ -18,7 +18,7 @@
         }
       } else {
       // The correct POST variables were not sent to this page. 
-      echo 'Invalid Request';
+      echo 'Invalid Request ifrån login';
       }
 
     ?>

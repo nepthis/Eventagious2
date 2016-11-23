@@ -60,7 +60,7 @@
         </a>
       </div>
 
-      <form action="includes/process_login.php" method="post" name="login_form">                      
+      <form action="process_login.php" method="post" name="login_form">                      
             Email: <input type="text" name="email" />
             Password: <input type="password" 
                              name="password" 
