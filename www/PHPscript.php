@@ -54,9 +54,9 @@
       }*/
 
     while($r = $sth->fetch()){
-    echo $r['user_id']. "\n"; //Or do what ever instead of echo
-    echo $r['username']. "\n";
-    echo $r['db_password']. "\n";
+    echo $r['user_id']; //Or do what ever instead of echo
+    echo $r['username'];
+    echo $r['db_password'];
     }
       //Storar värderna 
     //$sth->store_result();
