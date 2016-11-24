@@ -50,7 +50,7 @@
       echo "Klart!";
 */
 
-    if ($stmt = $db->prepare("SELECT id, username, password 
+    if ($stmt = $database->prepare("SELECT id, username, password 
         FROM members
        WHERE email = :mail
         LIMIT 1")) {
