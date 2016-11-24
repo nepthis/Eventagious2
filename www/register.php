@@ -54,7 +54,7 @@
   <form>
 	  <center>
 
-      <form action="https://eventagious3.appspot.com/register" 
+      <form action="register" 
                 method="post" 
                 name="registration_form">
             Username: <input type='text' 

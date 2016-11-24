@@ -83,12 +83,12 @@
                 // the password_verify function to avoid timing attacks.'
                 echo "kollar om password";
                 $db_password= trim($db_password);
+
+                //Måste kolla om denna funkar egentligen eller inte!
+
                 if (password_verify($password, $db_password)) {
                     
                     echo "Login funkar!";
-
-
-/*
                     // Password is correct!
                     // Get the user-agent string of the user.
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
@@ -96,16 +96,11 @@
                     $user_id = preg_replace("/[^0-9]+/", "", $user_id);
                     $_SESSION['user_id'] = $user_id;
                     // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/", 
-                                                                "", 
-                                                                $username);
+                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$username);
                     $_SESSION['username'] = $username;
-                    $_SESSION['login_string'] = hash('sha512', 
-                              $db_password . $user_browser);
-                    $_SESSION['adress'] = $adress;
-                    $_SESSION['section'] = $section;
+                    $_SESSION['login_string'] = hash('sha512',$db_password . $user_browser);
+
                     // Login successful.
-*/
                     return true;
                 } else {
                     echo "Fel passord";

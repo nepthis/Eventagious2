@@ -1,6 +1,6 @@
 <?php
-include "database.php";
-include "PHPscript.php";
+include_once "database.php";
+include_once "PHPscript.php";
 
 
 $error_msg = "";
@@ -25,18 +25,23 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // Username validity and password validity have been checked client side.
     // This should should be adequate as nobody gains any advantage from
     // breaking these rules.
-    //
+	//
+
+
  
-    $prep_stmt = "SELECT id FROM members WHERE email = ? LIMIT 1";
-    $stmt = $db->prepare($prep_stmt);
- 
+    //$prep_stmt = "SELECT id FROM members WHERE email = ? LIMIT 1";
+    $stmt = $db->prepare('SELECT id 
+    	FROM members 
+    	WHERE email = :mail 
+    	LIMIT 1');
+ 	
    // check existing email  
     if ($stmt) {
-        $stmt->bind_param('s', $email);
+        $stmt->bindParam(':mail',$email);
         $stmt->execute();
-        $stmt->store_result();
+        $r = $stmt->fetch()
  
-        if ($stmt->num_rows == 1) {
+        if ($stmt->rowCount() == 1) {
             // A user with this email address already exists
             $error_msg .= '<p class="error">A user with this email address already exists.</p>';
                         $stmt->close();
@@ -47,15 +52,17 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     }
  
     // check existing username
-    $prep_stmt = "SELECT id FROM members WHERE username = ? LIMIT 1";
-    $stmt = $mysqli->prepare($prep_stmt);
+    $stmt = $db->prepare('SELECT id 
+    	FROM members 
+    	WHERE username = :user 
+    	LIMIT 1');
  
     if ($stmt) {
-        $stmt->bind_param('s', $username);
+        $stmt->bindParam(':user',$username);
         $stmt->execute();
         $stmt->store_result();
  
-                if ($stmt->num_rows == 1) {
+                if ($stmt->rowCount() == 1) {
                         // A user with this username already exists
                         $error_msg .= '<p class="error">A user with this username already exists</p>';
                         $stmt->close();
@@ -79,12 +86,12 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
  
         // Insert the new user into the database 
         if ($insert_stmt = $db->prepare("INSERT INTO members (username, email, password) VALUES (?, ?, ?)")) {
-            $insert_stmt->bind_param('sss', $username, $email, $password);
+            $insert_stmt->bindParam('sss', $username, $email, $password);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
             }
         }
-        header('Location: ./register_success.php');
+        header('Location: https://eventagious3.appspot.com/index');
     }
 }
