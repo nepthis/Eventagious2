@@ -58,6 +58,11 @@
     $username = $r['username'];
     $db_password = $r['password'];
     }
+    $num_rows = mysql_num_rows($sth);
+    echo $num_rows;
+    echo $user_id;
+    echo $username;
+    echo $db_password;
       //Storar värderna 
     //$sth->store_result();
         // get variables from result.
@@ -66,7 +71,7 @@
 
 
 
-        if ($sth->num_rows == 1) {
+        if ($num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
  
