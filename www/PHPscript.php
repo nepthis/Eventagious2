@@ -54,16 +54,14 @@
       }*/
 
       //Storar värderna 
-    $sth->store_result();
-    echo "string2";
+    $sth->storeResult();
         // get variables from result.
-    $sth->bind_result($user_id, $username, $db_password);
+    $sth->bindResult($user_id, $username, $db_password);
     $sth->fetch();
-    printf("%s %s\n", $user_id, $username,$db_password);
 
 
 
-        /*if ($stmt->num_rows == 1) {
+        if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
  
@@ -79,7 +77,7 @@
                     
                     echo "Login funkar!";
 
-*/
+
 /*
                     // Password is correct!
                     // Get the user-agent string of the user.
@@ -105,14 +103,15 @@
                     $now = time();
                     $db->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
-                    return false;
+                    return false;*/
                 }
             }
         } else {
             // No user exists.
             echo "Databasen får inget uppslag";
             //return false;
-        */
+        
+}
 }
 
 
