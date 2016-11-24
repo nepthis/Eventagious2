@@ -35,7 +35,7 @@
       //print_r($email)
       //$mail = "test@example.com";
       $mail = $email;
-      $sth = $database->prepare('SELECT id, username, password
+      /*$sth = $database->prepare('SELECT id, username, password
           FROM members
           WHERE email = :mail');
       $sth->bindParam(':mail',$mail);
@@ -48,9 +48,8 @@
         print_r($row);
       }
       echo "Klart!";
+*/
 
-
-    /*    
     if ($stmt = $db->prepare("SELECT id, username, password 
         FROM members
        WHERE email = :email
@@ -60,18 +59,15 @@
         $stmt->store_result();
  
         // get variables from result.
-        $stmt->bind_result($user_id, $username, $db_password, $fistname, $surname, $adress, $section);
+        $stmt->bind_result($user_id, $username, $db_password);
         $stmt->fetch();
         
 
-        printf ($user_id\n); 
-        printf ($username\n); 
-        printf ($db_password\n); 
-        printf ($fistname\n); 
-        printf ($surname\n); 
-        printf ($adress\n); 
-        printf ($section\n); 
-*/
+        printf ($user_id); 
+        printf ($username); 
+        printf ($db_password); 
+
+
 
         /*if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
@@ -122,22 +118,22 @@
             // No user exists.
             echo "Databasen får inget uppslag";
             //return false;
-        
+        */
     }else{
         echo "Databasen funkar inte";
-    }*/
+    }
 }
 
 
 
-function checkbrute($user_id) {
+function checkbrute($user_id, $database) {
     // Get timestamp of current time 
     $now = time();
  
     // All login attempts are counted from the past 2 hours. 
     $valid_attempts = $now - (2 * 60 * 60);
  
-    if ($stmt = $db->prepare("SELECT time 
+    if ($stmt = $database->prepare("SELECT time 
                              FROM login_attempts 
                              WHERE user_id = :userid 
                             AND time > '$valid_attempts'")) {
@@ -158,7 +154,7 @@ function checkbrute($user_id) {
 
 
 
-function login_check() {
+function login_check($database) {
     // Check if all session variables are set 
     if (isset($_SESSION['user_id'], 
                         $_SESSION['username'], 
@@ -171,7 +167,7 @@ function login_check() {
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
  
-        if ($stmt = $db->prepare("SELECT password 
+        if ($stmt = $database->prepare("SELECT password 
                                       FROM members 
                                       WHERE id = :userid  LIMIT 1")) {
             // Bind "$user_id" to parameter. 
