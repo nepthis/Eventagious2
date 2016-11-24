@@ -52,14 +52,12 @@
         echo 'row';
         print_r($row);
       }*/
-    $row = mysql_fetch_row($sth);
-    $user_id = $row[0];
-    $username = $row[1];
-    $db_password = $row[2];
-    echo "test";
-    echo $user_id;
-    echo $username;
-    echo $db_password;
+
+    while($r = $sth->fetch()){
+    echo $r['user_id']. "\n"; //Or do what ever instead of echo
+    echo $r['username']. "\n";
+    echo $r['db_password']. "\n";
+    }
       //Storar värderna 
     //$sth->store_result();
         // get variables from result.
@@ -68,7 +66,7 @@
 
 
 
-        if ($stmt->num_rows == 1) {
+        if ($sth->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
  
