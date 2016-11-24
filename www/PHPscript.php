@@ -52,6 +52,9 @@
         echo 'row';
         print_r($row);
       }*/
+    $num_rows = mysql_num_rows($sth);
+    echo $num_rows;
+    echo"antal rader";
 
     while($r = $sth->fetch()){
     $user_id = $r['id']; //Or do what ever instead of echo
@@ -59,8 +62,7 @@
     $db_password = $r['password'];
     }
 
-    $row = mysql_num_rows($sth);
-    $num_rows = $row[0];
+    $num_rows = mysql_num_rows($sth);
 
     echo $num_rows;
     echo $user_id;
