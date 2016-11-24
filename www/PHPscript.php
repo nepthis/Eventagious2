@@ -1,5 +1,5 @@
 <?php
-    include "database.php";
+    include_once "database.php";
 
     function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
@@ -29,12 +29,12 @@
     }
 
 
-      function login($email, $password) {
+      function login($email, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
         echo $email;
         echo "Test ifrån Login";
 
-        $sth = $db->prepare('SELECT id, username, password
+        $sth = $database->prepare('SELECT id, username, password
             FROM members
             WHERE email = :mail');
         $sth->bindParam(':mail',$mail);
