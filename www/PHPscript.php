@@ -33,7 +33,7 @@
     // Using prepared statements means that SQL injection is not possible. 
 
         echo "Test ifrån Login";
-    /*if ($stmt = $db->prepare("SELECT id, username, password 
+    if ($stmt = $db->prepare("SELECT id, username, password 
         FROM members
        WHERE email = :email
         LIMIT 1")) {
@@ -46,16 +46,16 @@
         $stmt->fetch();
         
 
-        echo $user_id; 
-        echo $username; 
-        echo $db_password; 
-        echo $fistname; 
-        echo $surname; 
-        echo $adress; 
-        echo $section; 
+        printf ($user_id\n); 
+        printf ($username\n); 
+        printf ($db_password\n); 
+        printf ($fistname\n); 
+        printf ($surname\n); 
+        printf ($adress\n); 
+        printf ($section\n); 
 
 
-        if ($stmt->num_rows == 1) {
+        /*if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
  
@@ -104,10 +104,10 @@
             // No user exists.
             echo "Databasen får inget uppslag";
             //return false;
-        }
+        }*/
     }else{
         echo "Databasen funkar inte";
-    }*/
+    }
 }
 
 

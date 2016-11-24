@@ -10,8 +10,6 @@
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
 
-      echo $email;
-      echo $password;
         if (login($email, $password) == true) {
             // Login success 
           echo "login funkar";
