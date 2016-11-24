@@ -52,10 +52,11 @@
         echo 'row';
         print_r($row);
       }*/
-
-    $user_id = mysql_result($sth, 0);
-    $username = mysql_result($sth, 1);
-    $db_password = mysql_result($sth, 2);
+    $row = mysql_fetch_row($sth);
+    $user_id = $row[0];
+    $username = $row[1];
+    $db_password = $row[2];
+    echo "test";
     echo $user_id;
     echo $username;
     echo $db_password;
