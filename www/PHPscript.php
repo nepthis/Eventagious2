@@ -52,7 +52,7 @@
 
     if ($stmt = $database->prepare('SELECT id, username, password
           FROM members
-          WHERE email = :mail'){
+          WHERE email = :mail')){
         $stmt->bind_param(':mail', $mail);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
 
