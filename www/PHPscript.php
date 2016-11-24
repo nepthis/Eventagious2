@@ -74,11 +74,13 @@
             if (checkbrute($user_id) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
+                echo "kollar brute";
                 return false;
             } else {
                 // Check if the password in the database matches
                 // the password the user submitted. We are using
-                // the password_verify function to avoid timing attacks.
+                // the password_verify function to avoid timing attacks.'
+                echo "kollar om password";
                 if (password_verify($password, $db_password)) {
                     
                     echo "Login funkar!";
@@ -116,7 +118,8 @@
         
 
     }else{
-        return false;
+        echo "fel atal rader";
+        //return false;
     }
 }
 
