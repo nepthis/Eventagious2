@@ -35,7 +35,7 @@
       //print_r($email)
       //$mail = "test@example.com";
       $mail = $email;
-      $sth = $db->prepare('SELECT id, username, password
+      $sth = $database->prepare('SELECT id, username, password
           FROM members
           WHERE email = :mail');
       $sth->bindParam(':mail',$mail);
