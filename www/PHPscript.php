@@ -31,7 +31,9 @@
 
       function login($email, $password) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $db->prepare("SELECT id, username, password 
+
+        echo "Test ifrån Login";
+    /*if ($stmt = $db->prepare("SELECT id, username, password 
         FROM members
        WHERE email = :email
         LIMIT 1")) {
@@ -69,7 +71,7 @@
                     
                     echo "Login funkar!";
 
-
+*/
 /*
                     // Password is correct!
                     // Get the user-agent string of the user.
@@ -87,7 +89,7 @@
                     $_SESSION['adress'] = $adress;
                     $_SESSION['section'] = $section;
                     // Login successful.
-*/
+*//*
                     return true;
                 } else {
                     // Password is not correct
@@ -105,7 +107,7 @@
         }
     }else{
         echo "Databasen funkar inte";
-    }
+    }*/
 }
 
 

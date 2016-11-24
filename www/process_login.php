@@ -10,8 +10,8 @@
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
 
-      echo "test innan allt!";
-        /*
+      echo $email;
+      echo $password;
         if (login($email, $password) == true) {
             // Login success 
           echo "login funkar";
@@ -21,7 +21,6 @@
           echo "fel i inlog"; 
           //header('Location: ../index.php?error=1');
         }
-        */
       } else {
       // The correct POST variables were not sent to this page. 
       echo 'Invalid Request ifrån login';
