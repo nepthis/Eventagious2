@@ -29,9 +29,9 @@
     }
 
 
-      function login($email, $password, $mydb) {
+      function login($email, $password) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $mydb->prepare("SELECT id, username, password 
+    if ($stmt = $db->prepare("SELECT id, username, password 
         FROM members
        WHERE email = :email
         LIMIT 1")) {
@@ -42,12 +42,22 @@
         // get variables from result.
         $stmt->bind_result($user_id, $username, $db_password, $fistname, $surname, $adress, $section);
         $stmt->fetch();
- 
+        
+
+        echo $user_id; 
+        echo $username; 
+        echo $db_password; 
+        echo $fistname; 
+        echo $surname; 
+        echo $adress; 
+        echo $section; 
+
+
         if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
  
-            if (checkbrute($user_id, $mydb) == true) {
+            if (checkbrute($user_id) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
                 return false;
@@ -56,6 +66,11 @@
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.
                 if (password_verify($password, $db_password)) {
+                    
+                    echo "Login funkar!";
+
+
+/*
                     // Password is correct!
                     // Get the user-agent string of the user.
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
@@ -72,12 +87,13 @@
                     $_SESSION['adress'] = $adress;
                     $_SESSION['section'] = $section;
                     // Login successful.
+*/
                     return true;
                 } else {
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
-                    $mydb->query("INSERT INTO login_attempts(user_id, time)
+                    $db->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
                     return false;
                 }
@@ -91,14 +107,14 @@
 
 
 
-function checkbrute($user_id, $mydb) {
+function checkbrute($user_id) {
     // Get timestamp of current time 
     $now = time();
  
     // All login attempts are counted from the past 2 hours. 
     $valid_attempts = $now - (2 * 60 * 60);
  
-    if ($stmt = $mydb->prepare("SELECT time 
+    if ($stmt = $db->prepare("SELECT time 
                              FROM login_attempts 
                              WHERE user_id = :userid 
                             AND time > '$valid_attempts'")) {
@@ -119,7 +135,7 @@ function checkbrute($user_id, $mydb) {
 
 
 
-function login_check($mydb) {
+function login_check() {
     // Check if all session variables are set 
     if (isset($_SESSION['user_id'], 
                         $_SESSION['username'], 
@@ -132,7 +148,7 @@ function login_check($mydb) {
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
  
-        if ($stmt = $mydb->prepare("SELECT password 
+        if ($stmt = $db->prepare("SELECT password 
                                       FROM members 
                                       WHERE id = :userid  LIMIT 1")) {
             // Bind "$user_id" to parameter. 
