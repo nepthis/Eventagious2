@@ -56,6 +56,12 @@
         LIMIT 1")) {
         $stmt->bind_param(':mail', $mail);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
+
+        echo "innan utskrift";
+        foreach($stmt as $row) {
+        echo 'row';
+        print_r($row);
+      }
         $stmt->store_result();
  
         // get variables from result.
