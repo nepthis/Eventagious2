@@ -1,5 +1,5 @@
 <?php
-    
+    include_once "database.php";
 
     function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
