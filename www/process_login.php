@@ -2,6 +2,7 @@
 
     include_once "database.php";
     include_once "PHPscript.php";
+
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       //p = password...
       if (isset($_POST['email'], $_POST['p'])) {
@@ -21,5 +22,7 @@
       // The correct POST variables were not sent to this page. 
       echo 'Invalid Request ifrån login';
       }
+    }else{
+      echo "Det kommer inget post res";
     }
     ?>
