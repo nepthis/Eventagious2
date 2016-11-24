@@ -1,7 +1,7 @@
     <?php
 
-    include"database.php";
-    include_once "PHPscript.php";
+    include "database.php";
+    include "PHPscript.php";
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       //p = password...
@@ -10,19 +10,21 @@
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
 
+      $mail = "test@example.com";
       $sth = $db->prepare('SELECT id, username, password
-            FROM members
-            WHERE email = :mail');
-        $sth->bindParam(':mail',$mail);
+          FROM members
+          WHERE email = :mail');
+      $sth->bindParam(':mail',$mail);
 
-        $sth->execute();
+      $sth->execute();
+      echo "test av db";
 
-        echo "utskrift efter db";
-        foreach($sth as $row) {
-            echo 'row';
-            print_r($row);
-         }
 
+      foreach($sth as $row) {
+        echo 'row';
+        print_r($row);
+      }
+      echo "Klart!";
 
 /*
         if (login($email, $password, $db) == true) {
