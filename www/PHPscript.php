@@ -63,10 +63,10 @@
         $stmt->fetch();
         
 
-        printf ($user_id); 
-        printf ($username); 
-        printf ($db_password); 
-
+        echo $user_id;
+        echo $username;
+        echo $db_password;
+        echo"arg1";
 
 
         /*if ($stmt->num_rows == 1) {
