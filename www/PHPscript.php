@@ -32,20 +32,21 @@
       function login($email, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
         echo $email;
-        echo "Test ifrån Login";
+      //print_r($email)
+      $mail = "test@example.com";
+      $sth = $db->prepare('SELECT id, username, password
+          FROM members
+          WHERE email = :mail');
+      $sth->bindParam(':mail',$email);
 
-        $sth = $database->prepare('SELECT id, username, password
-            FROM members
-            WHERE email = :mail');
-        $sth->bindParam(':mail',$mail);
+      $sth->execute();
 
-        $sth->execute();
 
-        echo "utskrift efter db";
-        foreach($sth as $row) {
-            echo 'row';
-            print_r($row);
-         }
+      foreach($sth as $row) {
+        echo 'row';
+        print_r($row);
+      }
+      echo "Klart!";
 
 
     /*    
