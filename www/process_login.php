@@ -5,10 +5,13 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       //p = password...
+      echo "Test 45  ";
       if (isset($_POST['email'], $_POST['p'])) {
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
-   
+
+      echo "test innan allt!";
+        /*
         if (login($email, $password) == true) {
             // Login success 
           echo "login funkar";
@@ -21,6 +24,6 @@
       } else {
       // The correct POST variables were not sent to this page. 
       echo 'Invalid Request ifrån login';
-      }
+      }*/
     }
     ?>
