@@ -9,13 +9,13 @@
       if (isset($_POST['email'], $_POST['p'])) {
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
-
+      echo $email;
       //print_r($email)
       $mail = "test@example.com";
       $sth = $db->prepare('SELECT id, username, password
           FROM members
           WHERE email = :mail');
-      $sth->bindParam(':mail',$mail);
+      $sth->bindParam(':mail',$email);
 
       $sth->execute();
 
