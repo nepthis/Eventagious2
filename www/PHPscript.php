@@ -41,6 +41,7 @@ $sth = $db->prepare('SELECT id, username, password
 
  $sth->execute();
 
+echo $sth;
 
  foreach($sth as $row) {
     echo 'row';
