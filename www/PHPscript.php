@@ -82,10 +82,13 @@
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.'
                 echo "kollar om password";
+                echo $password;
+                echo "MELLANRUMME";
+                echo $db_password;
+                echo (password_verify($password, $db_password));
                 if (password_verify($password, $db_password)) {
                     
                     echo "Login funkar!";
-                    return true;
 
 
 /*
@@ -111,7 +114,7 @@
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
-                    $db->query("INSERT INTO login_attempts(user_id, time)
+                    $database->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
                     return false;
                 }
