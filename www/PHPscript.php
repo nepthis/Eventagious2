@@ -50,14 +50,13 @@
       echo "Klart!";
 */
 
-    if ($stmt = $database->prepare("SELECT id, username, password 
-        FROM members
-       WHERE email = :mail
-        LIMIT 1")) {
+    if ($stmt = $database->prepare('SELECT id, username, password
+          FROM members
+          WHERE email = :mail'){
         $stmt->bind_param(':mail', $mail);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
 
-        echo "innan utskrift";
+        echo "innan utskrift ";
         foreach($stmt as $row) {
         echo 'row';
         print_r($row);
