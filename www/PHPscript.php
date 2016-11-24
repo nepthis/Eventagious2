@@ -39,11 +39,6 @@
       $sth->execute();
 
       //bara test om de går att skriva ut eler inte
-      foreach($sth as $row) {
-        echo 'row';
-        print_r($row);
-      }
-      echo "Klart!";
 
 /*
     $stmt = $database->prepare('SELECT id, username, password
@@ -57,19 +52,15 @@
         echo 'row';
         print_r($row);
       }*/
-      
+
       //Storar värderna 
     $sth->store_result();
- 
+    echo "string2";
         // get variables from result.
     $sth->bind_result($user_id, $username, $db_password);
     $sth->fetch();
-        
+    printf("%s %s\n", $user_id, $username,$db_password);
 
-        echo $user_id;
-        echo $username;
-        echo $db_password;
-        echo "arg1";
 
 
         /*if ($stmt->num_rows == 1) {
