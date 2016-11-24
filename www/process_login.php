@@ -10,14 +10,14 @@
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
 
+      print_r($email /n)
       $mail = "test@example.com";
       $sth = $db->prepare('SELECT id, username, password
           FROM members
           WHERE email = :mail');
-      $sth->bindParam(':mail',$mail);
+      $sth->bindParam(':mail',$email);
 
       $sth->execute();
-      echo "test av db";
 
 
       foreach($sth as $row) {
