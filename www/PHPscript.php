@@ -53,11 +53,17 @@
         print_r($row);
       }*/
 
+    $user_id = mysql_result($sth, 0);
+    $username = mysql_result($sth, 1);
+    $db_password = mysql_result($sth, 2);
+    echo $user_id;
+    echo $username;
+    echo $db_password;
       //Storar värderna 
-    $sth->store_result();
+    //$sth->store_result();
         // get variables from result.
-    $sth->bind_result($user_id, $username, $db_password);
-    $sth->fetch();
+    //$sth->bind_result($user_id, $username, $db_password);
+    //$sth->fetch();
 
 
 
