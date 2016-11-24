@@ -100,8 +100,11 @@
             }
         } else {
             // No user exists.
-            return false;
+            echo "Databasen får inget uppslag";
+            //return false;
         }
+    }else{
+        echo "Databasen funkar inte";
     }
 }
 

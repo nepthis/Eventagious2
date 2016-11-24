@@ -22,7 +22,5 @@
       // The correct POST variables were not sent to this page. 
       echo 'Invalid Request ifrån login';
       }
-    }else{
-      echo "Det kommer inget post res";
     }
     ?>
