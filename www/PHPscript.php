@@ -52,7 +52,7 @@
         echo 'row';
         print_r($row);
       }*/
-    $num_rows = mysql_num_rows($sth);
+    $num_rows = $sth->rowCount();
     echo $num_rows;
     echo"antal rader";
 
