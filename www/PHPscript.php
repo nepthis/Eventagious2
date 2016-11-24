@@ -120,10 +120,10 @@ $sth = $db->prepare('SELECT id, username, password
             // No user exists.
             echo "Databasen får inget uppslag";
             //return false;
-        }*/
+        
     }else{
         echo "Databasen funkar inte";
-    }
+    }*/
 }
 
 
