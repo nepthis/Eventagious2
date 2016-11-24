@@ -72,7 +72,7 @@
             // If the user exists we check if the account is locked
             // from too many login attempts 
             echo "rätt antal rader";
-            if (checkbrute($user_id) == true) {
+            if (checkbrute($user_id,$database) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
                 echo "kollar brute";
@@ -105,7 +105,7 @@
                     $_SESSION['adress'] = $adress;
                     $_SESSION['section'] = $section;
                     // Login successful.
-*//*
+*/
                     return true;
                 } else {
                     // Password is not correct
@@ -113,7 +113,7 @@
                     $now = time();
                     $db->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
-                    return false;*/
+                    return false;
                 }
             }
         
@@ -137,14 +137,13 @@ function checkbrute($user_id, $database) {
                              FROM login_attempts 
                              WHERE user_id = :userid 
                             AND time > '$valid_attempts'")) {
-        $stmt->bind_param(':userid', $user_id);
+        $stmt->bindParam(':userid', $user_id);
  
         // Execute the prepared query. 
         $stmt->execute();
-        $stmt->store_result();
  
         // If there have been more than 5 failed logins 
-        if ($stmt->num_rows > 5) {
+        if ($stmt->rowCount() > 5) {
             return true;
         } else {
             return false;
