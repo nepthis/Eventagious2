@@ -71,7 +71,7 @@
         if ($sth->rowCount() == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
- 
+            echo "rätt antal rader";
             if (checkbrute($user_id) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
