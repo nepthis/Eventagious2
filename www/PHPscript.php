@@ -52,9 +52,9 @@
 
     if ($stmt = $db->prepare("SELECT id, username, password 
         FROM members
-       WHERE email = :email
+       WHERE email = :mail
         LIMIT 1")) {
-        $stmt->bind_param(':email', $email);  // Bind "$email" to parameter.
+        $stmt->bind_param(':mail', $mail);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
  
