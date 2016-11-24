@@ -21,9 +21,10 @@
           echo "fel i inlog"; 
           //header('Location: ../index.php?error=1');
         }
+        */
       } else {
       // The correct POST variables were not sent to this page. 
       echo 'Invalid Request ifrån login';
-      }*/
+      }
     }
     ?>
