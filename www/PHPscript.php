@@ -54,9 +54,9 @@
       }*/
 
     while($r = $sth->fetch()){
-    echo $r['id']; //Or do what ever instead of echo
-    echo $r['username'];
-    echo $r['password'];
+    $user_id = $r['id']; //Or do what ever instead of echo
+    $username = $r['username'];
+    $db_password = $r['password'];
     }
       //Storar värderna 
     //$sth->store_result();
