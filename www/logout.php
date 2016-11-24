@@ -1,6 +1,6 @@
 <?php
-include "database.php";
-include "PHPscript.php";
+include_once "database.php";
+include_once "PHPscript.php";
 
 sec_session_start();
  

@@ -69,7 +69,7 @@ $sth = $db->prepare('SELECT id, username, password
         printf ($surname\n); 
         printf ($adress\n); 
         printf ($section\n); 
-
+*/
 
         /*if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
