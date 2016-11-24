@@ -54,9 +54,9 @@
       }*/
 
       //Storar värderna 
-    $sth->storeResult();
+    $sth->store_result();
         // get variables from result.
-    $sth->bindResult($user_id, $username, $db_password);
+    $sth->bind_result($user_id, $username, $db_password);
     $sth->fetch();
 
 
