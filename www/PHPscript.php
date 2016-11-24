@@ -58,7 +58,10 @@
     $username = $r['username'];
     $db_password = $r['password'];
     }
-    $num_rows = mysql_num_rows($sth);
+
+    $row = mysql_num_rows($sth);
+    $num_rows = $row[0];
+
     echo $num_rows;
     echo $user_id;
     echo $username;

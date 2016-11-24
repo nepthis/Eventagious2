@@ -5,7 +5,7 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       //p = password...
-      echo "Test 45  ";
+      echo "processLogin!";
       if (isset($_POST['email'], $_POST['p'])) {
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
