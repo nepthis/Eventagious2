@@ -31,8 +31,24 @@
 
       function login($email, $password) {
     // Using prepared statements means that SQL injection is not possible. 
-
+        echo $email;
         echo "Test ifrån Login";
+
+$sth = $db->prepare('SELECT id, username, password 
+        FROM members
+        WHERE email = :email');
+ $sth->bindParam(':email',$email);
+
+ $sth->execute();
+
+
+ foreach($sth as $row) {
+    echo 'row';
+    print_r($row);
+ }
+
+
+    /*    
     if ($stmt = $db->prepare("SELECT id, username, password 
         FROM members
        WHERE email = :email
