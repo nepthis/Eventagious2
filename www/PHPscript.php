@@ -76,6 +76,7 @@
                 if (password_verify($password, $db_password)) {
                     
                     echo "Login funkar!";
+                    return true;
 
 
 /*
@@ -108,6 +109,8 @@
             }
         
 
+    }else{
+        return false;
     }
 }
 
