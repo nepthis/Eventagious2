@@ -2,7 +2,7 @@
  include "database.php";
 
  $mail = "test@example.com";
- $sth = $db->prepare('SELECT username
+ $sth = $db->prepare('SELECT id, username, password
     FROM members
     WHERE email = :mail');
  $sth->bindParam(':mail',$mail);

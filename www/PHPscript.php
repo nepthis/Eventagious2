@@ -1,5 +1,5 @@
 <?php
-    include_once "database.php";
+    include "database.php";
 
     function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
@@ -34,19 +34,18 @@
         echo $email;
         echo "Test ifrån Login";
 
-$sth = $db->prepare('SELECT id, username, password 
-        FROM members
-        WHERE email = :email');
- $sth->bindParam(':email',$email);
+        $sth = $db->prepare('SELECT id, username, password 
+                FROM members
+                WHERE email = :email');
+        $sth->bindParam(':email',$email);
 
- $sth->execute();
+        $sth->execute();
 
-echo $sth;
 
- foreach($sth as $row) {
-    echo 'row';
-    print_r($row);
- }
+        foreach($sth as $row) {
+            echo 'row';
+            print_r($row);
+         }
 
 
     /*    
