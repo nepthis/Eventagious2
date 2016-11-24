@@ -1,6 +1,6 @@
     <?php
 
-    include_once "database.php";
+    include"database.php";
     include_once "PHPscript.php";
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -10,7 +10,7 @@
       $email = $_POST['email'];
       $password = $_POST['p']; // The hashed password.
 
-      $sth = $database->prepare('SELECT id, username, password
+      $sth = $db->prepare('SELECT id, username, password
             FROM members
             WHERE email = :mail');
         $sth->bindParam(':mail',$mail);
