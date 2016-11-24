@@ -34,14 +34,14 @@
         echo $email;
         echo "Test ifrån Login";
 
-        $sth = $db->prepare('SELECT id, username, password 
-                FROM members
-                WHERE email = :email');
-        $sth->bindParam(':email',$email);
+        $sth = $db->prepare('SELECT id, username, password
+            FROM members
+            WHERE email = :mail');
+        $sth->bindParam(':mail',$mail);
 
         $sth->execute();
 
-
+        echo "utskrift efter db";
         foreach($sth as $row) {
             echo 'row';
             print_r($row);
