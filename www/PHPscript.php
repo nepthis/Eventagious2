@@ -106,12 +106,9 @@
                     return false;*/
                 }
             }
-        } else {
-            // No user exists.
-            echo "Databasen får inget uppslag";
-            //return false;
         
-}
+
+    }
 }
 
 
