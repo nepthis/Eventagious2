@@ -31,47 +31,45 @@
 
       function login($email, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
-        
-      //print_r($email)
-      //$mail = "test@example.com";
       $mail = $email;
-      /*$sth = $database->prepare('SELECT id, username, password
+      $sth = $database->prepare('SELECT id, username, password
           FROM members
           WHERE email = :mail');
       $sth->bindParam(':mail',$mail);
-
       $sth->execute();
 
-
+      //bara test om de går att skriva ut eler inte
       foreach($sth as $row) {
         echo 'row';
         print_r($row);
       }
       echo "Klart!";
-*/
 
-    if ($stmt = $database->prepare('SELECT id, username, password
+/*
+    $stmt = $database->prepare('SELECT id, username, password
           FROM members
-          WHERE email = :mail')){
-        $stmt->bind_param(':mail', $mail);  // Bind "$email" to parameter.
-        $stmt->execute();    // Execute the prepared query.
+          WHERE email = :mail')
+    $stmt->bindParam(':mail', $mail);  // Bind "$email" to parameter.
+    $stmt->execute();    // Execute the prepared query.
 
         echo "innan utskrift ";
         foreach($stmt as $row) {
         echo 'row';
         print_r($row);
-      }
-        $stmt->store_result();
+      }*/
+      
+      //Storar värderna 
+    $sth->store_result();
  
         // get variables from result.
-        $stmt->bind_result($user_id, $username, $db_password);
-        $stmt->fetch();
+    $sth->bind_result($user_id, $username, $db_password);
+    $sth->fetch();
         
 
         echo $user_id;
         echo $username;
         echo $db_password;
-        echo"arg1";
+        echo "arg1";
 
 
         /*if ($stmt->num_rows == 1) {
@@ -124,9 +122,6 @@
             echo "Databasen får inget uppslag";
             //return false;
         */
-    }else{
-        echo "Databasen funkar inte";
-    }
 }
 
 
