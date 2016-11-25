@@ -36,37 +36,27 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <?php include "database.php";
-    include "PHPscript.php";
-    include "registerscript.php"; ?>
+    <?php 
+    include_once "database.php";
+    include_once "PHPscript.php";
+    include_once "registerscript.php";
+    sec_session_start();
+    ?>
 
   </head>
 
            
 
   <body>
-    <?php
-    echo "Test i body";
-      $db = new Db();  
-    ?>
-
 
   <form>
 	  <center>
 
-      <form action="register" 
-                method="post" 
-                name="registration_form">
-            Username: <input type='text' 
-                name='username' 
-                id='username' /><br>
+      <form action="register" method="post" name="registration_form">
+            Username: <input type='text' name='username' id='username' /><br>
             Email: <input type="text" name="email" id="email" /><br>
-            Password: <input type="password"
-                             name="password" 
-                             id="password"/><br>
-            Confirm password: <input type="password" 
-                                     name="confirmpwd" 
-                                     id="confirmpwd" /><br>
+            Password: <input type="password" name="password" id="password"/><br>
+            Confirm password: <input type="password" name="confirmpwd" id="confirmpwd" /><br>
             <input type="button" 
                    value="Register" 
                    onclick="return regformhash(this.form,
@@ -99,17 +89,6 @@
 		        <input type="text" class="form-control" placeholder="adress" aria-describedby="sizing-addon1">
 		      </div>
 
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-			    Section
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			    <li><a href="#">Data</a></li>
-			    <li><a href="#">Maskin</a></li>
-			    <li><a href="#">nått annat</a></li>
-			  </ul>
-			</div>
 
   
 		      <button class="btn btn-primary" type="button">Go!</button>
