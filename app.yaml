@@ -1,25 +1,24 @@
  runtime: php55
  api_version: 1
 
+
  handlers:
 
-
- - url: /api
-   static_dir: www/index.php
-
+ - url: /api/.*
+   static_dir: www/api.php
 
  - url: /assets
-   static_dir: www2/assets
+   static_dir: www/assets
 
  - url: /login
-   script: www2/login.php
+   script: www/login.php
 
  - url: /register
-   script: www2/register.php
+   script: www/register.php
 
  - url: /test
-   script: www2/Testdb.php
+   script: www/Testdb.php
 
  - url: /.*
-   script: www2/main.php
+   script: www/main.php
 
