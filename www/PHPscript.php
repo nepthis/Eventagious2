@@ -1,6 +1,9 @@
 <?php
     include_once "database.php";
 
+
+    //https://www.apptha.com/blog/how-to-build-a-rest-api-using-php/
+
     function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
     /*Sets the session name. 
