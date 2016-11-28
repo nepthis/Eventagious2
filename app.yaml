@@ -2,18 +2,24 @@
  api_version: 1
 
  handlers:
+
+
+ - url: /api
+   static_dir: www/index.php
+
+
  - url: /assets
-   static_dir: www/assets
+   static_dir: www2/assets
 
  - url: /login
-   script: www/login.php
+   script: www2/login.php
 
  - url: /register
-   script: www/register.php
+   script: www2/register.php
 
  - url: /test
-   script: www/Testdb.php
+   script: www2/Testdb.php
 
  - url: /.*
-   script: www/main.php
+   script: www2/main.php
 
