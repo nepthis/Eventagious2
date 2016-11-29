@@ -5,10 +5,10 @@
  handlers:
 
  - url: /test2
-   static_dir: www/test2.php
+   script: www/test2.php
 
  - url: /api/.*
-   static_dir: www/api.php
+   script: www/api.php
 
  - url: /assets
    static_dir: www/assets
