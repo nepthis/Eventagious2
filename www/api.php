@@ -20,7 +20,6 @@ if ($path == '/help') {
   switch($request_method)
   {
     case 'GET':
-
       //Retrive User Id
       if(!empty($_GET["user_id"]))
       {
@@ -35,7 +34,7 @@ if ($path == '/help') {
       }
       else
       {
-        get_events();
+        return "fel i get";
       }
       break;
     case 'POST':
