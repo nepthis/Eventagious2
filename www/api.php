@@ -200,7 +200,7 @@ if ($path == '/help') {
     {
       $sth = $connection->prepare('SELECT *
           FROM members
-          WHERE userid = :id');
+          WHERE id = :id');
       
     }else{
       $sth = $connection->prepare('SELECT *
