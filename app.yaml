@@ -4,9 +4,8 @@
 
  handlers:
 
-
- - url: /test
-   static_dir: www/test.php
+ - url: /test2
+   static_dir: www/test2.php
 
  - url: /api/.*
    static_dir: www/api.php

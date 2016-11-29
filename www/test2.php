@@ -16,3 +16,5 @@ echo $response;
 */
 
 echo "Slutet på Filen";
+
+?>
