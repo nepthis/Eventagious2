@@ -34,7 +34,7 @@ if ($path == '/help') {
       }
       else
       {
-        return "fel i get";
+        echo json_encode("fel i get");
       }
       break;
     case 'POST':
