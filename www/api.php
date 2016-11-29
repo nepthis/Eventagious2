@@ -201,11 +201,12 @@ if ($path == '/help') {
       $sth = $connection->prepare('SELECT *
           FROM members
           WHERE userid = :id');
-      $sth->bindParam(':id',$UserID);
+      
     }else{
       $sth = $connection->prepare('SELECT *
           FROM members');
     }
+    $sth->bindParam(':id',$UserID);
     $response=array();
     $sth->execute();
 
