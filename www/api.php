@@ -369,7 +369,7 @@ function update_Event($product_id)
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
     $sth = $connection->prepare('UPDATE Event
-          SET UserID=:UserID,Longitude=:Longitude,Latitude=:Latitude
+          SET Longitude=:Longitude,Latitude=:Latitude
           WHERE EventID=:EventID');
 
     $sth->bindParam(':EventID',$EventID);
