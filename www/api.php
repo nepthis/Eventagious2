@@ -361,6 +361,38 @@ function update_Event($product_id)
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+  function update_EventLocation($product_id)
+  {
+    global $connection;
+    parse_str(file_get_contents("php://input"),$post_vars);
+    $EventID=$_POST["EventID"];
+    $Longitude=$_POST["Longitude"];
+    $Latitude=$_POST["Latitude"];
+    $sth = $connection->prepare('UPDATE Event
+          SET UserID=:UserID,Longitude=:Longitude,Latitude=:Latitude
+          WHERE EventID=:EventID');
+
+    $sth->bindParam(':EventID',$EventID);
+    $sth->bindParam(':Longitude',$Longitude);
+    $sth->bindParam(':Latitude',$Latitude);
+
+    if($sth->execute())
+    {
+      $response=array(
+        'status' => 1,
+        'status_message' =>'Product Updated Successfully.'
+      );
+    }
+    else
+    {
+      $response=array(
+        'status' => 0,
+        'status_message' =>'Product Updation Failed.'
+      );
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
 
   // Close database connection
   mysqli_close($connection);
