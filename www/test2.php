@@ -1,6 +1,6 @@
 <?php
-
-
+phpinfo();
+/*
 echo "Detta ar i test filen!! for API";
 
 
@@ -12,7 +12,11 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response_json = curl_exec($ch);
 curl_close($ch);
 $response=json_decode($response_json, true);
-echo $response;
+
+foreach($response as $row) {
+ 	echo 'row';
+ 	print_r($row);
+ }
 
 
 echo "Slutet på Filen";
