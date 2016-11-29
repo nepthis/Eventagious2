@@ -20,8 +20,6 @@
  - url: /register
    script: www/register.php
 
- - url: /test
-   script: www/Testdb.php
 
  - url: /.*
    script: www/main.php
