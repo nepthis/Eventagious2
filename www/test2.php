@@ -13,6 +13,8 @@ $response_json = curl_exec($ch);
 curl_close($ch);
 $response=json_decode($response_json, true);
 
+print_r($response);
+
 foreach($response as $row) {
  	echo 'row';
  	print_r($row);
