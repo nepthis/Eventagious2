@@ -5,7 +5,7 @@ echo "Detta är i test filen!! för API";
 
 
 
-$url = 'http://example.com/api/?user_id=1';
+$url = 'https://eventagious3.appspot.com/api/?user_id=1';
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_HTTPGET, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
