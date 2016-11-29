@@ -1,6 +1,6 @@
 <?php
-phpinfo();
-/*
+
+
 echo "Detta ar i test filen!! for API";
 
 
