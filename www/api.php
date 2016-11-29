@@ -15,23 +15,7 @@ if ($path == '/help') {
   $pass = 'root123';
 
   $connection = new PDO($dsn,$user,$pass);
-  $id=1;
-  $sth = $connection->prepare('SELECT username, password
-    FROM members
-    WHERE id = :id');
- $sth->bindParam(':id',$id);
 
- $sth->execute();
-
- echo "test av db";
-
-
- foreach($sth as $row) {
-  echo 'row';
-  print_r($row);
- }
- echo "Klart!";
-/*
   $request_method=$_SERVER["REQUEST_METHOD"];
   switch($request_method)
   {
@@ -217,12 +201,12 @@ if ($path == '/help') {
       $sth = $connection->prepare('SELECT *
           FROM members
           WHERE userid = :id');
+      $sth->bindParam(':id',$UserID);
     }else{
       $sth = $connection->prepare('SELECT *
-          FROM events');
+          FROM members');
     }
     $response=array();
-    $sth->bindParam(':id',$UserID);
     $sth->execute();
 
     while($r = $sth->fetch())
