@@ -20,7 +20,6 @@ if ($path == '/help') {
   switch($request_method)
   {
     case 'GET':
-
       //Retrive User Id
       if(!empty($_GET["user_id"]))
       {
@@ -35,7 +34,7 @@ if ($path == '/help') {
       }
       else
       {
-        get_events();
+        echo json_encode("fel i get");
       }
       break;
     case 'POST':
@@ -201,13 +200,15 @@ if ($path == '/help') {
     {
       $sth = $connection->prepare('SELECT *
           FROM members
-          WHERE userid = :id');
+          WHERE id = :id');
+      $sth->bindParam(':id',$UserID);
+      
     }else{
       $sth = $connection->prepare('SELECT *
-          FROM events');
+          FROM members');
     }
+    
     $response=array();
-    $sth->bindParam(':id',$UserID);
     $sth->execute();
 
     while($r = $sth->fetch())
