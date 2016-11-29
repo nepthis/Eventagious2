@@ -4,6 +4,10 @@
 
  handlers:
 
+
+ - url: /test
+   static_dir: www/test.php
+
  - url: /api/.*
    static_dir: www/api.php
 
@@ -15,9 +19,6 @@
 
  - url: /register
    script: www/register.php
-
- - url: /test
-   script: www/Testdb.php
 
  - url: /.*
    script: www/main.php
