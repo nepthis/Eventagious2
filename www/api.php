@@ -14,7 +14,7 @@ if ($path == '/help') {
   $user = 'root';
   $pass = 'root123';
 
-  $db = new PDO($dsn,$user,$pass);
+  $connection = new PDO($dsn,$user,$pass);
 
   $request_method=$_SERVER["REQUEST_METHOD"];
   switch($request_method)
@@ -66,12 +66,14 @@ if ($path == '/help') {
       //delete event
       if(!empty($_GET["event"]))
       {
-          delete_Event();
+          $event_id=intval($_GET["event_id"]);
+          delete_Event($event);
       }
       //delete User to User table
        else if(!empty($_GET["user"]))
       {
-        delete_User($event_id);
+        $user=intval($_GET["user"]);
+        delete_User($user);
       }
       break;
 
@@ -102,7 +104,7 @@ if ($path == '/help') {
     $sth->bindParam(':Description',$Description);
     $sth->bindParam(':Section',$Section);
 
-    if($sth->execute();))
+    if($sth->execute())
     {
       $response=array(
         'status' => 1,
@@ -143,7 +145,7 @@ if ($path == '/help') {
     $sth->bindParam(':adress',$adress);
     $sth->bindParam(':section',$section);
 
-    if($sth->execute();))
+    if($sth->execute())
     {
       $response=array(
         'status' => 1,
@@ -207,6 +209,7 @@ if ($path == '/help') {
     $response=array();
     $sth->bindParam(':id',$UserID);
     $sth->execute();
+
     while($r = $sth->fetch())
     {
       $response[]=$r;
@@ -296,7 +299,7 @@ function update_Event($product_id)
     $sth->bindParam(':Description',$Description);
     $sth->bindParam(':Section',$Section);
 
-    if($sth->execute();))
+    if($sth->execute())
     {
       $response=array(
         'status' => 1,
@@ -341,7 +344,7 @@ function update_Event($product_id)
     $sth->bindParam(':adress',$adress);
     $sth->bindParam(':section',$section);
 
-    if($sth->execute();))
+    if($sth->execute())
     {
       $response=array(
         'status' => 1,
