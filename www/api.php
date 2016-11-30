@@ -333,9 +333,9 @@ function update_Event($product_id)
 
   function update_User($product_id)
   {
-    $id = $product_id;
     global $connection;
-    //$id=$_POST["id"];
+    $id = $product_id;
+
     $username=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
@@ -359,8 +359,16 @@ function update_Event($product_id)
     if($sth->execute())
     {
       $response=array(
+        'id'=> $id
+        'username' =>$username
+        'email' =>$email
+        'password' =>$password
+        'firstname' =>$firstname
+        'surname' =>$surname
+        'adress' =>$adress
+        'section' =>$section
         'status' => 1,
-        'status_message' =>'Product Added Successfully.'
+        'status_message' =>'Product Updated Successfully User.'
       );
     }
     else
