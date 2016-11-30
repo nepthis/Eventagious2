@@ -12,7 +12,6 @@
             // Login success 
           //echo "login funkar";
           header('Location: https://eventagious3.appspot.com/index.php');
-          echo "login funkar";
           exit;
         } else {
           // Login failed
