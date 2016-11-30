@@ -53,13 +53,15 @@ if ($path == '/help') {
       break;
     case 'PUT':
       //update event
-      if(!empty($_GET["event"]))
+      if(!empty($_GET["event_id"]))
       {
-          update_Event();
+          $event_id=intval($_GET["event_id"]);
+          update_Event($event_id);
       }
-      else if(!empty($_GET["eventLocation"]))
+      else if(!empty($_GET["eventLocation_id"]))
       {
-        update_EventLocation();
+        $eventLocation_id=intval($_GET["eventLocation_id"]);
+        update_EventLocation($eventLocation);
       }
       //update User to User table
        else if(!empty($_GET["user_id"]))
@@ -295,8 +297,8 @@ if ($path == '/help') {
 function update_Event($product_id)
   {
     global $connection;
-    //parse_str(file_get_contents("php://input"),$post_vars);
-    $EventID=$_POST["EventID"];
+    $EventID = $product_id;
+
     $UserID=$_POST["UserID"];
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
@@ -382,10 +384,12 @@ function update_Event($product_id)
   function update_EventLocation($product_id)
   {
     global $connection;
-    parse_str(file_get_contents("php://input"),$post_vars);
-    $EventID=$_POST["EventID"];
+    $EventID=$product_id;
+    
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
+
+
     $sth = $connection->prepare('UPDATE Event
           SET Longitude=:Longitude,Latitude=:Latitude
           WHERE EventID=:EventID');
@@ -394,11 +398,12 @@ function update_Event($product_id)
     $sth->bindParam(':Longitude',$Longitude);
     $sth->bindParam(':Latitude',$Latitude);
 
+
     if($sth->execute())
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully Event Loc.'
+        'status_message' =>'Product Updated Successfully Event.'
       );
     }
     else
