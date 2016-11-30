@@ -5,7 +5,7 @@ echo "Detta ar i test filen!! for API";
 
 
 
-$url = 'https://eventagious3.appspot.com/api/?user_id=1';
+$url = 'https://eventagious3.appspot.com/api/?user_id_password=2';
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_HTTPGET, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
