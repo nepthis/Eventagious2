@@ -26,12 +26,23 @@ if ($path == '/help') {
         $user_id=intval($_GET["user_id"]);
         get_user($user_id);
       }
+      //Get the username and password
+      else if(!empty($_GET["user_id_password"]))
+      {
+        $user_id=intval($_GET["user_id_password"]);
+        get_user_password($user_id);
+      }
       // Retrive event
       else if(!empty($_GET["event_id"]))
       {
         $event_id=intval($_GET["event_id"]);
-        get_events($event_id);
+        get_event($event_id);
       }
+      else if(!empty($_GET["user_id_events"]))
+      {
+        $user_id=intval($_GET["user_id_events"]);
+        get_All_events($user_id);
+      }      
       else
       {
         echo json_encode("fel i GET");
@@ -180,7 +191,35 @@ if ($path == '/help') {
 
 
   // get function for events
-  function get_events($product_id=0){ 
+  function get_All_events($product_id=0){ 
+    $UserID = $product_id;
+    global $connection;
+    //$query="SELECT * FROM events";
+    if($UserID != 0)
+    {
+      $sth = $connection->prepare('SELECT *
+          FROM Event
+          WHERE UserID = :id');
+      $sth->bindParam(':id',$UserID);
+      
+    }else{
+      $sth = $connection->prepare('SELECT *
+          FROM Event');
+    }
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+
+  // get function for events
+  function get_event($product_id=0){ 
     $EventID = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
@@ -236,6 +275,34 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+  //Get the password and username
+  function get_user_password($product_id=0)
+  { 
+    $UserID = $product_id;
+    global $connection;
+    //$query="SELECT * FROM events";
+    if($UserID != 0)
+    {
+      $sth = $connection->prepare('SELECT username, password
+          FROM members
+          WHERE id = :id');
+      $sth->bindParam(':id',$UserID);
+      
+    }else{
+      echo json_encode("Fel i passorden");
+    }
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+
 
 
   function delete_User($product_id)
