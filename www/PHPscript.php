@@ -61,7 +61,6 @@
                 //if (password_verify($password, $db_password)) {
                 if ($password === $db_password) {
                     
-                    echo "Login funkar!";
                     // Password is correct!
                     // Get the user-agent string of the user.
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
