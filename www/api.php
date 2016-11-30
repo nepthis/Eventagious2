@@ -34,7 +34,7 @@ if ($path == '/help') {
       }
       else
       {
-        echo json_encode("fel i get");
+        echo json_encode("fel i GET");
       }
       break;
     case 'POST':
@@ -44,9 +44,11 @@ if ($path == '/help') {
           insert_Event();
       }
       //Insert User to User table
-       else if(!empty($_GET["user_id"]))
+       else if(!empty($_GET["user"]))
       {
         insert_User();
+      }else{
+        echo json_encode("fel i POST");
       }
       break;
     case 'PUT':
@@ -55,10 +57,18 @@ if ($path == '/help') {
       {
           update_Event();
       }
+      else if(!empty($_GET["eventLocation"]))
+      {
+        update_EventLocation();
+      }
       //update User to User table
-       else if(!empty($_GET["user"]))
+       else if(!empty($_GET["user_id"]))
       {
         update_User();
+      }
+      else
+      {
+        echo json_encode("fel i PUT");
       }
       break;
     case 'DELETE':
@@ -279,7 +289,7 @@ if ($path == '/help') {
 function update_Event($product_id)
   {
     global $connection;
-    parse_str(file_get_contents("php://input"),$post_vars);
+    //parse_str(file_get_contents("php://input"),$post_vars);
     $EventID=$_POST["EventID"];
     $UserID=$_POST["UserID"];
     $Longitude=$_POST["Longitude"];
@@ -323,7 +333,7 @@ function update_Event($product_id)
   function update_User($product_id)
   {
     global $connection;
-    parse_str(file_get_contents("php://input"),$post_vars);
+    //parse_str(file_get_contents("php://input"),$post_vars);
     $id=$_POST["id"];
     $username=$_POST["username"];
     $email=$_POST["email"];
