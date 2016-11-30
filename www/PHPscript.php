@@ -48,6 +48,9 @@
     echo("DB password");
     echo($db_password);
 
+    echo("inskickade password");
+    echo($password);
+
         if ($sth->rowCount() == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
