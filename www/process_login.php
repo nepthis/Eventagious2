@@ -13,7 +13,7 @@
             // Login success 
           //echo "login funkar";
           header('Location: /index.php');
-          exit;
+          exit();
         } else {
           // Login failed
           //echo "fel i inlog"; 
