@@ -26,8 +26,8 @@ if ($path == '/help') {
         $user_id=intval($_GET["user_id"]);
         get_user($user_id);
       }
-      // Retrive Products
-      if(!empty($_GET["event_id"]))
+      // Retrive event
+      else if(!empty($_GET["event_id"]))
       {
         $event_id=intval($_GET["event_id"]);
         get_events($event_id);
@@ -187,7 +187,7 @@ if ($path == '/help') {
       $sth->bindParam(':id',$eventID);
     }else{
       $sth = $connection->prepare('SELECT *
-          FROM events');
+          FROM Events');
     }
     $response=array();
     $sth->execute();
