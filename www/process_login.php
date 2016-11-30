@@ -1,5 +1,4 @@
     <?php
-
     include_once "database.php";
     include_once "PHPscript.php";
 
@@ -12,8 +11,9 @@
         if (login($username, $password, $db) == true) {
             // Login success 
           //echo "login funkar";
-          header('Location: /index.php');
-          exit();
+          header('Location: https://eventagious3.appspot.com/index.php');
+          echo "login funkar";
+          exit;
         } else {
           // Login failed
           //echo "fel i inlog"; 
