@@ -12,7 +12,7 @@
         if (login($username, $password, $db) == true) {
             // Login success 
           //echo "login funkar";
-          header('Location: https://eventagious3.appspot.com/index.php');
+          header('Location: /index.php');
           exit;
         } else {
           // Login failed
