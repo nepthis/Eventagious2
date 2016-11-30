@@ -179,7 +179,7 @@ if ($path == '/help') {
     $EventID = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
-    if($UserID != 0)
+    if($EventID != 0)
     {
       $sth = $connection->prepare('SELECT *
           FROM Event
