@@ -77,13 +77,13 @@ if ($path == '/help') {
       if(!empty($_GET["event_id"]))
       {
           $event_id=intval($_GET["event_id"]);
-          delete_Event($event);
+          delete_Event($event_id);
       }
       //delete User to User table
        else if(!empty($_GET["user_id"]))
       {
-        $user=intval($_GET["user_id"]);
-        delete_User($user);
+        $user_id=intval($_GET["user_id"]);
+        delete_User($user_id);
       }else
       {
         echo json_encode("fel i DELETE");
