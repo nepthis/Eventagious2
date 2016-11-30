@@ -74,7 +74,7 @@ if ($path == '/help') {
       break;
     case 'DELETE':
       //delete event
-      if(!empty($_GET["event"]))
+      if(!empty($_GET["event_id"]))
       {
           $event_id=intval($_GET["event_id"]);
           delete_Event($event);
@@ -82,8 +82,11 @@ if ($path == '/help') {
       //delete User to User table
        else if(!empty($_GET["user_id"]))
       {
-        $user=intval($_GET["user"]);
+        $user=intval($_GET["user_id"]);
         delete_User($user);
+      }else
+      {
+        echo json_encode("fel i DELETE");
       }
       break;
 
