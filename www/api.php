@@ -343,6 +343,7 @@ function update_Event($product_id)
     global $connection;
     $id = $product_id;
 
+
     $username=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
@@ -367,14 +368,14 @@ function update_Event($product_id)
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully User.'
+        'status_message' =>'User Updated Successfully.'
       );
     }
     else
     {
       $response=array(
         'status' => 0,
-        'status_message' =>'Product Addition Failed.'
+        'status_message' =>'User Updated Failed.'
       );
     }
     header('Content-Type: application/json');
@@ -386,8 +387,10 @@ function update_Event($product_id)
     global $connection;
     $EventID=$product_id;
 
-    $Longitude=$_POST["Longitude"];
-    $Latitude=$_POST["Latitude"];
+    parse_str(file_get_contents("php://input"),$post_vars);
+
+    $Longitude=$post_vars["Longitude"];
+    $Latitude=$post_vars["Latitude"];
 
 
     $sth = $connection->prepare('UPDATE Event
