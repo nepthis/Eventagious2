@@ -52,8 +52,8 @@
         // get variables from result.
     //$sth->bind_result($user_id, $username, $db_password);
     //$sth->fetch();
-
-
+    echo("antal rader");
+    echo $sth->rowCount();
 
         if ($sth->rowCount() == 1) {
             // If the user exists we check if the account is locked
