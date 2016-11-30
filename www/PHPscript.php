@@ -73,7 +73,6 @@
                     $_SESSION['login_string'] = hash('sha512',$db_password . $user_browser);
 
                     // Login successful.
-                    echo "Returnar True";
                     return true;
                 } else {
                     echo "Fel passord";

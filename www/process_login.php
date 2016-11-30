@@ -13,10 +13,12 @@
             // Login success 
           //echo "login funkar";
           header('Location: https://eventagious3.appspot.com/index.php');
+          exit;
         } else {
           // Login failed
           //echo "fel i inlog"; 
           header('Location: https://eventagious3.appspot.com');
+          exit;
         }
       } else {
       // The correct POST variables were not sent to this page. 
