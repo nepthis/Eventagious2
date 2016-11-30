@@ -62,10 +62,8 @@
       </div>
 
       <form action="login" method="post" name="login_form">                      
-            username: <input type="text" name="username" />
-            Password: <input type="password" 
-                             name="password" 
-                             id="password"/>
+            username: <input type="text" name="username" id="username"/>
+            Password: <input type="password" name="password" id="password"/>
             <input type="button" 
                    value="Login" 
                    onclick="form.submit();" /> 

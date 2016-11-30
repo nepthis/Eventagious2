@@ -35,7 +35,7 @@
       function login($username, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
       $username = $username;
-      $sth = $database->prepare('SELECT id, username, password
+      $sth = $database->prepare('SELECT id, password
           FROM members
           WHERE username = :username');
       $sth->bindParam(':username',$username);
@@ -43,15 +43,11 @@
 
     while($r = $sth->fetch()){
     $user_id = $r['id']; //Or do what ever instead of echo
-    $username = $r['username'];
     $db_password = $r['password'];
     }
+    echo("user ID");
+    echo($username);
 
-      //Storar värderna 
-    //$sth->store_result();
-        // get variables from result.
-    //$sth->bind_result($user_id, $username, $db_password);
-    //$sth->fetch();
     echo("antal rader");
     echo $sth->rowCount();
 
