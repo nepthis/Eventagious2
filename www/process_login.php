@@ -15,11 +15,11 @@
         if (login($username, $password, $db) == true) {
             // Login success 
           echo "login funkar";
-            //header('Location: https://eventagious3.appspot.com/index.php');
+            header('Location: https://eventagious3.appspot.com');
         } else {
           // Login failed
           echo "fel i inlog"; 
-          //header('Location: ../index.php?error=1');
+          header('Location: https://eventagious3.appspot.com');
         }
       } else {
       // The correct POST variables were not sent to this page. 
