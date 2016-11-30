@@ -7,9 +7,10 @@
       //p = password...
       echo "processLogin!";
       if (isset($_POST['username'], $_POST['password'])) {
-      $email = $_POST['username'];
+      $username = $_POST['username'];
       $password = $_POST['p']; // The not hashed password.
 
+      echo($username);
         if (login($username, $password, $db) == true) {
             // Login success 
           echo "login funkar";
