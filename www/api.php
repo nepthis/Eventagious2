@@ -62,9 +62,10 @@ if ($path == '/help') {
         update_EventLocation();
       }
       //update User to User table
-       else if(!empty($_GET["user"]))
+       else if(!empty($_GET["user_id"]))
       {
-        update_User();
+        $user_id=intval($_GET["user_id"]);
+        update_User($user_id);
       }
       else
       {
@@ -332,8 +333,9 @@ function update_Event($product_id)
 
   function update_User($product_id)
   {
+    $id = $product_id;
     global $connection;
-    $id=$_POST["id"];
+    //$id=$_POST["id"];
     $username=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
