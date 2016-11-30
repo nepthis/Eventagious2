@@ -44,7 +44,7 @@ if ($path == '/help') {
           insert_Event();
       }
       //Insert User to User table
-       else if(!empty($_GET["user"]))
+       else if(!empty($_GET["user_id"]))
       {
         insert_User();
       }
@@ -173,12 +173,12 @@ if ($path == '/help') {
       $sth = $connection->prepare('SELECT *
           FROM Events
           WHERE EventID = :id');
+      $sth->bindParam(':id',$eventID);
     }else{
       $sth = $connection->prepare('SELECT *
           FROM events');
     }
     $response=array();
-    $sth->bindParam(':id',$eventID);
     $sth->execute();
 
     while($r = $sth->fetch())
