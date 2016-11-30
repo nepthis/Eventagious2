@@ -61,7 +61,7 @@ if ($path == '/help') {
       else if(!empty($_GET["eventLocation_id"]))
       {
         $eventLocation_id=intval($_GET["eventLocation_id"]);
-        update_EventLocation($eventLocation);
+        update_EventLocation($eventLocation_id);
       }
       //update User to User table
        else if(!empty($_GET["user_id"]))
