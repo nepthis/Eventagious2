@@ -8,7 +8,7 @@
       echo "processLogin!";
       if (isset($_POST['username'], $_POST['password'])) {
       $username = $_POST['username'];
-      $password = $_POST['p']; // The not hashed password.
+      $password = $_POST['password']; // The not hashed password.
 
       echo($password);
         if (login($username, $password, $db) == true) {

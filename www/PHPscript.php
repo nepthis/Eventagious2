@@ -34,7 +34,6 @@
 
       function login($username, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
-      echo($username);
       $username = $username;
       $sth = $database->prepare('SELECT id, password
           FROM members
