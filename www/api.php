@@ -62,7 +62,7 @@ if ($path == '/help') {
         update_EventLocation();
       }
       //update User to User table
-       else if(!empty($_GET["user_id"]))
+       else if(!empty($_GET["user"]))
       {
         update_User();
       }
@@ -79,7 +79,7 @@ if ($path == '/help') {
           delete_Event($event);
       }
       //delete User to User table
-       else if(!empty($_GET["user"]))
+       else if(!empty($_GET["user_id"]))
       {
         $user=intval($_GET["user"]);
         delete_User($user);
@@ -314,7 +314,7 @@ function update_Event($product_id)
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully.'
+        'status_message' =>'Product Updated Successfully Event.'
       );
     }
     else
@@ -359,7 +359,7 @@ function update_Event($product_id)
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully.'
+        'status_message' =>'Product Updated Successfully User.'
       );
     }
     else
@@ -391,7 +391,7 @@ function update_Event($product_id)
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully.'
+        'status_message' =>'Product Updated Successfully Event Loc.'
       );
     }
     else
