@@ -10,7 +10,7 @@
       $username = $_POST['username'];
       $password = $_POST['p']; // The not hashed password.
 
-      echo($username);
+      echo($password);
         if (login($username, $password, $db) == true) {
             // Login success 
           echo "login funkar";

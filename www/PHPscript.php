@@ -34,6 +34,7 @@
 
       function login($username, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
+      echo($username);
       $username = $username;
       $sth = $database->prepare('SELECT id, password
           FROM members
@@ -45,16 +46,12 @@
     $user_id = $r['id']; //Or do what ever instead of echo
     $db_password = $r['password'];
     }
-    echo("user ID");
-    echo($username);
-
-    echo("antal rader");
-    echo $sth->rowCount();
+    echo("DB password");
+    echo($db_password);
 
         if ($sth->rowCount() == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
-            echo "rätt antal rader";
             if (checkbrute($user_id,$database) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
@@ -88,8 +85,8 @@
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
-                    $database->query("INSERT INTO login_attempts(user_id, time)
-                                    VALUES ('$user_id', '$now')");
+                    /*$database->query("INSERT INTO login_attempts(user_id, time)
+                                    VALUES ('$user_id', '$now')");*/
                     return false;
                 }
             }
