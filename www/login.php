@@ -1,3 +1,8 @@
+ <?php include_once "database.php";
+    include_once "PHPscript.php";
+    include_once "process_login.php";
+    //sec_session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,10 +41,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <?php include_once "database.php";
-    include_once "PHPscript.php";
-    include_once "process_login.php";
-    //sec_session_start();?>
+   
 
 
 
