@@ -14,11 +14,14 @@ curl_close($ch);
 $response=json_decode($response_json, true);
 
 
-foreach($response as $row) {
+/*foreach($response as $row) {
  	echo 'row';
  	print_r($row);
- }
-
+ }*/
+ $usernam = $response['username'];
+ $pass = $response['password'];
+ echo $usernam;
+ echo $pass;
 
 echo "Slutet på Filen";
 
