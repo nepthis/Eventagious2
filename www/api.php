@@ -333,7 +333,6 @@ function update_Event($product_id)
   function update_User($product_id)
   {
     global $connection;
-    //parse_str(file_get_contents("php://input"),$post_vars);
     $id=$_POST["id"];
     $username=$_POST["username"];
     $email=$_POST["email"];
@@ -359,19 +358,20 @@ function update_Event($product_id)
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully User.'
+        'status_message' =>'Product Added Successfully.'
       );
     }
     else
     {
       $response=array(
         'status' => 0,
-        'status_message' =>'Product Updation Failed.'
+        'status_message' =>'Product Addition Failed.'
       );
     }
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+
   function update_EventLocation($product_id)
   {
     global $connection;
