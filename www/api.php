@@ -299,12 +299,14 @@ function update_Event($product_id)
     global $connection;
     $EventID = $product_id;
 
-    $UserID=$_POST["UserID"];
-    $Longitude=$_POST["Longitude"];
-    $Latitude=$_POST["Latitude"];
-    $Adress=$_POST["Adress"];
-    $Description=$_POST["Description"];
-    $Section=$_POST["Section"];
+    parse_str(file_get_contents("php://input"),$post_vars);
+
+    $UserID=$post_vars["UserID"];
+    $Longitude=$post_vars["Longitude"];
+    $Latitude=$post_vars["Latitude"];
+    $Adress=$post_vars["Adress"];
+    $Description=$post_vars["Description"];
+    $Section=$post_vars["Section"];
 
     $sth = $connection->prepare('UPDATE Event
           SET UserID=:UserID,Longitude=:Longitude,Latitude=:Latitude,Adress=:Adress,Description=:Description,Section=:Section
@@ -343,14 +345,15 @@ function update_Event($product_id)
     global $connection;
     $id = $product_id;
 
+    parse_str(file_get_contents("php://input"),$post_vars);
 
-    $username=$_POST["username"];
-    $email=$_POST["email"];
-    $password=$_POST["password"];
-    $firstname=$_POST["firstname"];
-    $surname=$_POST["surname"];
-    $adress=$_POST["adress"];
-    $section=$_POST["section"];
+    $username=$post_vars["username"];
+    $email=$post_vars["email"];
+    $password=$post_vars["password"];
+    $firstname=$post_vars["firstname"];
+    $surname=$post_vars["surname"];
+    $adress=$post_vars["adress"];
+    $section=$post_vars["section"];
 
     $sth = $connection->prepare('UPDATE members
           SET username=:username,email=:email,password=:password,firstname=:firstname,surname=:surname,adress=:adress,section=:section
