@@ -385,7 +385,7 @@ function update_Event($product_id)
   {
     global $connection;
     $EventID=$product_id;
-    
+
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
 
@@ -403,14 +403,14 @@ function update_Event($product_id)
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Updated Successfully Event.'
+        'status_message' =>'Event Loc Updated Successfully.'
       );
     }
     else
     {
       $response=array(
         'status' => 0,
-        'status_message' =>'Product Updation Failed.'
+        'status_message' =>'Event Loc Updation Failed.'
       );
     }
     header('Content-Type: application/json');
