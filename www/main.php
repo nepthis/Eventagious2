@@ -4,13 +4,16 @@ include_once "PHPscript.php";
 sec_session_start();
 
 
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['username'])) {
+		include("Templates/header_login.php"); 
       //header('Location: https://eventagious3.appspot.com/login');
       //exit;
+    }else{
+    	include("Templates/header.php"); 
     }
 
 
-include("Templates/header.php");   
+//include("Templates/header.php");   
 // Set the default name 
 $action = 'index';
 
