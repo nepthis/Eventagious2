@@ -6,11 +6,11 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       //p = password...
       echo "processLogin!";
-      if (isset($_POST['email'], $_POST['p'])) {
-      $email = $_POST['email'];
-      $password = $_POST['p']; // The hashed password.
+      if (isset($_POST['username'], $_POST['p'])) {
+      $email = $_POST['username'];
+      $password = $_POST['p']; // The not hashed password.
 
-        if (login($email, $password, $db) == true) {
+        if (login($username, $password, $db) == true) {
             // Login success 
           echo "login funkar";
             //header('Location: https://eventagious3.appspot.com/index.php');

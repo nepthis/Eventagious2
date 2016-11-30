@@ -32,30 +32,14 @@
     }
 
 
-      function login($email, $password, $database) {
+      function login($username, $password, $database) {
     // Using prepared statements means that SQL injection is not possible. 
-      $mail = $email;
+      $username = $username;
       $sth = $database->prepare('SELECT id, username, password
           FROM members
-          WHERE email = :mail');
-      $sth->bindParam(':mail',$mail);
+          WHERE username = :username');
+      $sth->bindParam(':username',$username);
       $sth->execute();
-
-      //bara test om de går att skriva ut eler inte
-
-/*
-    $stmt = $database->prepare('SELECT id, username, password
-          FROM members
-          WHERE email = :mail')
-    $stmt->bindParam(':mail', $mail);  // Bind "$email" to parameter.
-    $stmt->execute();    // Execute the prepared query.
-
-        echo "innan utskrift ";
-        foreach($stmt as $row) {
-        echo 'row';
-        print_r($row);
-      }*/
-
 
     while($r = $sth->fetch()){
     $user_id = $r['id']; //Or do what ever instead of echo
@@ -85,11 +69,9 @@
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.'
                 echo "kollar om password";
-                $db_password= trim($db_password);
 
-                //Måste kolla om denna funkar egentligen eller inte!
-
-                if (password_verify($password, $db_password)) {
+                //if (password_verify($password, $db_password)) {
+                if ($password === $db_password) {
                     
                     echo "Login funkar!";
                     // Password is correct!

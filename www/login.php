@@ -62,13 +62,13 @@
       </div>
 
       <form action="login" method="post" name="login_form">                      
-            Email: <input type="text" name="email" />
+            username: <input type="text" name="username" />
             Password: <input type="password" 
                              name="password" 
                              id="password"/>
             <input type="button" 
                    value="Login" 
-                   onclick="formhash(this.form, this.form.password);" /> 
+                   onclick="form.submit();" /> 
         </form>
 
 
