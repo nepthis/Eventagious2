@@ -176,19 +176,21 @@ if ($path == '/help') {
 
   // get function for events
   function get_events($product_id=0){ 
-    $eventID = $product_id;
+    $EventID = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
-    if($eventID != 0)
+    if($UserID != 0)
     {
       $sth = $connection->prepare('SELECT *
-          FROM Events
+          FROM Event
           WHERE EventID = :id');
-      $sth->bindParam(':id',$eventID);
+      $sth->bindParam(':id',$EventID);
+      
     }else{
       $sth = $connection->prepare('SELECT *
-          FROM Events');
+          FROM Event');
     }
+    
     $response=array();
     $sth->execute();
 
