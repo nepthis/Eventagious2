@@ -271,20 +271,20 @@ if ($path == '/help') {
     $EventID = $product_id;
 
     $sth = $connection->prepare('DELETE FROM Event
-          Where EventID=:EventID');
-    $sth->bindParam(':EventID',$EventID);
+          Where EventID=:id');
+    $sth->bindParam(':id',$EventID);
     if($sth->execute())
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Deleted Successfully.'
+        'status_message' =>'Event Deleted Successfully.'
       );
     }
     else
     {
       $response=array(
         'status' => 0,
-        'status_message' =>'Product Deletion Failed.'
+        'status_message' =>'Event Deletion Failed.'
       );
     }
     header('Content-Type: application/json');
