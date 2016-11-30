@@ -58,8 +58,8 @@
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.'
 
-                if (password_verify($password, $db_password)) {
-                //if ($password === $db_password) {
+                //if (password_verify($password, $db_password)) {
+                if ($password === $db_password) {
                     
                     echo "Login funkar!";
                     // Password is correct!
