@@ -39,7 +39,7 @@
     <?php include_once "database.php";
     include_once "PHPscript.php";
     include_once "process_login.php";
-    sec_session_start();?>
+    //sec_session_start();?>
 
 
 
