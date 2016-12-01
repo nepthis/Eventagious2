@@ -90,6 +90,7 @@
                     // Login successful.
                     return true;
                 } else {
+                    echo $db_password;
                     echo $password;
                     echo "Fel passord12";
                     // Password is not correct
