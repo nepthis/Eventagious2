@@ -57,7 +57,7 @@
       <fieldset style="width:30%"><legend>Registration Form</legend>
       <table border="0">
         <tr>
-        <form method="POST" action="register.php">
+        <form method="POST" action="register">
         <td>Username</td><td> <input type="text" name="username"></td>
         </tr>
         <tr>
@@ -120,13 +120,13 @@ echo "test2";
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
   //if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
-    $username=$_POST["username"];
-    $email=$_POST["email"];
-    $password=$_POST["password"];
-    $firstname=$_POST["firstname"];
-    $surname=$_POST["surname"];
-    $adress=$_POST["adress"];
-    $section=$_POST["section"];
+    $username=$_REQUEST["username"];
+    $email=$_REQUEST["email"];
+    $password=$_REQUEST["password"];
+    $firstname=$_REQUEST["firstname"];
+    $surname=$_REQUEST["surname"];
+    $adress=$_REQUEST["adress"];
+    $section=$_REQUEST["section"];
     echo "test7";
     $data=array(
     'username' => $username,
