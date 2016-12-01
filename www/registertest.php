@@ -2,17 +2,6 @@
 
 
 echo "Detta ar i test filen!! for API insert user";
-if(isset($_REQUEST['submit'])!=''){
-$data=array(
-		'username' => '".$_REQUEST['username']."',
-		'email' => '".$_REQUEST['email']."',
-		'password' => '".$_REQUEST['password']."',
-		'firstname' => '".$_REQUEST['firstname']."',
-		'surname' =>'".$_REQUEST['surname']."',
-		'adress' => '".$_REQUEST['adress']."',
-		'section' => '".$_REQUEST['section']."',
-);
-}
 
 $url = 'https://eventagious3.appspot.com/api/?user=1';
 $ch = curl_init($url);
