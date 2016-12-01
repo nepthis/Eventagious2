@@ -278,12 +278,13 @@ if ($path == '/help') {
     echo json_encode($response);
   }
   //Get the password and username
-  function get_user_password($product_id=0)
+  function get_user_password($product_id)
   { 
     $username = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
-    if(!empty($UserID))
+    //if(!empty($UserID))
+    if(true)
     {
       $sth = $connection->prepare('SELECT id, password
           FROM members

@@ -58,10 +58,11 @@
     $db_password = $r['password'];
     }*/
 
-        if ($sth->rowCount() == 1) {
+        if (sizeof($response) == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
-            if (checkbrute($user_id,$database) == true) {
+            if(false){
+            //if (checkbrute($user_id,$database) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
                 return false;
