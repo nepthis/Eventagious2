@@ -18,8 +18,10 @@ foreach($response as $row) {
  	echo 'row';
  	print_r($row);
  }
- echo $response[1]['password'];
+ print_r($response);
 //print_r($row['password']);
+
+echo $response['password'];
 
 echo "Slutet på Filen";
 
