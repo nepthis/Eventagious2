@@ -14,18 +14,18 @@ curl_close($ch);
 $response=json_decode($response_json, true);
 
 
-/*foreach($response as $row) {
- 	echo 'row';
- 	print_r($row);
- }*/
-$length = sizeof($response);
+foreach($response as $row) {
+ 	print_r($row[0]['Description']);
+ }
+
+/*$length = sizeof($response);
 echo $length;
       for ($i = 0; $i = $length; $i++) {
         //print_r($response[i]['Eventname']);
         print_r($response[i]['Description']);
         print_r($response[i]['Adress']);
         print_r($response[i]['Section']);
-}
+}*/
 
 
 //echo "Testutskrifter";
