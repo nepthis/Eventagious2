@@ -37,21 +37,7 @@
            
 
   <body>
-  <form>
 	  <center>
-
-      <form action="register" method="post" name="registration_form">
-            Username: <input type='text' name='username' id='username' /><br>
-            Email: <input type="text" name="email" id="email" /><br>
-            Password: <input type="password" name="password" id="password"/><br>
-            First name: <input type="text" name="firstname" id="firstname"/><br>
-            Surname: <input type="text" name="surname" id="surname"/><br>
-            Adress: <input type="text" name="adress" id="adress"/><br>
-            Section: <input type="text" name="section" id="section" /><br>
-            <input type="button" 
-                   value="Register"
-                   onclick="form.submit();"/>
-        </form>
 
       <div id="Registration">
       <fieldset style="width:30%"><legend>Registration Form</legend>
@@ -85,14 +71,7 @@
       </table>
       </fieldset>
     </div>
-
 	  </center>
-  </form>
-
-
-      
-   
-      <hr>
 
       <footer>
         <p>&copy; 2016 Company, Inc.</p>
@@ -108,15 +87,10 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    
-  
-
-
 
   </body>
 </html>
 <?php
-echo "test2";
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
   //if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
@@ -127,7 +101,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $surname=$_REQUEST["surname"];
     $adress=$_REQUEST["adress"];
     $section=$_REQUEST["section"];
-    echo "test7";
+
     $data=array(
     'username' => $username,
     'email' => $email,
@@ -137,7 +111,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     'adress' => $adress,
     'section' => $adress,
     );
-    echo "test4";
+
     $url = 'https://eventagious3.appspot.com/api/?user=1';
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POST, true);
@@ -146,7 +120,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $response_json = curl_exec($ch);
     curl_close($ch);
     $response=json_decode($response_json, true);
-      //}
-echo "test5";
 }
 ?>
