@@ -60,6 +60,39 @@
                    onclick="form.submit();"/>
         </form>
 
+      <div id="Registration">
+      <fieldset style="width:30%"><legend>Registration Form</legend>
+      <table border="0">
+        <tr>
+        <form method="POST" action="registerscript.php">
+        <td>Username</td><td> <input type="text" name="username"></td>
+        </tr>
+        <tr>
+        <td>Email</td><td> <input type="text" name="email"></td>
+        </tr>
+        <tr>
+        <td>Password</td><td> <input type="password" name="password"></td>
+        </tr>
+        <tr>
+        <td>First name</td><td> <input type="text" name="firstname"></td>
+        </tr>
+        <tr>
+        <td>Surname</td><td><input type="text" name="surname"></td>
+        </tr>
+        <tr>
+        <td>Adress</td><td><input type="text" name="adress"></td>
+        </tr>
+        <tr>
+        <td>Section</td><td><input type="text" name="section"></td>
+        </tr>
+        <tr>
+        <td><input id="button" type="submit" name="submit" value="submit"></td>
+        </tr>
+      </form>
+      </table>
+      </fieldset>
+    </div>
+
 	  </center>
   </form>
 
