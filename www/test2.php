@@ -20,12 +20,12 @@ $response=json_decode($response_json, true);
  }*/
 $length = sizeof($response);
 echo $length;
-      for ($i = 0; $i =< $length; $i++) {
-        print_r($response[i]['Eventname']);
+      for ($i = 0; $i = $length; $i++) {
+        //print_r($response[i]['Eventname']);
         print_r($response[i]['Description']);
         print_r($response[i]['Adress']);
         print_r($response[i]['Section']);
-
+}
 
 
 //echo "Testutskrifter";
@@ -34,5 +34,3 @@ echo $length;
 //print_r($response[1]['Description']);
 
 echo "Slutet på Filen";
-
-?>
