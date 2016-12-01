@@ -109,8 +109,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     
-    
-
+  
 
 
 
@@ -120,7 +119,7 @@
 echo "test2";
 //if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
-  echo "test3";
+echo "test3";
   if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
     $username=$_POST["username"];
     $email=$_POST["email"];
@@ -150,3 +149,5 @@ echo "test2";
     $response=json_decode($response_json, true);
       //}
 }
+echo "test5";
+?>
