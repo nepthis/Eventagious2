@@ -46,6 +46,7 @@
 
       $user_id = $response[0]['id']; //Or do what ever instead of echo
       $db_password = $response[0]['password'];
+      $db_password = password_hash($db_password, PASSWORD_BCRYPT); //TEST HASH
 
       /*$sth = $database->prepare('SELECT id, password
           FROM members
