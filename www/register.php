@@ -119,8 +119,8 @@
 <?php
 echo "test2";
 //if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  ´//$error_msg = "";
-   echo "test3";
+  //$error_msg = "";
+  echo "test3";
   if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
     $username=$_POST["username"];
     $email=$_POST["email"];
@@ -141,12 +141,12 @@ echo "test2";
     );
     echo "test4";
     $url = 'https://eventagious3.appspot.com/api/?user=1';
-      $ch = curl_init($url);
-      curl_setopt($ch, CURLOPT_POST, true);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      $response_json = curl_exec($ch);
-      curl_close($ch);
-      $response=json_decode($response_json, true);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response_json = curl_exec($ch);
+    curl_close($ch);
+    $response=json_decode($response_json, true);
       //}
 }
