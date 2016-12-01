@@ -57,9 +57,7 @@
     $user_id = $r['id']; //Or do what ever instead of echo
     $db_password = $r['password'];
     }*/
-        if (password_verify($password, $db_password)){
-            echo "verified";
-        }
+        
         if (sizeof($response) == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
@@ -74,7 +72,8 @@
                 // the password_verify function to avoid timing attacks.'
 
                 //if (password_verify($password, $db_password)) {
-                if ($password === $db_password) {
+                if (password_verify($password, $db_password)){
+                //if ($password === $db_password) {
                     
                     // Password is correct!
                     // Get the user-agent string of the user.
@@ -90,6 +89,7 @@
                     $_SESSION['login_string'] = hash('sha512',$db_password . $user_browser);
 
                     // Login successful.
+                    echo "inne";
                     return true;
                 } else {
                     echo $db_password;
