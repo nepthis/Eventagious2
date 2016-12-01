@@ -37,7 +37,6 @@
     include_once "database.php";
     include_once "PHPscript.php";
     include_once "registerscript.php";
-    sec_session_start();
     ?>
 
   </head>
@@ -45,9 +44,6 @@
            
 
   <body>
-  <?php
-  echo "Test1";
-  ?>
   <form>
 	  <center>
 
@@ -55,41 +51,15 @@
             Username: <input type='text' name='username' id='username' /><br>
             Email: <input type="text" name="email" id="email" /><br>
             Password: <input type="password" name="password" id="password"/><br>
-            Confirm password: <input type="password" name="confirmpwd" id="confirmpwd" /><br>
+            First name: <input type="text" name="firstname" id="firstname"/><br>
+            Surname: <input type="text" name="surname" id="surname"/><br>
+            Adress: <input type="text" name="adress" id="adress"/><br>
+            Section: <input type="text" name="section" id="section" /><br>
             <input type="button" 
                    value="Register"
                    onclick="form.submit();"/>
         </form>
 
-
-
-
-
-
-		  <div class="input-group" style="content: ">
-		      <div class="input-group input-group-lg">
-		        <span class="input-group-addon" id="sizing-addon1">@</span>
-		        <input type="text" class="form-control" placeholder="First name" aria-describedby="sizing-addon1">
-		      </div>
-		      <div class="input-group input-group-lg" style="padding-top: 5px">
-		        <span class="input-group-addon" id="sizing-addon2">@</span>
-		        <input type="text" class="form-control" placeholder="Surname" aria-describedby="sizing-addon1">
-		      </div>
-		      <div class="input-group input-group-lg" style="padding-top: 5px">
-		        <span class="input-group-addon" id="sizing-addon1">@</span>
-		        <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
-		      </div>
-		      <div class="input-group input-group-lg" style="padding-top: 5px">
-		        <span class="input-group-addon" id="sizing-addon1">@</span>
-		        <input type="text" class="form-control" placeholder="adress" aria-describedby="sizing-addon1">
-		      </div>
-
-
-  
-		      <button class="btn btn-primary" type="button">Go!</button>
-
-
-		  </div>
 	  </center>
   </form>
 

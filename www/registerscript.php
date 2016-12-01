@@ -7,15 +7,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$error_msg = "";
 	 
 	if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
+		$username=$_POST["username"];
+		$email=$_POST["email"];
+		$password=$_POST["password"];
+		$firstname=$_POST["firstname"];
+		$surname=$_POST["surname"];
+		$adress=$_POST["adress"];
+		$section=$_POST["section"];
 
 		$data=array(
-		'username' => '".$_POST['username']."',
-		'email' => '".$_POST['email']."',
-		'password' => '".$_POST['password']."',
-		'firstname' => '".$_POST['firstname']."',
-		'surname' =>'".$_POST['surname']."',
-		'adress' => '".$_POST['adress']."',
-		'section' => '".$_POST['section']."',
+		'username' => $username,
+		'email' => $email,
+		'password' => $password,
+		'firstname' => $firstname,
+		'surname' => $surname,
+		'adress' => $adress,
+		'section' => $adress,
 		);
 	    // Sanitize and validate the data passed in
 	   /* $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -47,6 +54,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	    	LIMIT 1');
 	 	*/
 	   // check existing email  
+	    	/*
 	    if ($stmt) {
 	        $stmt->bindParam(':mail',$email);
 	        $stmt->execute();
@@ -82,7 +90,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	                $error_msg .= '<p class="error">Database error line 55</p>';
 	                $stmt->close();
 	        }
-	 
+	 	
 	    // TODO: 
 	    // We'll also have to account for the situation where the user doesn't have
 	    // rights to do registration, by checking what type of user is attempting to
@@ -103,6 +111,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	                header('Location: ../error.php?err=Registration failure: INSERT');
 	            }
 	        }
+	        */
 	        header('Location: https://eventagious3.appspot.com/index');
 	        $url = 'https://eventagious3.appspot.com/api/?user=1';
 			$ch = curl_init($url);
