@@ -21,7 +21,7 @@ foreach($response as $row) {
  print_r($response);
 //print_r($row['password']);
 
-echo $response['password'];
+print_r($response[0]['password']);
 
 echo "Slutet på Filen";
 
