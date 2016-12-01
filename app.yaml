@@ -7,6 +7,9 @@
  - url: /test2
    script: www/test2.php
 
+ - url: /registertest
+   script: www/registertest.php
+
  - url: /api/.*
    script: www/api.php
 
