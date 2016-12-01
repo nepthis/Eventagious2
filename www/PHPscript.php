@@ -32,7 +32,7 @@
     }
 
 
-      function login($username, $password, $database) {
+      function login($username, $password) {
     // Using prepared statements means that SQL injection is not possible. 
       $username = $username;
       $sth = $database->prepare('SELECT id, password

@@ -1,6 +1,4 @@
-<?php
-    include "database.php"; 
-    ?>
+
   <head>
     <meta charset="utf-8">
 

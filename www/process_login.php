@@ -1,5 +1,5 @@
     <?php
-    include_once "database.php";
+    //include_once "database.php";
     include_once "PHPscript.php";
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -8,7 +8,7 @@
       $username = $_POST['username'];
       $password = $_POST['password']; // The not hashed password.
 
-        if (login($username, $password, $db) == true) {
+        if (login($username, $password) == true) {
             // Login success 
           //echo "login funkar";
           header('Location: https://eventagious3.appspot.com/index.php');

@@ -29,8 +29,8 @@ if ($path == '/help') {
       //Get the username and password
       else if(!empty($_GET["user_id_password"]))
       {
-        $user_id=intval($_GET["user_id_password"]);
-        get_user_password($user_id);
+        $username=intval($_GET["user_id_username"]);
+        get_user_password($username);
       }
       // Retrive event
       else if(!empty($_GET["event_id"]))
@@ -280,15 +280,15 @@ if ($path == '/help') {
   //Get the password and username
   function get_user_password($product_id=0)
   { 
-    $UserID = $product_id;
+    $username = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
     if($UserID != 0)
     {
-      $sth = $connection->prepare('SELECT username, password
+      $sth = $connection->prepare('SELECT id, password
           FROM members
-          WHERE id = :id');
-      $sth->bindParam(':id',$UserID);
+          WHERE username = :username');
+      $sth->bindParam(':username',$username);
       
     }else{
       echo json_encode("Fel i passorden");
