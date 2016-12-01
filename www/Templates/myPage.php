@@ -9,14 +9,15 @@
       curl_close($ch);
       $response=json_decode($response_json, true);
 
+      print_r("<div class=""row"">");
      foreach($response as $row){
-        echo "<div class=""col-md-4"">";
-        echo "<h2>".$row['Eventname']"</h2>";
-        echo "<p>".$row['Description']" </p>";
-        echo "<p>".$row['Adress']" </p>";
-        echo "<p>".$row['Section']" </p>";
-        echo "<p><a class=""btn btn-default"" href=""index.php?action=eventInfo"" role=""button"">View details &raquo;</a></p>";
-        echo "</div>";
+        print_r("<div class=""col-md-4"">");
+        print_r("<h2>".$row['Eventname']"</h2>");
+        print_r("<p>".$row['Description']" </p>");
+        print_r("<p>".$row['Adress']" </p>");
+        print_r("<p>".$row['Section']" </p>");
+        print_r("<p><a class=""btn btn-default"" href=""index.php?action=eventInfo"" role=""button"">View details &raquo;</a></p>");
+        print_r("</div>");
       }
       ?>
 
@@ -47,23 +48,4 @@
         </div>
       </div>
 
-      <div clas ="row">
-        <div class="col-md-4">
-          <h2>Event 12</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Event 13</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Event 14</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
+      
