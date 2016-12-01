@@ -1,5 +1,5 @@
 <?php
-    include_once "database.php";
+    //include_once "database.php";
 
 
     //https://www.apptha.com/blog/how-to-build-a-rest-api-using-php/
