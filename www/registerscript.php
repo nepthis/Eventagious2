@@ -2,10 +2,10 @@
 include_once "database.php";
 include_once "PHPscript.php";
 include_once "register.php";
-
+echo "test2";
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$error_msg = "";
-	 
+	 echo "test3";
 	if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
 		$username=$_POST["username"];
 		$email=$_POST["email"];
@@ -24,6 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		'adress' => $adress,
 		'section' => $adress,
 		);
+		echo "test4";
 	    // Sanitize and validate the data passed in
 	   /* $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 	    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
