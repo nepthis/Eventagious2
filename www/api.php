@@ -29,7 +29,7 @@ if ($path == '/help') {
       //Get the username and password
       else if(!empty($_GET["user_id_username"]))
       {
-        $username=($_GET["user_id_username"]);
+        $username=$_GET["user_id_username"];
         get_user_password($username);
       }
       // Retrive event
@@ -283,7 +283,7 @@ if ($path == '/help') {
     $username = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
-    if(!empty($UserID))
+    if(!empty($username))
     {
       $sth = $connection->prepare('SELECT id, password
           FROM members
