@@ -1,4 +1,4 @@
- <?php //include_once "database.php";
+<?php //include_once "database.php";
     include_once "PHPscript.php";
     include_once "process_login.php";
  ?>
@@ -49,7 +49,7 @@
   <body>
     <?php
         if (!empty($error_msg)) {
-            echo $error_msg;
+            //echo $error_msg;
         }
     ?>
   <center>
