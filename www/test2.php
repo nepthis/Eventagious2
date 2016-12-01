@@ -18,15 +18,21 @@ $response=json_decode($response_json, true);
  	echo 'row';
  	print_r($row);
  }*/
-echo "Stora arryen";
-echo (sizeof($response));
-echo "inuti arrayen";
-echo (sizeof($response[0]));
+$length = sizeof($response);
+echo $length;
+      for ($i = 0; $i =< $length; $i++) {
+        echo "<div class=""col-md-4"">";
+        echo $response[i]['Eventname'];
+        echo $response[i]['Description'];
+        echo $response[i]['Adress'];
+        echo $response[i]['Section'];
 
-echo "Testutskrifter";
+
+
+//echo "Testutskrifter";
 //Detta funkar fin fint.
-print_r($response[0]['Description']);
-print_r($response[1]['Description']);
+//print_r($response[0]['Description']);
+//print_r($response[1]['Description']);
 
 echo "Slutet på Filen";
 
