@@ -18,7 +18,12 @@ $response=json_decode($response_json, true);
  	echo 'row';
  	print_r($row);
  }*/
+echo "Stora arryen";
+echo (sizeof($response));
+echo "inuti arrayen";
+echo (sizeof($response[0]));
 
+echo "Testutskrifter";
 //Detta funkar fin fint.
 print_r($response[0]['Description']);
 print_r($response[1]['Description']);
