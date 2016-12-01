@@ -119,9 +119,10 @@ if ($path == '/help') {
     $Adress=$_POST["Adress"];
     $Description=$_POST["Description"];
     $Section=$_POST["Section"];
+    $Eventname=$_POST["Eventname"];
 
     $sth = $connection->prepare('INSERT INTO Event
-          SET UserID=:UserID,Longitude=:Longitude,Latitude=:Latitude,Adress=:Adress,Description=:Description,Section=:Section');
+          SET UserID=:UserID,Longitude=:Longitude,Latitude=:Latitude,Adress=:Adress,Description=:Description,Section=:Section,Eventname=:Eventname');
     //$sth->bindParam(':EventID',$EventID);
     $sth->bindParam(':UserID',$UserID);
     $sth->bindParam(':Longitude',$Longitude);
@@ -129,6 +130,7 @@ if ($path == '/help') {
     $sth->bindParam(':Adress',$Adress);
     $sth->bindParam(':Description',$Description);
     $sth->bindParam(':Section',$Section);
+    $sth->bindParam(':Eventname',$Eventname);
 
     if($sth->execute())
     {
