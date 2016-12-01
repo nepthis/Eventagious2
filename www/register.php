@@ -118,8 +118,8 @@
 </html>
 <?php
 echo "test2";
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  $error_msg = "";
+//if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  ´//$error_msg = "";
    echo "test3";
   if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
     $username=$_POST["username"];
@@ -148,5 +148,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       $response_json = curl_exec($ch);
       curl_close($ch);
       $response=json_decode($response_json, true);
-      }
+      //}
 }
