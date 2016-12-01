@@ -27,7 +27,7 @@ if ($path == '/help') {
         get_user($user_id);
       }
       //Get the username and password
-      else if(!empty($_GET["user_id_password"]))
+      else if(!empty($_GET["user_id_username"]))
       {
         $username=intval($_GET["user_id_username"]);
         get_user_password($username);
