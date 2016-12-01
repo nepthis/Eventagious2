@@ -283,7 +283,7 @@ if ($path == '/help') {
     $username = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
-    if($UserID != 0)
+    if(!empty($UserID))
     {
       $sth = $connection->prepare('SELECT id, password
           FROM members

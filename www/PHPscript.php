@@ -44,9 +44,10 @@
       curl_close($ch);
       $response=json_decode($response_json, true);
 
+      $user_id = $response[0]['id']; //Or do what ever instead of echo
+      $db_password = $response[0]['password'];
 
-
-      $sth = $database->prepare('SELECT id, password
+      /*$sth = $database->prepare('SELECT id, password
           FROM members
           WHERE username = :username');
       $sth->bindParam(':username',$username);
@@ -55,7 +56,7 @@
     while($r = $sth->fetch()){
     $user_id = $r['id']; //Or do what ever instead of echo
     $db_password = $r['password'];
-    }
+    }*/
 
         if ($sth->rowCount() == 1) {
             // If the user exists we check if the account is locked
