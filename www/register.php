@@ -120,7 +120,7 @@ echo "test2";
 //if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
 echo "test3";
-  if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
+  //if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
     $username=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
@@ -128,7 +128,7 @@ echo "test3";
     $surname=$_POST["surname"];
     $adress=$_POST["adress"];
     $section=$_POST["section"];
-
+    echo "test7";
     $data=array(
     'username' => $username,
     'email' => $email,
