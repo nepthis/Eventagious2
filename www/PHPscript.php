@@ -35,7 +35,7 @@
       function login($username, $password) {
     // Using prepared statements means that SQL injection is not possible. 
       $username = $username;
-
+      $password = password_hash($password, PASSWORD_BCRYPT);
       $url = 'https://eventagious3.appspot.com/api/?user_id_username='.$username.'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -46,7 +46,6 @@
 
       $user_id = $response[0]['id']; //Or do what ever instead of echo
       $db_password = $response[0]['password'];
-      $db_password = password_hash($db_password, PASSWORD_BCRYPT); //TEST HASH
 
       /*$sth = $database->prepare('SELECT id, password
           FROM members
