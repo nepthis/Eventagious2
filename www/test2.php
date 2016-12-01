@@ -15,7 +15,7 @@ $response=json_decode($response_json, true);
 
 
 foreach($response as $row) {
- 	print_r($row[0]['Description']);
+ 	print_r($row['Description']);
  }
 
 /*$length = sizeof($response);
