@@ -13,7 +13,7 @@ sec_session_start();
     }*/
 
 
-//include("Templates/header.php");   
+include("Templates/header.php");   
 // Set the default name 
 $action = 'index';
 
