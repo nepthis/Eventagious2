@@ -9,13 +9,12 @@
       curl_close($ch);
       $response=json_decode($response_json, true);
 
-      $length = sizeof($response);
-      for ($i = 0; $i =< $length; $i++) {
+     foreach($response as $row){
         echo "<div class=""col-md-4"">";
-        echo "<h2>".$response[i]['Eventname']"</h2>";
-        echo "<p>".$response[i]['Description']" </p>";
-        echo "<p>".$response[i]['Adress']" </p>";
-        echo "<p>".$response[i]['Section']" </p>";
+        echo "<h2>".$row['Eventname']"</h2>";
+        echo "<p>".$row['Description']" </p>";
+        echo "<p>".$row['Adress']" </p>";
+        echo "<p>".$row['Section']" </p>";
         echo "<p><a class=""btn btn-default"" href=""index.php?action=eventInfo"" role=""button"">View details &raquo;</a></p>";
         echo "</div>";
       }
