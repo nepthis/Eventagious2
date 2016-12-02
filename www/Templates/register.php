@@ -1,43 +1,9 @@
-	  <center>
 
-      <div id="Registration">
-      <fieldset style="width:30%"><legend>Registration Form</legend>
-      <table border="0">
-        <tr>
-        <form method="POST" action="register">
-        <td>Username</td><td> <input type="text" name="username"></td>
-        </tr>
-        <tr>
-        <td>Email</td><td> <input type="text" name="email"></td>
-        </tr>
-        <tr>
-        <td>Password</td><td> <input type="password" name="password"></td>
-        </tr>
-        <tr>
-        <td>First name</td><td> <input type="text" name="firstname"></td>
-        </tr>
-        <tr>
-        <td>Surname</td><td><input type="text" name="surname"></td>
-        </tr>
-        <tr>
-        <td>Adress</td><td><input type="text" name="adress"></td>
-        </tr>
-        <tr>
-        <td>Section</td><td><input type="text" name="section"></td>
-        </tr>
-        <tr>
-        <td><input id="button" type="submit" name="submit" value="Submit"></td>
-        </tr>
-      </form>
-      </table>
-      </fieldset>
-    </div>
-	  </center>
       <div class="container">
     <form action="index.php?action=register" method="POST">
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">@</span>
-        <input type="text" class="form-control" name="username" id="username" placeholder="username" aria-describedby="sizing-addon1">
+        <input type="text" class="form-control" name="username" id="username" placeholder="Username" aria-describedby="sizing-addon1">
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
@@ -45,11 +11,11 @@
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="password" class="form-control" name="password" id="password" placeholder="password" aria-describedby="sizing-addon1">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" aria-describedby="sizing-addon1">
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name" aria-describedby="sizing-addon1">
+        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First name" aria-describedby="sizing-addon1">
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
@@ -63,7 +29,7 @@
         <span class="input-group-addon" id="sizing-addon2">@</span>
         <input type="text" class="form-control" name="section" id="section" placeholder="Section" aria-describedby="sizing-addon1">
       </div>
-      <input id="button" type="submit" name="submit" value="submit">
+      <center><input id="button" type="submit" name="submit" value="Submit"></center>
     </form>
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
