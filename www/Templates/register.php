@@ -34,7 +34,7 @@
     </div>
 	  </center>
       <div class="container">
-    <form action="register" method="POST">
+    <form action="index.php?action=register" method="POST">
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">@</span>
         <input type="text" class="form-control" name="username" id="username" placeholder="username" aria-describedby="sizing-addon1">
