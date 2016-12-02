@@ -1,6 +1,6 @@
 <?php  
 include_once "PHPscript.php";
-sec_session_start();
+session_start();
 
 echo $_SESSION['username'];
 echo "Test";

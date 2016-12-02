@@ -1,7 +1,7 @@
 <?php
     //include_once "database.php";
     include_once "PHPscript.php";
-    sec_session_start();
+    session_start();
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 

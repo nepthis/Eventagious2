@@ -1,7 +1,7 @@
 <?php
 include_once "PHPscript.php";
 
-sec_session_start();
+session_start();
  
 // Unset all session values 
 $_SESSION = array();
