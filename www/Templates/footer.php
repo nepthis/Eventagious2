@@ -35,7 +35,7 @@
 
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: {lat: 65.617734, lng: 22.140293},
           zoom: 14
         });
 
@@ -70,8 +70,17 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
         }
-      }
-
+      }/*
+      google.maps.event.addListener(map, 'click', function( event ){
+        alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+      });*/
+      GEvent.addListener(map, "click", function(overlay, latLng)
+      {
+          // display the lat/lng in your form's lat/lng fields
+          document.getElementById("latFld").value = latLng.lat();
+          document.getElementById("lngFld").value = latLng.lng();
+          alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
+      });
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
