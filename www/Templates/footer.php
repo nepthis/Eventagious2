@@ -35,7 +35,7 @@
 
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: {lat: 65.617734, lng: 22.140293},
           zoom: 14
         });
 
