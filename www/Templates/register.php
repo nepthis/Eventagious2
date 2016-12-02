@@ -1,4 +1,3 @@
-
 	  <center>
 
       <div id="Registration">
