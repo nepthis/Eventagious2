@@ -23,7 +23,7 @@
         </form>-->
   
   <div class="container">
-    <form action="event/login" method="post">
+    <form action="login" method="post">
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">@</span>
         <input type="text" class="form-control" name="username" id="username" placeholder="username" aria-describedby="sizing-addon1">
@@ -37,9 +37,4 @@
                    value="login" 
                    onclick="form.submit();" /> 
     </form>
-  </div>
-
-      <a class="btn btn-primary" href="http://localhost:8080/register" role="button">Register</a>
-      
-  </div>
   </center>

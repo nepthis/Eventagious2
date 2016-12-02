@@ -1,6 +1,7 @@
 <?php
     //include_once "database.php";
     include_once "PHPscript.php";
+    sec_session_start();
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -10,9 +11,10 @@
 
         if (login($username, $password) == true) {
             // Login success
+
           //header('Location: https://eventagious3.appspot.com/index.php');
-          header('Location: http://localhost:8080/index.php');
-          //exit;
+          header('Location: index.php');
+          exit;
         } else {
           // Login failed
           echo "fel i inlog"; 

@@ -22,7 +22,7 @@
  - url: /event/create
    script: www/createeventScript.php
 
- - url: /event/login
+ - url: /login
    script: www/process_login.php
 
  - url: /register
