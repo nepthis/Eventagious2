@@ -1,5 +1,7 @@
 <?php
-include_once "createeventScript.php";
+    include_once "createeventScript.php";
+    include_once "PHPscript.php";
+    include_once "process_login.php";
 ?>
   <head>
     <meta charset="utf-8">
@@ -38,7 +40,7 @@ include_once "createeventScript.php";
   <body>
   
 <script>
-  window.fbAsyncInit = function() {
+  /*window.fbAsyncInit = function() {
     FB.init({
       appId      : '227253474362999',
       xfbml      : true,
@@ -53,34 +55,9 @@ include_once "createeventScript.php";
      js = d.createElement(s); js.id = id;
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+   }(document, 'script', 'facebook-jssdk'));*/
 </script>
 
-      <?php
-      
-           /*env_variables:
-          # Replace project, instance, database, user and password with the values obtained
-          # when configuring your Cloud SQL instance.
-          MYSQL_DSN: mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 'root123'*/
-
-
-        //$app['database'] = function () use ($app) {
-          // Connect to CloudSQL from App Engine.
-/*
-          $dsn = 'mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject';
-          $user = 'root';
-          $password = 'root123';
-          if (!isset($dsn, $user) || false === $password) {
-              throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
-          }
-
-        $db = new PDO($dsn, $user, $password);
-*/
-        //return $db;
-        //};
-      ?>
 
 
      <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -98,7 +75,7 @@ include_once "createeventScript.php";
             <a class="navbar-brand" href="index.php?action=about">About</a>
             <a class="navbar-brand" href="index.php?action=event">Events</a>
             <a class="navbar-brand" href="index.php?action=createevent">Create a Event</a>
-            <a class="navbar-brand" href="#">logout</a>
+            <a class="navbar-brand" href="logout">logout</a>
           </div>
         </div>
       </nav>

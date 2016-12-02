@@ -6,22 +6,20 @@
 
       if (isset($_POST['username'], $_POST['password'])) {
       $username = $_POST['username'];
-<<<<<<< HEAD
-      $password = $_POST['password'];  // The not hashed password.
-=======
       $password = $_POST['password']; // The hashed password.
 
->>>>>>> c57103e6ab239c840011b84565a07be6c818dca6
         if (login($username, $password) == true) {
-            // Login success 
-          header('Location: https://eventagious3.appspot.com/index.php');
+            // Login success
+          echo "Test av session";
+          echo $_SESSION['username']; 
+          //header('Location: https://eventagious3.appspot.com/index.php');
           //header('Location: http://localhost:8080/index.php');
-          exit;
+          //exit;
         } else {
           // Login failed
-          //echo "fel i inlog"; 
-          header('Location: https://eventagious3.appspot.com');
-          exit;
+          echo "fel i inlog"; 
+          //header('Location: https://eventagious3.appspot.com');
+          //exit;
         }
       } else {
       // The correct POST variables were not sent to this page. 
