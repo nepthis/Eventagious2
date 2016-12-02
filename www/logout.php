@@ -1,5 +1,4 @@
 <?php
-include_once "database.php";
 include_once "PHPscript.php";
 
 sec_session_start();
@@ -20,4 +19,4 @@ setcookie(session_name(),
  
 // Destroy session 
 session_destroy();
-header('Location: ../index.php');
+header('Location: http://localhost:8080/index.php');

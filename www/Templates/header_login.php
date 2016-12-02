@@ -77,6 +77,7 @@
 */
         //return $db;
         //};
+        echo "TEst ifrån header_login";
       ?>
 
 
@@ -93,7 +94,8 @@
             <a class="navbar-brand" href="index.php?action=map">Maps</a>
             <a class="navbar-brand" href="index.php?action=about">About</a>
             <a class="navbar-brand" href="index.php?action=event">Events</a>
-            <a class="navbar-brand" href="https://eventagious3.appspot.com/login">Login</a>
+            <a class="navbar-brand" href="http://localhost:8080/login">Login</a>
+            <!--<a class="navbar-brand" href="https://eventagious3.appspot.com/login">Login</a>-->
           </div>
         </div>
       </nav>
