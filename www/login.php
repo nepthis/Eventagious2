@@ -20,7 +20,7 @@
             <input type="button" 
                    value="Login" 
                    onclick="form.submit();" /> 
-        </form>
+      </form>
 
 
 

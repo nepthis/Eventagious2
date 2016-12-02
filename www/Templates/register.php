@@ -33,6 +33,39 @@
       </fieldset>
     </div>
 	  </center>
+      <div class="container">
+    <form action="register.php" method="POST">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="sizing-addon1">@</span>
+        <input type="text" class="form-control" name="username" id="username" placeholder="username" aria-describedby="sizing-addon1">
+      </div>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon2">@</span>
+        <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" aria-describedby="sizing-addon1">
+      </div>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon2">@</span>
+        <input type="password" class="form-control" name="password" id="password" placeholder="password" aria-describedby="sizing-addon1">
+      </div>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon2">@</span>
+        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name" aria-describedby="sizing-addon1">
+      </div>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon2">@</span>
+        <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname" aria-describedby="sizing-addon1">
+      </div>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon2">@</span>
+        <input type="text" class="form-control" name="adress" id="adress" placeholder="Adress" aria-describedby="sizing-addon1">
+      </div>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon2">@</span>
+        <input type="text" class="form-control" name="section" id="section" placeholder="Section" aria-describedby="sizing-addon1">
+      </div>
+
+      <input id="button" type="submit" name="submit" value="submit">
+    </form>
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";

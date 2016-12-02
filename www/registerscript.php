@@ -1,12 +1,11 @@
 <?php
-include_once "database.php";
 include_once "PHPscript.php";
 include_once "register.php";
 echo "test2";
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$error_msg = "";
 	 echo "test3";
-	if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
+	//if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
 		$username=$_POST["username"];
 		$email=$_POST["email"];
 		$password=$_POST["password"];
@@ -123,5 +122,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			curl_close($ch);
 			$response=json_decode($response_json, true);
 	    }
-	}
+	
 }
