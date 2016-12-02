@@ -65,7 +65,7 @@
         <td>Section</td><td><input type="text" name="section"></td>
         </tr>
         <tr>
-        <td><input id="button" type="submit" name="submit" value="submit"></td>
+        <td><input id="button" type="submit" name="submit" value="Submit"></td>
         </tr>
       </form>
       </table>
@@ -97,6 +97,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $username=$_REQUEST["username"];
     $email=$_REQUEST["email"];
     $password=$_REQUEST["password"];
+    $password = password_hash($password, PASSWORD_BCRYPT);
     $firstname=$_REQUEST["firstname"];
     $surname=$_REQUEST["surname"];
     $adress=$_REQUEST["adress"];
@@ -109,7 +110,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     'firstname' => $firstname,
     'surname' => $surname,
     'adress' => $adress,
-    'section' => $adress,
+    'section' => $section,
     );
 
     $url = 'https://eventagious3.appspot.com/api/?user=1';

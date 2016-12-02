@@ -6,7 +6,12 @@
 
       if (isset($_POST['username'], $_POST['password'])) {
       $username = $_POST['username'];
+<<<<<<< HEAD
       $password = $_POST['password']; // The hashed password.
+=======
+      $password = $_POST['password'];  // The not hashed password.
+      //$password = password_hash($password, PASSWORD_BCRYPT); //hashad password, borde funka
+>>>>>>> 66f4315f92620dee51156d065c00244c767ddca9
 
         if (login($username, $password) == true) {
             // Login success 

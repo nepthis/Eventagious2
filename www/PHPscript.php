@@ -35,7 +35,7 @@
       function login($username, $password) {
     // Using prepared statements means that SQL injection is not possible. 
       $username = $username;
-
+      //$HashAndSalt = password_hash($password, PASSWORD_BCRYPT);
       $url = 'https://eventagious3.appspot.com/api/?user_id_username='.$username.'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -57,7 +57,7 @@
     $user_id = $r['id']; //Or do what ever instead of echo
     $db_password = $r['password'];
     }*/
-
+        
         if (sizeof($response) == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
@@ -72,7 +72,8 @@
                 // the password_verify function to avoid timing attacks.'
 
                 //if (password_verify($password, $db_password)) {
-                if ($password === $db_password) {
+                if (password_verify($password, $db_password)){
+                //if ($password === $db_password) {
                     
                     // Password is correct!
                     // Get the user-agent string of the user.
@@ -90,7 +91,9 @@
                     // Login successful.
                     return true;
                 } else {
-                    echo "Fel passord";
+                    echo $db_password;
+                    echo $password;
+                    echo "Fel passord12";
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
