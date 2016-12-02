@@ -16,6 +16,9 @@
  - url: /assets
    static_dir: www/assets
 
+ - url: /event/create
+   script: www/createeventScript.php
+
  - url: /login
    script: www/login.php
 
