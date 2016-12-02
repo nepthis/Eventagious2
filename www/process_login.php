@@ -7,12 +7,10 @@
       if (isset($_POST['username'], $_POST['password'])) {
       $username = $_POST['username'];
       $password = $_POST['password'];  // The not hashed password.
-      //$password = password_hash($password, PASSWORD_BCRYPT); //hashad password, borde funka
-
         if (login($username, $password) == true) {
             // Login success 
-          //header('Location: https://eventagious3.appspot.com/index.php');
-          header('Location: http://localhost:8080/index.php');
+          header('Location: https://eventagious3.appspot.com/index.php');
+          //header('Location: http://localhost:8080/index.php');
           exit;
         } else {
           // Login failed
