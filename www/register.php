@@ -94,6 +94,10 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
   //if(isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
+    if($_REQUEST['username']=='' || $_REQUEST['email']=='' || $_REQUEST['password']=='' || $_REQUEST['firstname']=='' || $_REQUEST['surname']=='' || $_REQUEST['adress']=='' || $_REQUEST['section']=='' || ){
+      echo "please fill the empty field.";
+    }
+    else{
     $username=$_REQUEST["username"];
     $email=$_REQUEST["email"];
     $password=$_REQUEST["password"];
@@ -121,6 +125,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $response_json = curl_exec($ch);
     curl_close($ch);
     $response=json_decode($response_json, true);
+  }
 }
 //}
 ?>
