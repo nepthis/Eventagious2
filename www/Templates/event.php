@@ -19,7 +19,7 @@
       <?php
       $user_id = $_SESSION['user_id'];
       echo $user_id;
-      $url = 'https://eventagious3.appspot.com/api/?user_id_events='.$_SESSION['user_id'].'';
+      $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -37,10 +37,10 @@
         echo("<p><a class=\"btn btn-default\" href=\"index.php?action=eventInfo\" role=\"button\">View details &raquo;</a></p>");
         echo("</div>");
     }
+?>
 
 
-
-        <!-- Example row of columns -->
+        <!-- Example row of columns 
         <div class="row">
           <div class="col-md-4">
             <h2>Event 1</h2>
@@ -60,4 +60,4 @@
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
             <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
           </div>
-        </div>
+        </div>-->
