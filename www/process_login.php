@@ -17,9 +17,8 @@
           exit;
         } else {
           // Login failed
-          echo "fel i inlog"; 
-          //header('Location: https://eventagious3.appspot.com');
-          //exit;
+          eader('Location: index.php');
+          exit;
         }
       } else {
       // The correct POST variables were not sent to this page. 

@@ -2,20 +2,6 @@
 include_once "PHPscript.php";
 session_start();
 
-echo $_SESSION['username'];
-echo "Test";
-if (empty($_SESSION['username'])){
-	echo "empty";
-}else{
-	echo "Den ar inte tomm";
-}
-if (isset($_SESSION['username'])) {
-	echo "isset";
-	# code...
-}else{
-	echo "Den ar inte issset";
-}
-
 
 if (!isset($_SESSION['username'])) {
 		include("Templates/header_login.php"); 
