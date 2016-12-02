@@ -19,4 +19,4 @@ setcookie(session_name(),
  
 // Destroy session 
 session_destroy();
-header('Location: http://localhost:8080/index.php');
+header('Location: https://eventagious3.appspot.com/index.php');

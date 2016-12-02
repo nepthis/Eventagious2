@@ -77,7 +77,6 @@
 */
         //return $db;
         //};
-        echo "TEst ifrån header_login";
       ?>
 
 
