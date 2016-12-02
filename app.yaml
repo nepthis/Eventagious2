@@ -22,9 +22,6 @@
  - url: /event/create
    script: www/createeventScript.php
 
- - url: /login
-   script: www/login.php
-
  - url: /register
    script: www/register.php
 

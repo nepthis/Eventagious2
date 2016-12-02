@@ -33,7 +33,7 @@
         <input type="text" class="form-control" placeholder="p" aria-describedby="sizing-addon1">
       </div>
 
-      <a class="btn btn-primary" href="http://localhost:8080/register" role="button">Register</a>
+      <a class="btn btn-primary" href="index.php?action=register" role="button">Register</a>
       
   </div>
   </center>
