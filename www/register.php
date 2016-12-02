@@ -97,6 +97,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if($_REQUEST['username']==''){
       echo "Please fill the username field.";
     }
+    else if($_REQUEST['email']==''){
+      echo "Please fill the email field.";
+    }
+    else if($_REQUEST['password']==''){
+      echo "Please fill the password field.";
+    }
+    else if($_REQUEST['firstname']==''){
+      echo "Please fill the first name field.";
+    }
+    else if($_REQUEST['surname']==''){
+      echo "Please fill the surname field.";
+    }
+    else if($_REQUEST['adress']==''){
+      echo "Please fill the adress field.";
+    }
+    else if($_REQUEST['section']==''){
+      echo "Please fill the section field.";
+    }
     else{
     $username=$_REQUEST["username"];
     $email=$_REQUEST["email"];
