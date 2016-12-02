@@ -70,9 +70,16 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
         }
-      }
+      }/*
       google.maps.event.addListener(map, 'click', function( event ){
         alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+      });*/
+      GEvent.addListener(map, "click", function(overlay, latLng)
+      {
+          // display the lat/lng in your form's lat/lng fields
+          document.getElementById("latFld").value = latLng.lat();
+          document.getElementById("lngFld").value = latLng.lng();
+          alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
       });
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
