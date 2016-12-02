@@ -34,7 +34,7 @@
     </div>
 	  </center>
       <div class="container">
-    <form action="register.php" method="POST">
+    <form action="register" method="POST">
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">@</span>
         <input type="text" class="form-control" name="username" id="username" placeholder="username" aria-describedby="sizing-addon1">
@@ -63,7 +63,6 @@
         <span class="input-group-addon" id="sizing-addon2">@</span>
         <input type="text" class="form-control" name="section" id="section" placeholder="Section" aria-describedby="sizing-addon1">
       </div>
-
       <input id="button" type="submit" name="submit" value="submit">
     </form>
 <?php
