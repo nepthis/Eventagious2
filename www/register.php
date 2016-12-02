@@ -93,7 +93,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
-  if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
+  if(isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
     $username=$_REQUEST["username"];
     $email=$_REQUEST["email"];
     $password=$_REQUEST["password"];
