@@ -10,15 +10,15 @@
 
         if (login($username, $password) == true) {
             // Login success
-          //echo "Test av session";
-          //echo $_SESSION['username']; 
-          header('Location: https://eventagious3.appspot.com/index.php');
+          echo "Test av session";
+          echo $_SESSION['username']; 
+          //header('Location: https://eventagious3.appspot.com/index.php');
           //header('Location: http://localhost:8080/index.php');
           //exit;
         } else {
           // Login failed
           //echo "fel i inlog"; 
-          header('Location: https://eventagious3.appspot.com');
+          //header('Location: https://eventagious3.appspot.com');
           //exit;
         }
       } else {
