@@ -1,4 +1,6 @@
-
+<?php
+include_once "createeventScript.php";
+?>
   <head>
     <meta charset="utf-8">
 

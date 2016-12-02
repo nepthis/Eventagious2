@@ -6,7 +6,7 @@
 
       if (isset($_POST['username'], $_POST['password'])) {
       $username = $_POST['username'];
-      $password = $_POST['password']; // The not hashed password.
+      $password = $_POST['password']; // The hashed password.
 
         if (login($username, $password) == true) {
             // Login success 
