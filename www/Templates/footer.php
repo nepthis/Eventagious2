@@ -71,7 +71,9 @@
           handleLocationError(false, myMarker, map.getCenter());
         }
       }
-
+      google.maps.event.addListener(map, 'click', function( event ){
+        alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+      });
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
