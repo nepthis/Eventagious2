@@ -74,13 +74,9 @@
       google.maps.event.addListener(map, 'click', function( event ){
         alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
       });*/
-      GEvent.addListener(map, "click", function(overlay, latLng)
-      {
-          // display the lat/lng in your form's lat/lng fields
-          document.getElementById("latFld").value = latLng.lat();
-          document.getElementById("lngFld").value = latLng.lng();
-          alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
-      });
+      google.maps.event.addListener(map,'click',function(event) {
+        document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
+       })   
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
