@@ -93,10 +93,7 @@
             <a class="navbar-brand" href="index.php?action=map">Maps</a>
             <a class="navbar-brand" href="index.php?action=about">About</a>
             <a class="navbar-brand" href="index.php?action=event">Events</a>
-<<<<<<< HEAD
             <a class="navbar-brand" href="https://eventagious3.appspot.com/login">Login</a>
-=======
->>>>>>> 5852f7025f4620e5c227de85b889a62e51448dd4
             <a class="navbar-brand" href="index.php?action=register">Register</a>
             <a class="navbar-brand" href="index.php?action=login">Login</a>
             <!--<a class="navbar-brand" href="https://eventagious3.appspot.com/login">Login</a>-->

@@ -10,8 +10,8 @@
 
         if (login($username, $password) == true) {
             // Login success
-          header('Location: https://eventagious3.appspot.com/index.php');
-          //header('Location: http://localhost:8080/index.php');
+          //header('Location: https://eventagious3.appspot.com/index.php');
+          header('Location: http://localhost:8080/index.php');
           //exit;
         } else {
           // Login failed
