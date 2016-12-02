@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $response=json_decode($response_json, true);
 
     if ($response['status']==1){
-        header('Location: https://eventagious3.appspot.com/index.php?action=myPage');
+        header('Location: index.php?action=myPage');
         exit;
     }else if ($response['status']==0){
         echo "Det gick fel någonstans! försök igen";
