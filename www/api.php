@@ -8,6 +8,11 @@ if ($path == '/help') {
 };
 */
 
+//connect to datastor
+  //use google\appengine\api\cloud_storage\CloudStorageTools;
+  //$options = ['gs_bucket_name' => "eventagious3.appspot.com/img"];
+
+
 
 // Connect to database
   $dsn = 'mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject';

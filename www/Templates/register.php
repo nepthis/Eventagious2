@@ -33,6 +33,11 @@
     </form>
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+  /*
+  Gör om felhantering
+  */
+
   //$error_msg = "";
   //if(isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
     if($_REQUEST['username']==''){

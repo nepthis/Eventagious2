@@ -1,12 +1,12 @@
       <div class="jumbotron">
         <div class="container">
-          <h1>Welcome to Eventagious</h1>
+          <h1>All the event on Eventagious</h1>
            <div class="col-sm-3 col-md-3 ">
-        		<form class="navbar-form" role="search">
+        		<form class="navbar-form" role="search" action="/index.php?action=event" method="post">
 	        		<div class="input-group">
 	            		<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
 	           			<div class="input-group-btn">
-	                		<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+	                		<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" onclick="form.submit();"></i></button>
 	            		</div>
 	        		</div>
         		</form>
@@ -16,7 +16,7 @@
 
 
       <div class="container">
-      <?php
+<?php
       $user_id = $_SESSION['user_id'];
       echo $user_id;
       $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
@@ -34,30 +34,15 @@
         echo("<p>".$row['Description']."</p>");
         echo("<p>".$row['Adress']."</p>");
         echo("<p>".$row['Section']."</p>");
-        echo("<p><a class=\"btn btn-default\" href=\"index.php?action=eventInfo\" role=\"button\">View details &raquo;</a></p>");
+        echo("<p><a class=\"btn btn-default\" href=\"index.php?action=eventinfo&EventID=".$row['EventID']."\" role=\"button\">View details &raquo;</a></p>");
         echo("</div>");
     }
+
+    
+
 ?>
 
-
-        <!-- Example row of columns 
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Event 1</h2>
-            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-            <p><a class="btn btn-default" href="index.php?action=eventInfo" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Event 2</h2>
-            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-            <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
-         </div>
-          <div class="col-md-4">
-            <h2>Event 3</h2>
-            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-            <p><a class="btn btn-default" href="eventInfo.html" role="button">View details &raquo;</a></p>
-          </div>
-        </div>-->
+<?php
+  //Måste fixa en som tar han dom sökningen. och vi måste fixa en till funktion i API som söker på namn i event tabellen.
+  ?>
+        
