@@ -9,7 +9,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
   use google\appengine\api\cloud_storage\CloudStorageTools;
-  $options = ['gs_bucket_name' => "eventagious3.appspot.com"];
+
+  $bucket =CloudStorageTools::getDefaultGoogleStorageBucketName();
+  echo $bucket;
+  $options = ['gs_bucket_name' => $bucket];
 
 
 $upload_url = CloudStorageTools::createUploadUrl('/test2', $options);
