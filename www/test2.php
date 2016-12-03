@@ -28,7 +28,7 @@ $response=json_decode($response_json, true);
 echo "Slutet på Filen";
 
 ?>
-<form action="{{ upload_url }}" enctype="multipart/form-data" method="post">
+<form action=<?php echo $upload_url ?> enctype="multipart/form-data" method="post">
     Files to upload: <br>
    <input type="file" name="uploaded_files" size="40">
    <input type="submit" value="Send">
