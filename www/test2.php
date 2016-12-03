@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
   use google\appengine\api\cloud_storage\CloudStorageTools;
-  $options = ['gs_bucket_name' => "eventagious3.appspot.com/img"];
+  $options = ['gs_bucket_name' => "eventagious3.appspot.com"];
 
 
 $upload_url = CloudStorageTools::createUploadUrl('/test2', $options);
@@ -26,7 +26,7 @@ $response=json_decode($response_json, true);
 */
 
 echo "Slutet på Filen";
-
+echo $upload_url
 ?>
 <form action=<?php echo $upload_url ?> enctype="multipart/form-data" method="post">
     Files to upload: <br>
