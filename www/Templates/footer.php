@@ -72,7 +72,10 @@
         }
         google.maps.event.addListener(map,'click',function(event) {
         document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
-       }) 
+          infowindow = new google.maps.InfoWindow({
+            content: 'Hello, World!!'
+          });
+       })
       }/*
       google.maps.event.addListener(map, 'click', function( event ){
         alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
