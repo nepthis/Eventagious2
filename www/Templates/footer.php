@@ -37,6 +37,8 @@
         var lat = myLatLng.lat();
         var lng = myLatLng.lng();
         var latlng = new google.maps.LatLng(lat, lng);
+        infowindow.setContent("results[1].formatted_address");
+        infowindow.open(map, marker);
 
         //Code to reverse geocode follows
          geocoder.geocode({'latLng': latlng}, function(results, status) {
