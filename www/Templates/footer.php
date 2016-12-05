@@ -34,6 +34,7 @@
         var mapObject3 = ["Test3", 65.620003, 22.149404]
         var clickCoordsLat;
         var clickCoordsLon;
+        var p1 = "success";
 
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -95,5 +96,5 @@
   </body>
 </html>
 <?php
-echo "<script>document.writeln(clickCoordsLon);</script>";
+echo "<script>document.writeln(p1);</script>";
 ?>
