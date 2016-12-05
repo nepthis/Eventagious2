@@ -20,13 +20,67 @@
 
 
     <!-- Maps scrips -->
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=My_Key&sensor=false"></script>
+      <script type="text/javascript"> 
+      var map;
+      var geocoder = new google.maps.Geocoder();
+      var infowindow = new google.maps.InfoWindow();
 
+      function initialize() 
+      {
+       var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+       var mapOptions = 
+           {
+            zoom: 4,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+           }
+       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+       google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+        var myLatLng = event.latLng;
+        var lat = myLatLng.lat();
+        var lng = myLatLng.lng();
+        var latlng = new google.maps.LatLng(lat, lng);
+
+        //Code to reverse geocode follows
+         geocoder.geocode({'latLng': latlng}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+           if (results[1]) {
+            map.setZoom(11);
+            marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+            });
+            infowindow.setContent(results[1].formatted_address);
+            infowindow.open(map, marker);
+            document.forms["wheregoing"]["start"].value=results[1].formatted_address;
+          }
+         } else {
+          alert("Geocoder failed due to: " + status);
+         }
+        });
+       });
+      }    
+
+    function placeMarker(location) 
+      {
+      var marker = new google.maps.Marker({
+      position: location,
+      map: map
+   });
+
+    map.setCenter(location);
+  }
+    </script>
+    <body onload="initialize()">
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-
+      /*
      function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
@@ -39,7 +93,13 @@
           zoom: 14
         });
 
-
+        google.maps.event.addListener(map,'click',function(event) {
+        document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
+          infowindow = new google.maps.InfoWindow({
+            content: 'Hello, World!!'
+          });
+          infowindow.open(map, marker);
+       })
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
@@ -70,16 +130,11 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
         }
-        google.maps.event.addListener(map,'click',function(event) {
-        document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
-          infowindow = new google.maps.InfoWindow({
-            content: 'Hello, World!!'
-          });
-       })
-      }/*
+        
+      }
       google.maps.event.addListener(map, 'click', function( event ){
         alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
-      });*/
+      });
 
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
@@ -88,7 +143,7 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
 
-
+      
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
