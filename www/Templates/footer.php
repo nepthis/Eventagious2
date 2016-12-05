@@ -22,6 +22,7 @@
     <!-- Maps scrips -->
       <script type="text/javascript"> 
     //var map;
+    alert(denna skit funkar inte);
     var geocoder = new google.maps.Geocoder();
     var infowindow = new google.maps.InfoWindow();
 
