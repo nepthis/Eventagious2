@@ -28,13 +28,10 @@
     function initMap() 
     {
      var myLatlng = new google.maps.LatLng(-34.397, 150.644);
-     var mapOptions = 
-         {
-          zoom: 4,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-         }
-     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+     var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 65.617734, lng: 22.140293},
+          zoom: 14
+        });
 
      google.maps.event.addListener(map, 'click', function(event) {
       placeMarker(event.latLng);
