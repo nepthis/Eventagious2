@@ -22,7 +22,7 @@
     <!-- Maps scrips -->
       <script type="text/javascript"> 
     //var map;
-    alert(denna skit funkar inte);
+    alert("denna skit funkar inte");
     var geocoder = new google.maps.Geocoder();
     var infowindow = new google.maps.InfoWindow();
 
@@ -71,7 +71,6 @@
   map.setCenter(location);
 }
   </script>
-  <body onload="initMap()">
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
