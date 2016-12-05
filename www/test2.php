@@ -1,19 +1,18 @@
 <?php
-
-
+require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
+use google\appengine\api\cloud_storage\CloudStorageTools;
 echo "Detta ar i test filen!! for CloudStorageTools";
 
+
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    echo "Uppladdningen funkade";
+    
+
 }
 
-
-  use google\appengine\api\cloud_storage\CloudStorageTools;
-
-  $bucket =CloudStorageTools::getDefaultGoogleStorageBucketName();
-  echo $bucket;
-  $options = ['gs_bucket_name' => $bucket];
-
+$bucket =CloudStorageTools::getDefaultGoogleStorageBucketName();
+$options = ['gs_bucket_name' => $bucket];
+echo $bucket;
 
 $upload_url = CloudStorageTools::createUploadUrl('/test2', $options);
 
@@ -29,9 +28,9 @@ $response=json_decode($response_json, true);
 */
 
 echo "Slutet på Filen";
-echo $upload_url
+
 ?>
-<form action=<?php echo $upload_url ?> enctype="multipart/form-data" method="post">
+<form action=<?php echo $upload_url?> enctype="multipart/form-data" method="post">
     Files to upload: <br>
    <input type="file" name="uploaded_files" size="40">
    <input type="submit" value="Send">
