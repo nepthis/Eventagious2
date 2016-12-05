@@ -12,8 +12,14 @@ $response=json_decode($response_json, true);
 */
 
 ?>
-<form action= "/upload_handler.php" enctype="multipart/form-data" method="post">
-    Files to upload: <br>
-   <input type="file" name="uploaded_files" size="40">
-   <input type="submit" value="Send">
+
+
+<html>
+<body>
+<form action="/upload_handler.php" method="post" enctype="multipart/form-data">
+  Send these files:<p/>
+  <input name="userfile[]" type="file" multiple="multiple"/><p/>
+  <input type="submit" value="Send files" />
 </form>
+</body>
+</html>
