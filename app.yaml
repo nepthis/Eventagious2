@@ -7,6 +7,12 @@
  - url: /test2
    script: www/test2.php
 
+ - url: /upload_handler
+   script: www/upload_handler.php
+
+ - url: /test2
+   script: www/test2.php
+
  - url: /registertest
    script: www/registertest.php
 
