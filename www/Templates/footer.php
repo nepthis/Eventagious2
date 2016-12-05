@@ -21,21 +21,16 @@
 
     <!-- Maps scrips -->
       <script type="text/javascript"> 
-      var map;
       var geocoder = new google.maps.Geocoder();
       var infowindow = new google.maps.InfoWindow();
 
-      function init() 
+      function initMap() 
       {
-       var myLatlng = new google.maps.LatLng(-34.397, 150.644);
-       var mapOptions = 
-           {
-            zoom: 4,
-            center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-           }
-       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
+       var myLatlng = new google.maps.LatLng(65.6, 22.12);
+       var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 65.617734, lng: 22.140293},
+          zoom: 14
+        });
        google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
         var myLatLng = event.latLng;
@@ -73,7 +68,7 @@
     map.setCenter(location);
   }
     </script>
-    <body onload="init()">
+    <body onload="initMap()">
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
