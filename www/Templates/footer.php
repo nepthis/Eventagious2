@@ -70,13 +70,14 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
         }
+        google.maps.event.addListener(map,'click',function(event) {
+        document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
+       }) 
       }/*
       google.maps.event.addListener(map, 'click', function( event ){
         alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
       });*/
-      google.maps.event.addListener(map,'click',function(event) {
-        document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
-       })   
+
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
