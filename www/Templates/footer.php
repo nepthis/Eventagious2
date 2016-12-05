@@ -21,18 +21,17 @@
 
     <!-- Maps scrips -->
       <script type="text/javascript"> 
-    var map;
+    //var map;
     var geocoder = new google.maps.Geocoder();
     var infowindow = new google.maps.InfoWindow();
 
     function initMap() 
     {
-     var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+     var myLatlng = new google.maps.LatLng(65.6, 22);
      var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617734, lng: 22.140293},
           zoom: 14
         });
-     alert(funkar init);
 
      google.maps.event.addListener(map, 'click', function(event) {
       var myLatLng = event.latLng;
@@ -40,10 +39,9 @@
       var lng = myLatLng.lng();
       var latlng = new google.maps.LatLng(lat, lng);
       placeMarker(event.latLng);
-      alert(FUNKAR JU INTE);
 
       //Code to reverse geocode follows
-       geocoder.geocode({'latLng': latlng}, function(results, status) {
+       /*geocoder.geocode({'latLng': latlng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
          if (results[1]) {
           map.setZoom(11);
@@ -58,7 +56,7 @@
        } else {
         alert("Geocoder failed due to: " + status);
        }
-      });
+      });*/
      });
     }    
 
