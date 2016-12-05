@@ -21,58 +21,59 @@
 
     <!-- Maps scrips -->
       <script type="text/javascript"> 
-      var geocoder = new google.maps.Geocoder();
-      var infowindow = new google.maps.InfoWindow();
+    var map;
+    var geocoder = new google.maps.Geocoder();
+    var infowindow = new google.maps.InfoWindow();
 
-      function initMap() 
-      {
-       var myLatlng = new google.maps.LatLng(65.6, 22.12);
-       var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 65.617734, lng: 22.140293},
-          zoom: 14
-        });
-       //google.maps.event.addListener(map, 'click', function(event) {
-      map.addListener(map, 'click', function(event) {
-        placeMarker(event.latLng);
-        var myLatLng = event.latLng;
-        var lat = myLatLng.lat();
-        var lng = myLatLng.lng();
-        var latlng = new google.maps.LatLng(lat, lng);
-        infowindow.setContent("results[1].formatted_address");
-        infowindow.open(map, marker);
-
-        //Code to reverse geocode follows
-        /*
-         geocoder.geocode({'latLng': latlng}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-           if (results[1]) {
-            map.setZoom(11);
-            marker = new google.maps.Marker({
-              position: latlng,
-              map: map
-            });
-            infowindow.setContent(results[1].formatted_address);
-            infowindow.open(map, marker);
-            document.forms["wheregoing"]["start"].value=results[1].formatted_address;
-          }
-         } else {
-          alert("Geocoder failed due to: " + status);
+    function initMap() 
+    {
+     var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+     var mapOptions = 
+         {
+          zoom: 4,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
          }
-        });
-       });*/
-      }    
+     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
-    function placeMarker(location) 
-      {
-      var marker = new google.maps.Marker({
-      position: location,
-      map: map
-   });
+     google.maps.event.addListener(map, 'click', function(event) {
+      placeMarker(event.latLng);
+      var myLatLng = event.latLng;
+      var lat = myLatLng.lat();
+      var lng = myLatLng.lng();
+      var latlng = new google.maps.LatLng(lat, lng);
 
-    map.setCenter(location);
-  }
-    </script>
-    <body onload="initMap()">
+      //Code to reverse geocode follows
+       geocoder.geocode({'latLng': latlng}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+         if (results[1]) {
+          map.setZoom(11);
+          marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+          });
+          infowindow.setContent(results[1].formatted_address);
+          infowindow.open(map, marker);
+          document.forms["wheregoing"]["start"].value=results[1].formatted_address;
+        }
+       } else {
+        alert("Geocoder failed due to: " + status);
+       }
+      });
+     });
+    }    
+
+  function placeMarker(location) 
+    {
+    var marker = new google.maps.Marker({
+    position: location,
+    map: map
+ });
+
+  map.setCenter(location);
+}
+  </script>
+  <body onload="initMap()">
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
