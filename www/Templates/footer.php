@@ -20,71 +20,21 @@
 
 
     <!-- Maps scrips -->
-      <script type="text/javascript"> 
-    var map;
-    var geocoder = new google.maps.Geocoder();
-    var infowindow = new google.maps.InfoWindow();
 
-    function initMap() 
-    {
-     var myLatlng = new google.maps.LatLng(-34.397, 150.644);
-     var mapOptions = 
-         {
-          zoom: 4,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-         }
-     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
-     google.maps.event.addListener(map, 'click', function(event) {
-      placeMarker(event.latLng);
-      var myLatLng = event.latLng;
-      var lat = myLatLng.lat();
-      var lng = myLatLng.lng();
-      var latlng = new google.maps.LatLng(lat, lng);
-
-      //Code to reverse geocode follows
-       geocoder.geocode({'latLng': latlng}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-         if (results[1]) {
-          map.setZoom(11);
-          marker = new google.maps.Marker({
-            position: latlng,
-            map: map
-          });
-          infowindow.setContent(results[1].formatted_address);
-          infowindow.open(map, marker);
-          document.forms["wheregoing"]["start"].value=results[1].formatted_address;
-        }
-       } else {
-        alert("Geocoder failed due to: " + status);
-       }
-      });
-     });
-    }    
-
-  function placeMarker(location) 
-    {
-    var marker = new google.maps.Marker({
-    position: location,
-    map: map
- });
-
-  map.setCenter(location);
-}
-  </script>
-  <body onload="initMap()">
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      /*
+      
      function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
+        var clickCoordsLat;
+        var clickCoordsLon;
+        var p1 = "success";
 
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -92,13 +42,11 @@
           zoom: 14
         });
 
-        google.maps.event.addListener(map,'click',function(event) {
-        document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
-          infowindow = new google.maps.InfoWindow({
-            content: 'Hello, World!!'
-          });
-          infowindow.open(map, marker);
-       })
+        google.maps.event.addListener(map, 'click', function(event) {
+           marker = new google.maps.Marker({position: event.latLng, map: map}); 
+           clickCoordsLat = event.latLng.lat();
+           clickCoordsLon = event.latLng.lng();
+         });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
@@ -131,9 +79,6 @@
         }
         
       }
-      google.maps.event.addListener(map, 'click', function( event ){
-        alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
-      });
 
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
@@ -150,3 +95,6 @@
     </div>
   </body>
 </html>
+<?php
+echo "<script>document.writeln(p1);</script>";
+?>
