@@ -1,18 +1,42 @@
 <?php
 require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
 use google\appengine\api\cloud_storage\CloudStorageTools;
-
-$fileName = 'gs://eventagious3.appspot.com/'.$_FILES['userfile']['name'];
-echo $fileName."<br>";
-
-$options = array('gs'=>array('acl'=>'public-read','Content-Type' => $_FILES['userfile']['type']));
-$ctx = stream_context_create($options);
-
-if (false == rename($_FILES['userfile']['tmp_name'], $fileName, $ctx)) {
-  die('Could not rename.');
+ 
+$bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
+$root_path = 'gs://' . $bucket . '/img/'.$_SESSION['user_id'].'/';
+ 
+$public_urls = [];
+foreach($_FILES['userfile']['name'] as $idx => $name) {
+  if ($_FILES['userfile']['type'][$idx] === 'image/jpeg') {
+    $im = imagecreatefromjpeg($_FILES['userfile']['tmp_name'][$idx]);
+    imagefilter($im, IMG_FILTER_GRAYSCALE);
+    $grayscale = $root_path .  'gray/' . $name;
+    imagejpeg($im, $grayscale);
+ 
+    $original = $root_path . 'original/' . $name;
+    move_uploaded_file($_FILES['userfile']['tmp_name'][$idx], $original);
+ 
+    $public_urls[] = [
+        'name' => $name,
+        'original' => CloudStorageTools::getImageServingUrl($original),
+        'original_thumb' => CloudStorageTools::getImageServingUrl($original, ['size' => 75]),
+        'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
+        'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
+    ];
+  } 
 }
-
-$object_public_url = CloudStorageTools::getPublicUrl($fileName, true);
-echo $objectPublicUrl."<br>";
-//header('Location:' .$objectPublicUrl); // redirects the user to the public uploaded file, comment any previous output (echo's).
+ 
 ?>
+<html>
+<body>
+<?php
+foreach($public_urls as $urls) {
+  echo '<a href="' . $urls['original'] .'"><IMG src="' . $urls['original_thumb'] .'"></a> ';
+  echo '<a href="' . $urls['grayscale'] .'"><IMG src="' . $urls['grayscale_thumb'] .'"></a>';
+  echo '<p>';
+}
+?>
+<p>
+<a href="/">Upload More</a>
+</body>
+</html>
