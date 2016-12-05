@@ -94,3 +94,6 @@
     </div>
   </body>
 </html>
+<?php
+echo "<script>document.writeln(clickCoordsLon);</script>";
+?>
