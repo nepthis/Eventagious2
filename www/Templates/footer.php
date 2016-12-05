@@ -20,13 +20,12 @@
 
 
     <!-- Maps scrips -->
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=My_Key&sensor=false"></script>
       <script type="text/javascript"> 
       var map;
       var geocoder = new google.maps.Geocoder();
       var infowindow = new google.maps.InfoWindow();
 
-      function initialize() 
+      function init() 
       {
        var myLatlng = new google.maps.LatLng(-34.397, 150.644);
        var mapOptions = 
@@ -74,7 +73,7 @@
     map.setCenter(location);
   }
     </script>
-    <body onload="initialize()">
+    <body onload="init()">
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
