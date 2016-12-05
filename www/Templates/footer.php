@@ -32,13 +32,15 @@
           center: {lat: 65.617734, lng: 22.140293},
           zoom: 14
         });
+     alert(funkar init);
 
      google.maps.event.addListener(map, 'click', function(event) {
-      placeMarker(event.latLng);
       var myLatLng = event.latLng;
       var lat = myLatLng.lat();
       var lng = myLatLng.lng();
       var latlng = new google.maps.LatLng(lat, lng);
+      placeMarker(event.latLng);
+      alert(FUNKAR JU INTE);
 
       //Code to reverse geocode follows
        geocoder.geocode({'latLng': latlng}, function(results, status) {
