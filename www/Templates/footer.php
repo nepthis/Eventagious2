@@ -31,7 +31,8 @@
           center: {lat: 65.617734, lng: 22.140293},
           zoom: 14
         });
-       google.maps.event.addListener(map, 'click', function(event) {
+       //google.maps.event.addListener(map, 'click', function(event) {
+      map.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
         var myLatLng = event.latLng;
         var lat = myLatLng.lat();
@@ -41,6 +42,7 @@
         infowindow.open(map, marker);
 
         //Code to reverse geocode follows
+        /*
          geocoder.geocode({'latLng': latlng}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
            if (results[1]) {
@@ -57,7 +59,7 @@
           alert("Geocoder failed due to: " + status);
          }
         });
-       });
+       });*/
       }    
 
     function placeMarker(location) 
