@@ -128,54 +128,22 @@ if ($path == '/help') {
 
     //$UserID=$_POST["UserID"];
     $EventID=$_POST["EventID"];
-
-    $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
-    $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
-
-    echo json_encode($_POST["EventID"]);
-
-    echo json_encode($_FILES);
-    echo json_encode($_POST);
-
-    echo json_encode($_FILES['file']['name'][0]);
-    echo json_encode($_FILES['file']['type'][0]);
+    $original=$_POST["original"];
+    $original_thumb=$_POST["original_thumb"];
+    $grayscale=$_POST["grayscale"];
+    $grayscale_thumb=$_POST["grayscale_thumb"];
 
 
-    echo json_encode($_POST['file']['name'][0]);
-    echo json_encode($_POST['file']['type'][0]);
 
-
-    /*
     //Filen måste heta file annars kommer det inte att gå att ladda upp...
-
-    $public_urls = [];
-    foreach($_POST['file']['name'] as $idx => $name) {
-      if ($_POST['file']['type'][$idx] === 'image/jpeg') {
-        $im = imagecreatefromjpeg($_POST['file']['tmp_name'][$idx]);
-        imagefilter($im, IMG_FILTER_GRAYSCALE);
-        $grayscale = $root_path .  'gray/' . $name;
-        imagejpeg($im, $grayscale);
-        $original = $root_path . 'original/' . $name;
-        move_uploaded_file($_POST['file']['tmp_name'][$idx], $original);
-     
-        $public_urls[] = [
-            'name' => $name,
-            'original' => CloudStorageTools::getImageServingUrl($original),
-            'original_thumb' => CloudStorageTools::getImageServingUrl($original, ['size' => 75]),
-            'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
-            'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
-        ];
-        echo json_encode($public_urls[]);
-
-        /*$sth = $connection->prepare('UPDATE EventIMG
-          SET Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb
-          WHERE EventID=:EventID');
+        $sth = $connection->prepare('INSERT INTO EventIMG
+          SET EventID=:EventID,Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb');
 
         $sth->bindParam(':EventID',$EventID);
-        $sth->bindParam(':original',$public_urls['original']);
-        $sth->bindParam(':original_thumb',$public_urls['original_thumb']);
-        $sth->bindParam(':grayscale',$public_urls['grayscale']);
-        $sth->bindParam(':grayscale_thumb',$public_urls['grayscale_thumb']);
+        $sth->bindParam(':original',$original);
+        $sth->bindParam(':original_thumb',$original_thumb);
+        $sth->bindParam(':grayscale',$grayscale);
+        $sth->bindParam(':grayscale_thumb',$grayscale_thumb);
 
 
         if($sth->execute())
