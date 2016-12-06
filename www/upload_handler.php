@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		print_r($response);
 
 */
-
+	$EventID= $_POST['EventID'];
 	$bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
 	$root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
  
@@ -51,6 +51,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
  
 ?>
+	<html>
+	<body>
+	<?php
+	foreach($public_urls as $urls) {
+	  echo '<a href="' . $urls['original'] .'"><IMG src="' . $urls['original_thumb'] .'"></a> ';
+	  echo '<a href="' . $urls['grayscale'] .'"><IMG src="' . $urls['grayscale_thumb'] .'"></a>';
+	  echo '<p>';
+	}
+	?>
+	<p>
+	<a href="/">Upload More</a>
+	</body>
+	</html>
 
-
-    }
+}
