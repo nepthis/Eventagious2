@@ -27,13 +27,13 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
      var markers = [];
+     var clickCoordsLat;
+     var clickCoordsLon;
      function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
-        var clickCoordsLat;
-        var clickCoordsLon;
         var lastMarker;
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -107,8 +107,17 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-
-      
+      /*
+      $.ajax({
+        type: 'POST',
+        url: 'coords_handler.php',
+        data: {'longitude': clickCoordsLon},
+      });
+      $.ajax({
+        type: 'POST',
+        url: '´coords_handler.php',
+        data: {'latitude': clickCoordsLat},
+      });*/
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
