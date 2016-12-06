@@ -34,7 +34,7 @@
         var mapObject3 = ["Test3", 65.620003, 22.149404]
         var clickCoordsLat;
         var clickCoordsLon;
-        var p1 = "success";
+        var markers = [];
 
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -43,7 +43,7 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-           marker = new google.maps.Marker({position: event.latLng, map: map}); 
+           addMarker(event.latLng);
            clickCoordsLat = event.latLng.lat();
            clickCoordsLon = event.latLng.lng();
          });
@@ -79,7 +79,13 @@
         }
         
       }
-
+      function addMarker(location) {
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        markers.push(marker);
+      }
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
@@ -95,6 +101,3 @@
     </div>
   </body>
 </html>
-<?php
-echo "<script>document.writeln(p1);</script>";
-?>
