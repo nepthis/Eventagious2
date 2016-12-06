@@ -116,8 +116,8 @@
       });*/
     //document.forms[0].elements["Latitude"].value = getValue("latitude1");
     //document.forms[0].elements["Longitude"].value = getValue("longitude1");
-    document.getElementById('Latitude').value = getValue("latitude1");
-    document.getElementById('Longitude').value = getValue("longitude1");
+    document.getElementById('Latitude').value = latitude1;
+    document.getElementById('Longitude').value = longitude1;
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
