@@ -75,8 +75,8 @@
             <a class="navbar-brand" href="index.php?action=map">Maps</a>
             <a class="navbar-brand" href="index.php?action=about">About</a>
             <a class="navbar-brand" href="index.php?action=event">Events</a>
-            <a class="navbar-brand" href="index.php?action=createevent">Create a Event</a>
-            <a class="navbar-brand" href="logout">logout</a>
+            <a class="navbar-brand" href="index.php?action=createevent">Create an event</a>
+            <a class="navbar-brand" href="logout">Logout</a>
           </div>
         </div>
       </nav>
