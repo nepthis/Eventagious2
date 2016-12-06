@@ -1,6 +1,6 @@
       <div class="jumbotron">
         <div class="container">
-          <h1>All the event on Eventagious</h1>
+          <h1>Browse all events currently available at Eventagious</h1>
            <div class="col-sm-3 col-md-3 ">
         		<form class="navbar-form" role="search" action="/index.php?action=event" method="post">
 	        		<div class="input-group">
