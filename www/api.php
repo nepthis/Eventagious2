@@ -131,7 +131,11 @@ if ($path == '/help') {
 
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
-     
+    echo json_encode($_POST['file']['name'][0]);
+    echo json_encode($_POST['file']['type'][0]);
+
+
+    /*
     //Filen måste heta file annars kommer det inte att gå att ladda upp...
 
     $public_urls = [];
@@ -151,8 +155,9 @@ if ($path == '/help') {
             'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
             'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
         ];
+        echo json_encode($public_urls[]);
 
-        $sth = $connection->prepare('UPDATE EventIMG
+        /*$sth = $connection->prepare('UPDATE EventIMG
           SET Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb
           WHERE EventID=:EventID');
 
@@ -180,7 +185,7 @@ if ($path == '/help') {
       } 
     }
     header('Content-Type: application/json');
-    echo json_encode($response);
+    echo json_encode($response);*/
   }
 
 

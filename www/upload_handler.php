@@ -20,7 +20,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$response_json = json_decode(curl_exec($resource));
 		curl_close($resource);
 
-
+		$response=json_decode($response_json, true);
+		echo $response['original'];
+		print_r($response);
 
 
 
@@ -39,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	    $response_json = curl_exec($ch);
 	    curl_close($ch);*/
 	    
-	    $response=json_decode($response_json, true);
+	    /*$response=json_decode($response_json, true);
 
 	    if ($response['status']==1){
 	        header('Location: index.php?action=myPage');
