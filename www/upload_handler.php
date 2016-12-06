@@ -2,6 +2,7 @@
 use google\appengine\api\cloud_storage\CloudStorageTools;
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+
       //if (isset($_POST['file[]'],$_POST['EventID'])) {
 /*
 		$EventID = $_POST['EventID'];
@@ -27,8 +28,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 */
 	$EventID= $_POST['EventID'];
 	$bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
-	$root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
- 
+	$root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
+ 	echo $root_path;
+ 	echo $bucket;
 	$public_urls = [];
 	foreach($_FILES['userfile']['name'] as $idx => $name) {
 	  if ($_FILES['userfile']['type'][$idx] === 'image/jpeg') {
