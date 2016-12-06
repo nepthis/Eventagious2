@@ -35,6 +35,7 @@
         var clickCoordsLat;
         var clickCoordsLon;
         var lastMarker;
+        var markers = [];
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617734, lng: 22.140293},
@@ -49,6 +50,7 @@
          });
            clickCoordsLat = event.latLng.lat();
            clickCoordsLon = event.latLng.lng();
+           markers.push(lastMarker);
          });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
