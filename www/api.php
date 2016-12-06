@@ -60,7 +60,7 @@ if ($path == '/help') {
       if(!empty($_GET["insert_img"]))
       {
           echo json_encode("går in i rätt");
-          insert_img();
+          //insert_img();
       }
       //Insert Event to event table
       if(!empty($_GET["event"]))
@@ -123,7 +123,7 @@ if ($path == '/help') {
   }
 
   function insert_img(){
-    require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
+    //require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
     use google\appengine\api\cloud_storage\CloudStorageTools;
  
     global $connection;
