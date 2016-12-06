@@ -1,42 +1,37 @@
 <?php
-require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
-use google\appengine\api\cloud_storage\CloudStorageTools;
- 
-$bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
-$root_path = 'gs://' . $bucket . '/img/'.$_SESSION['user_id'].'/';
- 
-$public_urls = [];
-foreach($_FILES['userfile']['name'] as $idx => $name) {
-  if ($_FILES['userfile']['type'][$idx] === 'image/jpeg') {
-    $im = imagecreatefromjpeg($_FILES['userfile']['tmp_name'][$idx]);
-    imagefilter($im, IMG_FILTER_GRAYSCALE);
-    $grayscale = $root_path .  'gray/' . $name;
-    imagejpeg($im, $grayscale);
- 
-    $original = $root_path . 'original/' . $name;
-    move_uploaded_file($_FILES['userfile']['tmp_name'][$idx], $original);
- 
-    $public_urls[] = [
-        'name' => $name,
-        'original' => CloudStorageTools::getImageServingUrl($original),
-        'original_thumb' => CloudStorageTools::getImageServingUrl($original, ['size' => 75]),
-        'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
-        'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
-    ];
-  } 
-}
- 
-?>
-<html>
-<body>
-<?php
-foreach($public_urls as $urls) {
-  echo '<a href="' . $urls['original'] .'"><IMG src="' . $urls['original_thumb'] .'"></a> ';
-  echo '<a href="' . $urls['grayscale'] .'"><IMG src="' . $urls['grayscale_thumb'] .'"></a>';
-  echo '<p>';
-}
-?>
-<p>
-<a href="/">Upload More</a>
-</body>
-</html>
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+      if (isset($_POST['userfile[]'],$_POST['EventID'] )) {
+      	$tmpfile = $_FILES['userfile']['tmp_name'];
+		$filename = basename($_FILES['userfile']['name']);
+		$filetype=$_FILES['userfile']['type']
+		$EventID = $_POST['EventID'];
+
+		$cfile = curl_file_create(basename($_FILES['userfile']['name']),$_FILES['userfile']['type'],'test_name');
+
+	    $data=array(
+	    'EventID' => $EventID,
+	    'file' => $cfile
+	    );
+
+		$url = 'https://eventagious3.appspot.com/api/?insert_img=1';
+	    $ch = curl_init($url);
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    $response_json = curl_exec($ch);
+	    curl_close($ch);
+	    $response=json_decode($response_json, true);
+
+	    if ($response['status']==1){
+	        header('Location: index.php?action=myPage');
+	        exit;
+	    }else if ($response['status']==0){
+	        echo "Det gick fel någonstans! försök igen";
+	    }
+	  	}else{
+	    	echo "Allt är inte ifyllt";
+	  	}
+
+
+    }

@@ -1,5 +1,5 @@
 <?php
-
+require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
 /*$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($path == '/help') {
@@ -57,6 +57,10 @@ if ($path == '/help') {
       }
       break;
     case 'POST':
+      if(!empty($_GET["insert_img"]))
+      {
+          insert_img();
+      }
       //Insert Event to event table
       if(!empty($_GET["event"]))
       {
@@ -116,6 +120,66 @@ if ($path == '/help') {
       header("HTTP/1.0 405 Method Not Allowed");
       break;
   }
+
+  function insert_img(){
+    use google\appengine\api\cloud_storage\CloudStorageTools;
+ 
+    global $connection;
+    //$UserID=$_POST["UserID"];
+    $EventID=$_POST["EventID"];
+
+    $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
+    $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
+     
+    $public_urls = [];
+    foreach($_FILES['userfile']['name'] as $idx => $name) {
+      if ($_FILES['userfile']['type'][$idx] === 'image/jpeg') {
+        $im = imagecreatefromjpeg($_FILES['userfile']['tmp_name'][$idx]);
+        imagefilter($im, IMG_FILTER_GRAYSCALE);
+        $grayscale = $root_path .  'gray/' . $name;
+        imagejpeg($im, $grayscale);
+        $original = $root_path . 'original/' . $name;
+        move_uploaded_file($_FILES['userfile']['tmp_name'][$idx], $original);
+     
+        $public_urls[] = [
+            'name' => $name,
+            'original' => CloudStorageTools::getImageServingUrl($original),
+            'original_thumb' => CloudStorageTools::getImageServingUrl($original, ['size' => 75]),
+            'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
+            'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
+        ];
+
+        $sth = $connection->prepare('UPDATE EventIMG
+          SET Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb
+          WHERE EventID=:EventID');
+
+        $sth->bindParam(':EventID',$EventID);
+        $sth->bindParam(':original',$public_urls['original']);
+        $sth->bindParam(':original_thumb',$public_urls['original_thumb']);
+        $sth->bindParam(':grayscale',$public_urls['grayscale']);
+        $sth->bindParam(':grayscale_thumb',$public_urls['grayscale_thumb']);
+
+
+        if($sth->execute())
+        {
+          $response=array(
+            'status' => 1,
+            'status_message' =>'Product Updated Successfully Event.'
+          );
+        }
+        else
+        {
+          $response=array(
+            'status' => 0,
+            'status_message' =>'Product Updation Failed.'
+          );
+        }
+      } 
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+
 
   function insert_Event()
   {
