@@ -57,7 +57,7 @@
     $user_id = $r['id']; //Or do what ever instead of echo
     $db_password = $r['password'];
     }*/
-        
+        echo sizeof($response);
         if (sizeof($response) == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 

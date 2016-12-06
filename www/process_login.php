@@ -17,7 +17,7 @@
           exit;
         } else {
           // Login failed
-          eader('Location: index.php');
+          header('Location: index.php');
           exit;
         }
       } else {

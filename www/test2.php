@@ -18,7 +18,8 @@ $response=json_decode($response_json, true);
 <body>
 <form action="/upload_handler" method="post" enctype="multipart/form-data">
   Send these files:<p/>
-  <input name="userfile[]" type="file" multiple="multiple"/><p/>
+  <input name="file[]" type="file" multiple="multiple"/><p/>
+  <input name="EventID" type="hidden" value="12"/><p/>
   <input type="submit" value="Send files" />
 </form>
 </body>

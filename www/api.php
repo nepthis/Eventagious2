@@ -57,10 +57,10 @@ if ($path == '/help') {
       }
       break;
     case 'POST':
-      if(!empty($_GET["insert_img"]))
+     /* if(!empty($_GET["insert_img"]))
       {
           insert_img();
-      }
+      }*/
       //Insert Event to event table
       if(!empty($_GET["event"]))
       {
@@ -120,7 +120,7 @@ if ($path == '/help') {
       header("HTTP/1.0 405 Method Not Allowed");
       break;
   }
-
+/*
   function insert_img(){
     use google\appengine\api\cloud_storage\CloudStorageTools;
  
@@ -128,7 +128,7 @@ if ($path == '/help') {
 
     //$UserID=$_POST["UserID"];
     $EventID=$_POST["EventID"];
-    
+
 
 
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
@@ -184,7 +184,7 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
-
+*/
 
   function insert_Event()
   {
