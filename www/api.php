@@ -131,6 +131,11 @@ if ($path == '/help') {
 
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
+
+    echo json_encode($_FILES['file']['name'][0]);
+    echo json_encode($_FILES['file']['type'][0]);
+
+
     echo json_encode($_POST['file']['name'][0]);
     echo json_encode($_POST['file']['type'][0]);
 

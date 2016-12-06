@@ -21,7 +21,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		curl_close($resource);
 
 		$response=json_decode($response_json, true);
-		echo $response['original'];
 		print_r($response);
 
 
