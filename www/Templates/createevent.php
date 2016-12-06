@@ -116,8 +116,8 @@
       });*/
     //document.forms[0].elements["Latitude"].value = getValue("latitude1");
     //document.forms[0].elements["Longitude"].value = getValue("longitude1");
-    //document.getElementById('Latitude').value = latitude1;
-    //document.getElementById('Longitude').value = longitude1;
+    document.getElementById('Latitude').value = 4;
+    document.getElementById('Longitude').value = 5;
     //$("#Latitude").attr("value", latitude1);
     //$("#Longitude").attr("value", longitude1);
     </script>
