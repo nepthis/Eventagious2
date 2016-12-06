@@ -114,8 +114,10 @@
         url: '´coords_handler.php',
         data: {'latitude': clickCoordsLat},
       });*/
-    document.forms[0].elements["Latitude"].value = getValue("latitude1");
-    document.forms[0].elements["Longitude"].value = getValue("longitude1");
+    //document.forms[0].elements["Latitude"].value = getValue("latitude1");
+    //document.forms[0].elements["Longitude"].value = getValue("longitude1");
+    document.getElementById('Latitude').value = getValue("latitude1");
+    document.getElementById('Longitude').value = getValue("longitude1");
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
@@ -160,7 +162,7 @@
         <input type="text" class="form-control" name="Latitude" id="Latitude" placeholder="Latitude" aria-describedby="sizing-addon1">
       </div>-->
       <input type="hidden" name="Longitude" id ="Longitude" value="longitude1">
-      <input type="hidden" name="Latitude" id ="Latitude" value="longitude1">
+      <input type="hidden" name="Latitude" id ="Latitude" value="latitude1">
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
