@@ -67,7 +67,7 @@
             };
 
             //Marker for you position
-      /*
+      
       var myMarker = new google.maps.Marker({
             position: pos,
             map: map,
@@ -80,7 +80,7 @@
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
-        }*/
+        }
         
       }
       /*
