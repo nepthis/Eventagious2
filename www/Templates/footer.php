@@ -34,8 +34,7 @@
         var mapObject3 = ["Test3", 65.620003, 22.149404]
         var clickCoordsLat;
         var clickCoordsLon;
-        var markers = [];
-
+        var lastMarker;
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617734, lng: 22.140293},
@@ -43,7 +42,8 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-           addMarker(event.latLng);
+          lastMarker.setMap(null);
+           var lastMarker = new google.maps.Marker({position: location,map: map});
            clickCoordsLat = event.latLng.lat();
            clickCoordsLon = event.latLng.lng();
          });
@@ -79,12 +79,13 @@
         }
         
       }
+      /*
       function addMarker(location) {
         var marker = new google.maps.Marker({
           position: location,
           map: map
         });
-        markers.push(marker);
+        markers.push(marker);*/
       }
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
