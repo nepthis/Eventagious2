@@ -26,7 +26,7 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      
+     var markers = [];
      function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
@@ -35,7 +35,6 @@
         var clickCoordsLat;
         var clickCoordsLon;
         var lastMarker;
-        var markers = [];
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617734, lng: 22.140293},
