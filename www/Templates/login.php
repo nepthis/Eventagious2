@@ -34,7 +34,7 @@
       </div>
 
       <input type="button" 
-                   value="login" 
+                   value="Login" 
                    onclick="form.submit();" /> 
     </form>
   </center>
