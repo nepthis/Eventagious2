@@ -42,7 +42,7 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-          setMapOnAll(null);
+          //setMapOnAll(null);
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
             map: map
@@ -67,6 +67,7 @@
             };
 
             //Marker for you position
+      /*
       var myMarker = new google.maps.Marker({
             position: pos,
             map: map,
@@ -79,7 +80,7 @@
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
-        }
+        }*/
         
       }
       /*
