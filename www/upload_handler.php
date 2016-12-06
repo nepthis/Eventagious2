@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$filetype=$_FILES['userfile']['type']
 		$EventID = $_POST['EventID'];
 
-		$cfile = curl_file_create(basename($_FILES['userfile']['name']),$_FILES['userfile']['type'],'test_name');
+		$cfile = curl_file_create($_FILES['userfile']['tmp_name'],$_FILES['userfile']['type'],$_FILES['userfile']['name']);
 
 	    $data=array(
 	    'EventID' => $EventID,

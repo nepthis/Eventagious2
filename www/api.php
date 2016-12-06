@@ -125,21 +125,26 @@ if ($path == '/help') {
     use google\appengine\api\cloud_storage\CloudStorageTools;
  
     global $connection;
+
     //$UserID=$_POST["UserID"];
     $EventID=$_POST["EventID"];
+    
+
 
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
      
+    //Filen måste heta file annars kommer det inte att gå att ladda upp...
+
     $public_urls = [];
-    foreach($_FILES['userfile']['name'] as $idx => $name) {
-      if ($_FILES['userfile']['type'][$idx] === 'image/jpeg') {
-        $im = imagecreatefromjpeg($_FILES['userfile']['tmp_name'][$idx]);
+    foreach($_POST['file']['name'] as $idx => $name) {
+      if ($_POST['file']['type'][$idx] === 'image/jpeg') {
+        $im = imagecreatefromjpeg($_POST['file']['tmp_name'][$idx]);
         imagefilter($im, IMG_FILTER_GRAYSCALE);
         $grayscale = $root_path .  'gray/' . $name;
         imagejpeg($im, $grayscale);
         $original = $root_path . 'original/' . $name;
-        move_uploaded_file($_FILES['userfile']['tmp_name'][$idx], $original);
+        move_uploaded_file($_POST['file']['tmp_name'][$idx], $original);
      
         $public_urls[] = [
             'name' => $name,
