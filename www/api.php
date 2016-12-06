@@ -57,13 +57,14 @@ if ($path == '/help') {
       }
       break;
     case 'POST':
-     /* if(!empty($_GET["insert_img"]))
+    //Försöker fixa med bilderna...
+      if(!empty($_GET["insertImg"]))
       {
           echo json_encode("går in i rätt");
           //insert_img();
-      }*/
+      }
       //Insert Event to event table
-      if(!empty($_GET["event"]))
+      else if(!empty($_GET["event"]))
       {
           insert_Event();
       }
