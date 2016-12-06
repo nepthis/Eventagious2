@@ -42,7 +42,7 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-          lastMarker.setMap(null);
+          setMapOnAll(null);
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
             map: map
