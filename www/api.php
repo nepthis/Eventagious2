@@ -123,15 +123,12 @@ if ($path == '/help') {
   }
 
   function insert_img(){
-    //require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
  
     global $connection;
 
     //$UserID=$_POST["UserID"];
     $EventID=$_POST["EventID"];
 
-    echo json_encode("gar in i ratt");
-    echo json_encode($_POST['file']['name']);/*
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
      
@@ -183,7 +180,7 @@ if ($path == '/help') {
       } 
     }
     header('Content-Type: application/json');
-    echo json_encode($response);*/
+    echo json_encode($response);
   }
 
 
