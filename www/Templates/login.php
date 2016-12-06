@@ -30,7 +30,7 @@
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="password" id="password" placeholder="password" aria-describedby="sizing-addon1">
+        <input type="password" class="form-control" name="password" id="password" placeholder="password" aria-describedby="sizing-addon1">
       </div>
 
       <input type="button" 
