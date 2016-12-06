@@ -60,8 +60,7 @@ if ($path == '/help') {
     //Försöker fixa med bilderna...
       if(!empty($_GET["insertImg"]))
       {
-          echo json_encode("går in i rätt");
-          //insert_img();
+          insert_img();
       }
       //Insert Event to event table
       else if(!empty($_GET["event"]))
@@ -125,14 +124,14 @@ if ($path == '/help') {
 
   function insert_img(){
     //require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
-    //use google\appengine\api\cloud_storage\CloudStorageTools;
+    use google\appengine\api\cloud_storage\CloudStorageTools;
  
     global $connection;
 
     //$UserID=$_POST["UserID"];
     $EventID=$_POST["EventID"];
 
-
+    echo json_encode("gar in i ratt");
     echo json_encode($_POST['file']['name']);/*
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' . $bucket . '/img/'.$EventID.'/';
