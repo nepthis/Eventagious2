@@ -1,5 +1,5 @@
 <?php
-
+use google\appengine\api\cloud_storage\CloudStorageTools;
 /*$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($path == '/help') {
@@ -124,7 +124,6 @@ if ($path == '/help') {
 
   function insert_img(){
     //require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
-    use google\appengine\api\cloud_storage\CloudStorageTools;
  
     global $connection;
 
