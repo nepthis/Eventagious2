@@ -44,7 +44,7 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
           //setMapOnAll(null);
-          markers = [];
+          deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
             map: map
@@ -85,6 +85,14 @@
           handleLocationError(false, myMarker, map.getCenter());
         }
         
+      }
+      function deleteMarkers() {
+        if (markers) {
+         for (i=0; i < markers.length; i++) {
+              markers[i].setMap(null);
+          }
+      markers.length = 0;
+      }
       }
       /*
       function addMarker(location) {
