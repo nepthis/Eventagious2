@@ -1,5 +1,4 @@
 <?php
-
 /*$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($path == '/help') {
@@ -63,7 +62,7 @@ if ($path == '/help') {
           insert_img();
       }*/
       //Insert Event to event table
-      else if(!empty($_GET["event"]))
+      if(!empty($_GET["event"]))
       {
           insert_Event();
       }
