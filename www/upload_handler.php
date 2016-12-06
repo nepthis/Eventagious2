@@ -48,6 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	        'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
 	    ];
 	  } 
+	}
 }
  
 ?>
@@ -65,4 +66,3 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	</body>
 	</html>
 
-}

@@ -58,10 +58,10 @@ if ($path == '/help') {
       break;
     case 'POST':
     //Försöker fixa med bilderna...
-      if(!empty($_GET["insertImg"]))
+      /*if(!empty($_GET["insertImg"]))
       {
           insert_img();
-      }
+      }*/
       //Insert Event to event table
       else if(!empty($_GET["event"]))
       {
@@ -122,7 +122,7 @@ if ($path == '/help') {
       break;
   }
 
-  function insert_img(){
+  /*function insert_img(){
  
     global $connection;
 
@@ -164,7 +164,7 @@ if ($path == '/help') {
     }
     header('Content-Type: application/json');
     echo json_encode($response);
-  }
+  }*/
 
 
   function insert_Event()
