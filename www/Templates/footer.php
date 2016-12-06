@@ -43,7 +43,10 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
           lastMarker.setMap(null);
-           var lastMarker = new google.maps.Marker({position:event.latLng,map: map});
+          var lastMarker = new google.maps.Marker({
+            position: event.latLng,
+            map: map
+         });
            clickCoordsLat = event.latLng.lat();
            clickCoordsLon = event.latLng.lng();
          });
@@ -85,8 +88,8 @@
           position: location,
           map: map
         });
-        markers.push(marker);*/
-      }
+        markers.push(marker);
+      }*/
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
