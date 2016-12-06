@@ -116,8 +116,10 @@
       });*/
     //document.forms[0].elements["Latitude"].value = getValue("latitude1");
     //document.forms[0].elements["Longitude"].value = getValue("longitude1");
-    document.getElementById('Latitude').value = latitude1;
-    document.getElementById('Longitude').value = longitude1;
+    //document.getElementById('Latitude').value = latitude1;
+    //document.getElementById('Longitude').value = longitude1;
+    $("#Latitude").attr("value", latitude1);
+    $("#Longitude").attr("value", longitude1);
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
@@ -155,11 +157,11 @@
       <p>Fylla i vart eventet ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon5">@</span>
-        <input type="hidden" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
+        <input type="hidden" class="form-control" name="Longitude" id="Longitude" value ="?????" aria-describedby="sizing-addon1">
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon6">@</span>
-        <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
+        <input type="hidden" class="form-control" name="Latitude" id="Latitude" value ="?????" aria-describedby="sizing-addon1">
       </div>
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
