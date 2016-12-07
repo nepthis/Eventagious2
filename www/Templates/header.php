@@ -77,6 +77,7 @@
             <a class="navbar-brand" href="index.php?action=about">About</a>
             <a class="navbar-brand" href="index.php?action=event">Events</a>
             <a class="navbar-brand" href="index.php?action=createevent">Create an event</a>
+            <a class="navbar-brand" href="index.php?action=admin">Admin</a>
             <a class="navbar-brand" href="logout">Logout</a>
           </div>
         </div>
