@@ -7,7 +7,7 @@
       </div>
 
       <div class="container">
-          <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
+          <div id="map" style="height: 500px; width:1200px; text-align: center; padding-top: 0px;"></div>
       </div>
 
 
@@ -19,7 +19,7 @@
 
   <div class="container">
     <form action="event/create" method="post">
-      <div class="input-group input-group-lg">
+      <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon1">@</span>
         <input type="text" class="form-control" name="UserID" id="UserID" placeholder="UserID" aria-describedby="sizing-addon1">
       </div>
