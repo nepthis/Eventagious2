@@ -149,12 +149,7 @@
         geocoder.geocode({'location': latlng}, function(results, status) {
           if (status === 'OK') {
             if (results[1]) {
-              map.setZoom(11);
-              var marker = new google.maps.Marker({
-                position: latlng,
-                map: map
               document.getElementById('Adress').value = results[1].formatted_address;
-              });
             } else {
               window.alert('No results found');
             }
