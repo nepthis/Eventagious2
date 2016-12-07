@@ -143,6 +143,8 @@
         }
         
       }
+      document.getElementById('Longitude').value = clickCoordsLon;
+      document.getElementById('Latitude').value = clickCoordsLat;
       function deleteMarkers() {
         if (markers) {
          for (i=0; i < markers.length; i++) {
@@ -165,8 +167,6 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-      var longitude1 = 4;
-      var latitude1 = 5;
       /*
       $.ajax({
         type: 'POST',
