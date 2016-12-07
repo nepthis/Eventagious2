@@ -127,18 +127,12 @@ if ($path == '/help') {
     global $connection;
 
     //$UserID=$_POST["UserID"];
-    $EventID=$_POST["EventID"];
-    $original=$_POST["original"];
-    $original_thumb=$_POST["original_thumb"];
-    $grayscale=$_POST["grayscale"];
-    $grayscale_thumb=$_POST["grayscale_thumb"];
-
-    print_r($_FILES);
-    print_r($_REQUEST);
 
     $altName=$_FILES[0];  
     echo $altName;  
 
+    $FileName= $_REQUEST['FileName'];
+    echo $FileName;
     $EventID= $_REQUEST['EventID'];
     echo $EventID;
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
@@ -164,33 +158,36 @@ if ($path == '/help') {
         ];
         print_r($public_urls);
       } 
-    
-    /*//Filen måste heta file annars kommer det inte att gå att ladda upp...
-        $sth = $connection->prepare('INSERT INTO EventIMG
+    $original=$public_urls["original"];
+    $original_thumb=$public_urls["original_thumb"];
+    $grayscale=$public_urls["grayscale"];
+    $grayscale_thumb=$public_urls["grayscale_thumb"];
+    //Filen måste heta file annars kommer det inte att gå att ladda upp...
+    $sth = $connection->prepare('INSERT INTO EventIMG
           SET EventID=:EventID,Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb');
 
-        $sth->bindParam(':EventID',$EventID);
-        $sth->bindParam(':original',$original);
-        $sth->bindParam(':original_thumb',$original_thumb);
-        $sth->bindParam(':grayscale',$grayscale);
-        $sth->bindParam(':grayscale_thumb',$grayscale_thumb);
+    $sth->bindParam(':EventID',$EventID);
+    $sth->bindParam(':original',$original);
+    $sth->bindParam(':original_thumb',$original_thumb);
+    $sth->bindParam(':grayscale',$grayscale);
+    $sth->bindParam(':grayscale_thumb',$grayscale_thumb);
 
-        if($sth->execute())
-        {
-          $response=array(
+    if($sth->execute())
+    {
+      $response=array(
             'status' => 1,
             'status_message' =>'Product Updated Successfully Event.'
           );
-        }
-        else
-        {
-          $response=array(
+    }
+    else
+    {
+    $response=array(
             'status' => 0,
             'status_message' =>'Product Updation Failed.'
           );
-        }
+    }
     header('Content-Type: application/json');
-    echo json_encode($response);*/
+    echo json_encode($response);
   }
 
 
