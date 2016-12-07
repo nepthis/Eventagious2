@@ -93,7 +93,7 @@
           //setMapOnAll(null);
           document.getElementById('Longitude').value = event.latLng.lng();
           document.getElementById('Latitude').value = event.latLng.lat();
-          document.getElementById('points').value = event.latLng.lat();
+          document.getElementById('points').value = 5;
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
