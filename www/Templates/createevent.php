@@ -15,9 +15,6 @@
         <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
       </div>
     </div>
-    <form>
-      <input type="number" id="points" value="0">
-    </form>
 
   <div class="container">
     <form action="event/create" method="post">
@@ -84,7 +81,7 @@
         var lastMarker;
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 65.617734, lng: 22.140293},
+          center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
 
@@ -98,7 +95,6 @@
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
           clickCoords = event.latLng;
-          console.log("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
           document.getElementById('Longitude').value = clickCoordsLon;
           document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
@@ -153,11 +149,9 @@
               document.getElementById('Adress').value = results[1].formatted_address;
             } else {
               window.alert('No results found');
-              console.log("status");
             }
           } else {
             window.alert('Geocoder failed due to: ' + status);
-            console.log("resp");
           }
         });
       }
@@ -204,4 +198,3 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
     </script>
-  <script type="text/javascript">document.getElementById('points').value = 10;</script>
