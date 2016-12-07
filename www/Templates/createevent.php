@@ -76,7 +76,6 @@
       var clickCoordsLat;
       var clickCoordsLon;
       var clickCoords;
-      var geocoder = new google.maps.Geocoder;
       function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
@@ -145,6 +144,7 @@
         
       }
       function geocodeLatLng(geocoder, map) {
+        var geocoder = new google.maps.Geocoder;
         var latlng = {lat: parseFloat(clickCoordsLat), lng: parseFloat(clickCoordsLon)};
         geocoder.geocode({'location': latlng}, function(results, status) {
           if (status === 'OK') {
