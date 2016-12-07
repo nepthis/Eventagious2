@@ -12,25 +12,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$url = 'https://eventagious3.appspot.com/api/?insert_img=1';
 		$header = array('Content-Type: multipart/form-data');
 		
-		echo $_FILES['file']['name'];
-		echo $_FILES['file']['tmp_name'];
+		$tmpfile = $_FILES['userfile']['tmp_name'];
+ 		$filename = basename($_FILES['userfile']['name']);
+ 		$filetype = $_FILES['userfile']['type'];
 
-		echo $_FILES['file']['type'];
-
-		$data = array(
-			'EventID' => $EventID,
-			'FileName'=>'file',
-			'file' => '@'.$_FILES['file']['tmp_name'].';filename='. $_FILES['file']['name']. ';type='.$_FILES['file']['type'].'');
+ 		$args['file'] = new CurlFile($tmpfile, $filetype, $filename);
+		$args['EventID'] =$EventID;
+		$args['FileName'] ='file';
 		 
-		$resource = curl_init();
+		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_POST, true);
-    	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+ 		curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $args);
     	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     	$response_json = curl_exec($ch);
     	curl_close($ch);
     	$response=json_decode($response_json, true);
-
-		$response=json_decode($response_json, true);
 		
 		echo $response['status'];
 

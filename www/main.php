@@ -3,7 +3,7 @@ include_once "PHPscript.php";
 session_start();
 
 
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['user_id'])) {
 		include("Templates/header_login.php"); 
     }else{
     	include("Templates/header.php"); 
