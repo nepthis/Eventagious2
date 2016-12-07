@@ -1,5 +1,13 @@
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Skapa ett event</h1>
+          <p>Detta är en sida för att skapa event! </p>
+          <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
+        </div>
+      </div>
+
       <div class="container">
-          <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
+          <div id="map" style="height: 500px; width:1200px; text-align: center; padding-top: 0px;"></div>
       </div>
 
 
@@ -8,17 +16,10 @@
       </div>
     
     </div>
-   <div class="jumbotron">
-      <div class="container">
-        <h1>Skapa ett event</h1>
-        <p>Detta är en sida för att skapa event! </p>
-        <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
-      </div>
-    </div>
 
   <div class="container">
     <form action="event/create" method="post">
-      <div class="input-group input-group-lg">
+      <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon1">@</span>
         <input type="text" class="form-control" name="UserID" id="UserID" placeholder="UserID" aria-describedby="sizing-addon1">
       </div>
@@ -45,10 +46,14 @@
         <span class="input-group-addon" id="sizing-addon6">@</span>-->
         <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
       <!--</div>-->
-      <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
         <input type="text" class="form-control" name="Section" id="Section" placeholder="Section" aria-describedby="sizing-addon1">
+      </div>
+      <p>Fylla i vilken sektion som det ska vara </p>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon7">@</span>
+        <input type="text" class="form-control" name="EventDate" id="EventDate" placeholder="Date YYYY-MM-DD" aria-describedby="sizing-addon1">
       </div>
       <input type="button" 
                    value="Create" 
