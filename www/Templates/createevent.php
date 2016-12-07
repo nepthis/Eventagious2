@@ -41,13 +41,13 @@
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
             map: map
-         });
-           clickCoordsLat = event.latLng.lat();
-           clickCoordsLon = event.latLng.lng();
-           markers.push(lastMarker);
-           document.getElementById('Latitude').value = 4;
-           document.getElementById('Longitude').value = 5;  
-         });
+          });
+          clickCoordsLat = event.latLng.lat();
+          clickCoordsLon = event.latLng.lng();
+          markers.push(lastMarker);
+          document.getElementById('#Latitude').value = 4;
+          document.getElementById('#Longitude').value = 5;  
+        });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
