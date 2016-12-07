@@ -44,7 +44,9 @@
          });
            clickCoordsLat = event.latLng.lat();
            clickCoordsLon = event.latLng.lng();
-           markers.push(lastMarker);  
+           markers.push(lastMarker);
+           document.getElementById('Latitude').value = 4;
+           document.getElementById('Longitude').value = 5;  
          });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
@@ -116,8 +118,8 @@
       });*/
     //document.forms[0].elements["Latitude"].value = getValue("latitude1");
     //document.forms[0].elements["Longitude"].value = getValue("longitude1");
-    document.getElementById('Latitude').value = 4;
-    document.getElementById('Longitude').value = 5;
+    //document.getElementById('Latitude').value = 4;
+    //document.getElementById('Longitude').value = 5;
     //$("#Latitude").attr("value", latitude1);
     //$("#Longitude").attr("value", longitude1);
     </script>
@@ -157,11 +159,11 @@
       <p>Fylla i vart eventet ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon5">@</span>
-        <input type="text" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
+        <input type="hidden" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
       </div>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon6">@</span>
-        <input type="text" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
+        <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
       </div>
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
