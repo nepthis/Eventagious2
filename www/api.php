@@ -133,25 +133,27 @@ if ($path == '/help') {
     $grayscale=$_POST["grayscale"];
     $grayscale_thumb=$_POST["grayscale_thumb"];
 
-    echo "Test2";
     print_r($_FILES);
     print_r($_REQUEST);
-    echo $_FILES['file']['name'][0];
+
+    $altName=$_FILES[0];  
+    echo $altName;  
+
     $EventID= $_REQUEST['EventID'];
     echo $EventID;
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
 
     $public_urls = [];
-    foreach($_FILES['file']['name'] as $idx => $name) {
-      if ($_FILES['file']['type'][$idx] === 'image/jpeg') {
-        $im = imagecreatefromjpeg($_FILES['file']['tmp_name'][$idx]);
+    $name = $_FILES['file']['name'];
+    if ($_FILES['file']['type'] === 'image/jpeg') {
+        $im = imagecreatefromjpeg($_FILES['file']['tmp_name']);
         imagefilter($im, IMG_FILTER_GRAYSCALE);
         $grayscale = $root_path .  'gray/' . $name;
         imagejpeg($im, $grayscale);
      
         $original = $root_path . 'original/' . $name;
-        move_uploaded_file($_FILES['file']['tmp_name'][$idx], $original);
+        move_uploaded_file($_FILES['file']['tmp_name'], $original);
      
         $public_urls[] = [
             'name' => $name,
@@ -160,8 +162,9 @@ if ($path == '/help') {
             'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
             'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
         ];
+        print_r($public_urls);
       } 
-    }
+    
     /*//Filen måste heta file annars kommer det inte att gå att ladda upp...
         $sth = $connection->prepare('INSERT INTO EventIMG
           SET EventID=:EventID,Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb');
