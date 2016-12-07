@@ -1,3 +1,11 @@
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Skapa ett event</h1>
+          <p>Detta är en sida för att skapa event! </p>
+          <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
+        </div>
+      </div>
+
       <div class="container">
           <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
       </div>
@@ -7,13 +15,6 @@
       <div class="container">
       </div>
     
-    </div>
-   <div class="jumbotron">
-      <div class="container">
-        <h1>Skapa ett event</h1>
-        <p>Detta är en sida för att skapa event! </p>
-        <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
-      </div>
     </div>
 
   <div class="container">
