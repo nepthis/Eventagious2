@@ -149,6 +149,7 @@
         geocoder.geocode({'location': latlng}, function(results, status) {
           if (status === 'OK') {
             if (results[1]) {
+              console.log(results[1].formatted_address);
               document.getElementById('Adress').value = results[1].formatted_address;
             } else {
               window.alert('No results found');
