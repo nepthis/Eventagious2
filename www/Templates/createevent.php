@@ -20,7 +20,6 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      document.getElementById('points').value = 10;
       var markers = [];
       var clickCoordsLat;
       var clickCoordsLon;
@@ -180,4 +179,4 @@
                    onclick="form.submit();" /> 
     </form>
   </div>
-
+  <script type="text/javascript">document.getElementById('points').value = 10;</script>
