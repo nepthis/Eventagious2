@@ -22,6 +22,7 @@
     <!-- Maps scrips -->
 
     <script>
+    /*
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
@@ -100,7 +101,7 @@
           map: map
         });
         markers.push(marker);
-      }*/
+      }
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
@@ -119,9 +120,10 @@
         data: {'latitude': clickCoordsLat},
       });*/
     </script>
-    <script async defer
+
+    <!--<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
-    </script>
+    </script>-->
     </div>
   </body>
 </html>
