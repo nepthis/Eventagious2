@@ -20,12 +20,13 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-     var markers = [];
-     var clickCoordsLat;
-     var clickCoordsLon;
-     document.getElementById("#Latitude").value = "4";
-     document.getElementById("#Longitude").value = "5";  
-     function initMap() {
+      document.getElementById('points').value = 10;
+      var markers = [];
+      var clickCoordsLat;
+      var clickCoordsLon;
+      document.getElementById("#Latitude").value = "4";
+      document.getElementById("#Longitude").value = "5";  
+      function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
@@ -136,7 +137,9 @@
         <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
       </div>
     </div>
-
+    <form>
+      <input type="number" id="points" value="0">
+    </form>
 
   <div class="container">
     <form action="event/create" method="post">
