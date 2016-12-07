@@ -126,12 +126,7 @@ if ($path == '/help') {
  
     global $connection;
 
-    //$UserID=$_POST["UserID"];
-
- 
-
     $FileName= $_REQUEST['FileName'];
-    echo $FileName;
     $EventID= $_REQUEST['EventID'];
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
@@ -154,7 +149,6 @@ if ($path == '/help') {
             'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
             'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
         ];
-        print_r($public_urls);
       } 
       foreach($public_urls as $urls) {
         $original=$urls['original'];

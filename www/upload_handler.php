@@ -14,7 +14,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$fileName = $_FILES['file_upl']['name'];
 		$filePath = $_FILES['file_upl']['tmp_name'];
 
-		$fields = array('EventID' => $EventID,'file' => '@' . $filePath,'fileName' =>$fileName);
+		$fields = array(
+			'EventID' => $EventID,
+			'file' => '@' . $filePath,
+			'fileName' =>$fileName,
+			'FileName'=>'file');
 		 
 		$resource = curl_init();
 		curl_setopt($resource, CURLOPT_URL, $url);
