@@ -9,26 +9,33 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 		echo $_POST['EventID'];
 
-		$url = 'https://eventagious3.appspot.com/api/?insert_img=1';
+		$url = 'https://eventagious3.appspot.com/api/?insertImg=1';
 		$header = array('Content-Type: multipart/form-data');
 		
-		$tmpfile = $_FILES['userfile']['tmp_name'];
- 		$filename = basename($_FILES['userfile']['name']);
- 		$filetype = $_FILES['userfile']['type'];
+		$tmpfile = $_FILES['file']['tmp_name'];
+ 		$filename = basename($_FILES['file']['name']);
+ 		$filetype = $_FILES['file']['type'];
 
- 		$args['file'] = new CurlFile($tmpfile, $filetype, $filename);
-		$args['EventID'] =$EventID;
-		$args['FileName'] ='file';
+
+ 		echo $_FILES['file']['tmp_name'];
+ 		echo $_FILES['file']['type'];
+ 		//$args['file'] = new CurlFile($tmpfile, $filetype, $filename);
+		$post = array (
+    		'EventID' => $EventID,
+    		'FileName' => 'file',
+    		'file_contents' => curl_file_create($_FILES['file']['tmp_name'],$_FILES['file']['type'])
+    		);
 		 
 		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_POST, true);
- 		curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $args);
-    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POST, 1);
+ 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     	$response_json = curl_exec($ch);
     	curl_close($ch);
-    	$response=json_decode($response_json, true);
+    	$response=json_decode($response_json, 1);
 		
-		echo $response['status'];
+		echo "Test";
+		print_r($response);
 
 
 
