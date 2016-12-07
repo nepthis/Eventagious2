@@ -9,3 +9,28 @@
         </p>
       </div>
     </div>
+<?php
+        echo("asdasd");
+      $url = 'https://eventagious3.appspot.com/api/?get_All_users=1';
+      $ch = curl_init($url);
+      curl_setopt($ch, CURLOPT_HTTPGET, true);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      $response_json = curl_exec($ch);
+      curl_close($ch);
+      $response=json_decode($response_json, true);
+
+      echo("<div class=\"row\">");
+      foreach($response as $row){
+        echo("<div class=\"col-md-4\">");
+        echo("<h2>".$row['username']."</h2>");
+        echo("<p>".$row['email']."</p>");
+        echo("<p>".$row['firstname']."</p>");
+        echo("<p>".$row['surname']."</p>");
+        echo("<p>".$row['section']."</p>");
+        echo("<p>".$row['isAdmin']."</p>");
+        echo("</div>");
+    }
+
+    
+
+?>
