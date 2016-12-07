@@ -26,24 +26,16 @@
             <p><a class="btn btn-default" href="index.php?action=eventInfo" role="button">View details &raquo;</a></p>
           </div>
         </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script>
-    
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-     var markers = [];
-     var clickCoordsLat;
-     var clickCoordsLon;
-     function initMap() {
+    var markers = [];
+    var clickCoordsLat;
+    var clickCoordsLon;
+    function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
@@ -54,9 +46,7 @@
           center: {lat: 65.617734, lng: 22.140293},
           zoom: 14
         });
-
         google.maps.event.addListener(map, 'click', function(event) {
-          //setMapOnAll(null);
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
@@ -105,7 +95,7 @@
               markers[i].setMap(null);
           }
       markers.length = 0;
-      }
+        }
       }
       /*
       function addMarker(location) {
@@ -115,12 +105,8 @@
         });
         markers.push(marker);
       }
-      function handleLocationError(browserHasGeolocation, myMarker, pos) {
-        myMarker.setPosition(pos);
-        myMarker.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
     </script>
+  </div>
