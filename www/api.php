@@ -128,13 +128,12 @@ if ($path == '/help') {
 
     //$UserID=$_POST["UserID"];
 
-    $altName=$_FILES[0];  
-    echo $altName;  
+ 
 
     $FileName= $_REQUEST['FileName'];
     echo $FileName;
+    echo $_FILES[$FileName]['type'];
     $EventID= $_REQUEST['EventID'];
-    echo $EventID;
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
 
@@ -158,10 +157,12 @@ if ($path == '/help') {
         ];
         print_r($public_urls);
       } 
-    $original=$public_urls["original"];
-    $original_thumb=$public_urls["original_thumb"];
-    $grayscale=$public_urls["grayscale"];
-    $grayscale_thumb=$public_urls["grayscale_thumb"];
+      foreach($public_urls as $urls) {
+        $original=$urls['original'];
+        $original_thumb=$urls['original_thumb'];
+        $grayscale=$urls['grayscale'];
+        $grayscale_thumb=$urls['grayscale_thumb'];
+      }
     //Filen måste heta file annars kommer det inte att gå att ladda upp...
     $sth = $connection->prepare('INSERT INTO EventIMG
           SET EventID=:EventID,Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb');
