@@ -21,12 +21,12 @@
       echo("<div class=\"row\">");
       foreach($response as $row){
         echo("<div class=\"col-md-4\">");
-        echo("<h2>Username:".$row['username']."</h2>");
-        echo("<p>E-mail:".$row['email']."</p>");
-        echo("<p>First name:".$row['firstname']."</p>");
-        echo("<p>Surname:".$row['surname']."</p>");
-        echo("<p>Section:".$row['section']."</p>");
-        echo("<p>Admin:".$row['isAdmin']."</p>");
+        echo("<h2>Username: ".$row['username']."</h2>");
+        echo("<p>E-mail: ".$row['email']."</p>");
+        echo("<p>First name: ".$row['firstname']."</p>");
+        echo("<p>Surname: ".$row['surname']."</p>");
+        echo("<p>Section: ".$row['section']."</p>");
+        echo("<p>Admin: ".$row['isAdmin']."</p>");
         echo("</div>");
     }
 
