@@ -2,7 +2,7 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
     //Funkar inte riktigt som den ska... den gå in i if satsen fast den inte borde göra detta.
-  if (isset($_POST['UserID'], $_POST['Eventname'], $_POST['Description'], $_POST['Adress'], $_POST['Longitude'], $_POST['Latitude'], $_POST['Section'])) {
+  if (isset($_POST['UserID'], $_POST['Eventname'], $_POST['Description'], $_POST['Adress'], $_POST['Longitude'], $_POST['Latitude'], $_POST['Section'], $_POST['EventDate'])) {
     //$Username=$_SESSION["username"];
     $UserID=$_POST["UserID"];
     $Eventname=$_POST["Eventname"];
@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
     $Section=$_POST["Section"];
+    $EventDate=$_POST["EventDate"];
 
     $data=array(
     'UserID' => $UserID,
@@ -20,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     'Description' => $Description,
     'Section' => $Section,
     'Eventname' => $Eventname,
+    'EventDate' => $EventDate,
     );
     $url = 'https://eventagious3.appspot.com/api/?event=1';
     $ch = curl_init($url);

@@ -45,10 +45,14 @@
         <span class="input-group-addon" id="sizing-addon6">@</span>-->
         <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
       <!--</div>-->
-      <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
         <input type="text" class="form-control" name="Section" id="Section" placeholder="Section" aria-describedby="sizing-addon1">
+      </div>
+      <p>Fylla i vilken sektion som det ska vara </p>
+      <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon7">@</span>
+        <input type="text" class="form-control" name="Date" id="Date" placeholder="Date" aria-describedby="sizing-addon1">
       </div>
       <input type="button" 
                    value="Create" 
