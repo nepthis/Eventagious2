@@ -95,7 +95,6 @@
             <a class="navbar-brand" href="index.php?action=event">Events</a>
             <a class="navbar-brand" href="index.php?action=register">Register</a>
             <a class="navbar-brand" href="index.php?action=login">Login</a>
-            <a class="navbar-brand" href="index.php?action=admin">Admin</a>
             <!--<a class="navbar-brand" href="https://eventagious3.appspot.com/login">Login</a>-->
           </div>
         </div>
