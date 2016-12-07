@@ -4,14 +4,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
       //if (isset($_POST['file[]'],$_POST['EventID'])) {
-/*
+
 		$EventID = $_POST['EventID'];
 
 		echo $_POST['EventID'];
 
 		$url = 'https://eventagious3.appspot.com/api/?insert_img=1';
 		$header = array('Content-Type: multipart/form-data');
-		$fields = array('EventID' => $EventID,'file' => '@' . $_FILES['file']['tmp_name'][0]);
+		$fileName = $_FILES['file_upl']['name'];
+		$filePath = $_FILES['file_upl']['tmp_name'];
+
+		$fields = array('EventID' => $EventID,'file' => '@' . $filePath,'fileName' =>$fileName);
 		 
 		$resource = curl_init();
 		curl_setopt($resource, CURLOPT_URL, $url);
@@ -25,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$response=json_decode($response_json, true);
 		print_r($response);
 
-*/
+/*
 	$EventID= $_POST['EventID'];
 	$bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
 	$root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
@@ -67,4 +70,4 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	<a href="/">Upload More</a>
 	</body>
 	</html>
-
+*/
