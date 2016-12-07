@@ -136,14 +136,12 @@ if ($path == '/help') {
     echo "Test2";
     print_r($_FILES);
     print_r($_REQUEST);
-    echo json_encode($_FILES);
-
+    echo $_FILES['file']['name'];
     $EventID= $_REQUEST['EventID'];
     echo $EventID;
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
-    echo $root_path;
-    echo $bucket;
+
     $public_urls = [];
     foreach($_FILES['file']['name'] as $idx => $name) {
       if ($_FILES['file']['type'][$idx] === 'image/jpeg') {
