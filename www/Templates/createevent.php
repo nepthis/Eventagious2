@@ -94,6 +94,7 @@
           document.getElementById('Longitude').value = event.latLng.lng();
           document.getElementById('Latitude').value = event.latLng.lat();
           document.getElementById('points').value = 5;
+          alert(document.getElementById('points').value);
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
@@ -107,6 +108,7 @@
           document.getElementById('points').value = event.latLng.lat();
           document.getElementById('Longitude').value = event.latLng.lng();
           document.getElementById('Latitude').value = 5;
+          alert(document.getElementById('points').value);
         });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
