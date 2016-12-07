@@ -137,6 +137,37 @@ if ($path == '/help') {
     print_r($_REQUEST);
     echo json_encode($_FILES);
 
+    $EventID= $_REQUEST['EventID'];
+    echo $EventID;
+    $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
+    $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
+    echo $root_path;
+    echo $bucket;
+    $public_urls = [];
+    foreach($_FILES['file']['name'] as $idx => $name) {
+      if ($_FILES['file']['type'][$idx] === 'image/jpeg') {
+        $im = imagecreatefromjpeg($_FILES['file']['tmp_name'][$idx]);
+        imagefilter($im, IMG_FILTER_GRAYSCALE);
+        $grayscale = $root_path .  'gray/' . $name;
+        imagejpeg($im, $grayscale);
+     
+        $original = $root_path . 'original/' . $name;
+        move_uploaded_file($_FILES['file']['tmp_name'][$idx], $original);
+     
+        $public_urls[] = [
+            'name' => $name,
+            'original' => CloudStorageTools::getImageServingUrl($original),
+            'original_thumb' => CloudStorageTools::getImageServingUrl($original, ['size' => 75]),
+            'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
+            'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
+        ];
+      } 
+    }
+
+
+
+
+
 /*
     //Filen måste heta file annars kommer det inte att gå att ladda upp...
         $sth = $connection->prepare('INSERT INTO EventIMG
