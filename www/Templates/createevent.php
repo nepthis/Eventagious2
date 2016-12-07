@@ -91,6 +91,8 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
           //setMapOnAll(null);
+          document.getElementById('Longitude').value = 100;
+          document.getElementById('Latitude').value = 1000;
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
@@ -99,8 +101,6 @@
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
           markers.push(lastMarker);
-          document.getElementById('Longitude').value = 100;
-          document.getElementById('Latitude').value = 1000;
         });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
