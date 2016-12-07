@@ -91,8 +91,9 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
           //setMapOnAll(null);
-          document.getElementById('Longitude').value = 100;
-          document.getElementById('Latitude').value = 1000;
+          document.getElementById('Longitude').value = event.latLng.lng();
+          document.getElementById('Latitude').value = event.latLng.lat();
+          document.getElementById('points').value = event.latLng.lat();
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
