@@ -121,7 +121,7 @@ if ($path == '/help') {
       header("HTTP/1.0 405 Method Not Allowed");
       break;
   }
-
+  //Man måste skicka in namnet på filen genom en var "FileName"
   function insert_img(){
  
     global $connection;
@@ -132,21 +132,20 @@ if ($path == '/help') {
 
     $FileName= $_REQUEST['FileName'];
     echo $FileName;
-    echo $_FILES[$FileName]['type'];
     $EventID= $_REQUEST['EventID'];
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
 
     $public_urls = [];
-    $name = $_FILES['file']['name'];
-    if ($_FILES['file']['type'] === 'image/jpeg') {
-        $im = imagecreatefromjpeg($_FILES['file']['tmp_name']);
+    $name = $_FILES[$FileName]['name'];
+    if ($_FILES[$FileName]['type'] === 'image/jpeg') {
+        $im = imagecreatefromjpeg($_FILES[$FileName]['tmp_name']);
         imagefilter($im, IMG_FILTER_GRAYSCALE);
         $grayscale = $root_path .  'gray/' . $name;
         imagejpeg($im, $grayscale);
      
         $original = $root_path . 'original/' . $name;
-        move_uploaded_file($_FILES['file']['tmp_name'], $original);
+        move_uploaded_file($_FILES[$FileName]['tmp_name'], $original);
      
         $public_urls[] = [
             'name' => $name,

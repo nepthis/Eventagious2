@@ -83,16 +83,14 @@
 
                     $_SESSION['user_id'] = $user_id;
                     // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$username);
+                    //$username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$username);
 
-                    $_SESSION['username'] = $username;
-                    $_SESSION['login_string'] = hash('sha512',$db_password . $user_browser);
+                    //$_SESSION['username'] = $username;
+                    //$_SESSION['login_string'] = hash('sha512',$db_password . $user_browser);
 
                     // Login successful.
                     return true;
                 } else {
-                    echo $db_password;
-                    echo $password;
                     echo "Fel passord12";
                     // Password is not correct
                     // We record this attempt in the database
@@ -112,6 +110,7 @@
 }
 
 
+//Fixa så att den funkar...
 
 function checkbrute($user_id, $database) {
     // Get timestamp of current time 
