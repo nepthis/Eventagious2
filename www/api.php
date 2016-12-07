@@ -160,6 +160,7 @@ if ($path == '/help') {
         $grayscale = CloudStorageTools::getImageServingUrl($grayscale);
         $grayscale_thumb = CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]);
         echo("test inifran")
+        echo $original;
       } 
     }
 }
