@@ -97,8 +97,8 @@
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
           console.log("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
-          //document.getElementById('Longitude').value = clickCoordsLon;
-          //document.getElementById('Latitude').value = clickCoordsLat;
+          document.getElementById('Longitude').value = clickCoordsLon;
+          document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
         });
         /*
