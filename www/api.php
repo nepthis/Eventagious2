@@ -57,12 +57,12 @@ if ($path == '/help') {
       break;
     case 'POST':
     //Försöker fixa med bilderna...
-      /*if(!empty($_GET["insertImg"]))
+      if(!empty($_GET["insertImg"]))
       {
           insert_img();
-      }*/
+      }
       //Insert Event to event table
-      if(!empty($_GET["event"]))
+      else if(!empty($_GET["event"]))
       {
           insert_Event();
       }
@@ -121,7 +121,7 @@ if ($path == '/help') {
       break;
   }
 
-  /*function insert_img(){
+  function insert_img(){
  
     global $connection;
 
@@ -144,7 +144,6 @@ if ($path == '/help') {
         $sth->bindParam(':grayscale',$grayscale);
         $sth->bindParam(':grayscale_thumb',$grayscale_thumb);
 
-
         if($sth->execute())
         {
           $response=array(
@@ -159,11 +158,9 @@ if ($path == '/help') {
             'status_message' =>'Product Updation Failed.'
           );
         }
-      } 
-    }
     header('Content-Type: application/json');
     echo json_encode($response);
-  }*/
+  }
 
 
   function insert_Event()
