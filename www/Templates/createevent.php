@@ -96,8 +96,9 @@
           });
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
-          document.getElementById('Longitude').value = clickCoordsLon;
-          document.getElementById('Latitude').value = clickCoordsLat;
+          alert("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
+          //document.getElementById('Longitude').value = clickCoordsLon;
+          //document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
         });
         /*
