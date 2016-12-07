@@ -75,6 +75,8 @@
       var markers = [];
       var clickCoordsLat;
       var clickCoordsLon;
+      var clickCoords;
+      var geocoder = new google.maps.Geocoder;
       function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
@@ -96,6 +98,7 @@
           });
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
+          clickCoords = event.latLng;
           console.log("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
           document.getElementById('Longitude').value = clickCoordsLon;
           document.getElementById('Latitude').value = clickCoordsLat;
@@ -140,6 +143,25 @@
           handleLocationError(false, myMarker, map.getCenter());
         }
         
+      }
+      function geocodeLatLng(geocoder, map) {
+        var latlng = {lat: parseFloat(clickCoordsLat), lng: parseFloat(clickCoordsLon)};
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+            if (results[1]) {
+              map.setZoom(11);
+              var marker = new google.maps.Marker({
+                position: latlng,
+                map: map
+              document.getElementById('Adress').value = results[1].formatted_address;
+              });
+            } else {
+              window.alert('No results found');
+            }
+          } else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        });
       }
       function deleteMarkers() {
         if (markers) {
