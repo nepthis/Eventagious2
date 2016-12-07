@@ -42,6 +42,11 @@ if ($path == '/help') {
         $username=$_GET["user_id_username"];
         get_user_password($username);
       }
+      else if(!empty($_GET["eventImg"]))
+      {
+        $event_id=$_GET["eventImg"];
+        get_eventImg($event_id);
+      }
       // Retrive event
       else if(!empty($_GET["event_id"]))
       {
@@ -321,15 +326,14 @@ if ($path == '/help') {
     echo json_encode($response);
   }
 
-  // get function for events
-  function get_event($product_id=0){ 
+  function get_eventImg($product_id=0){ 
     $EventID = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
     if($EventID != 0)
     {
       $sth = $connection->prepare('SELECT *
-          FROM Event
+          FROM EventIMG
           WHERE EventID = :id');
       $sth->bindParam(':id',$EventID);
       
@@ -337,6 +341,28 @@ if ($path == '/help') {
       $sth = $connection->prepare('SELECT *
           FROM Event');
     }
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+
+  // get function for events
+  function get_event($product_id=0){ 
+    $EventID = $product_id;
+    global $connection;
+    //$query="SELECT * FROM events";
+
+    $sth = $connection->prepare('SELECT *
+          FROM Event
+          WHERE EventID = :id');
+    $sth->bindParam(':id',$EventID);
     
     $response=array();
     $sth->execute();
