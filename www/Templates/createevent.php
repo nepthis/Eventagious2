@@ -91,10 +91,6 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
           //setMapOnAll(null);
-          document.getElementById('Longitude').value = event.latLng.lng();
-          document.getElementById('Latitude').value = event.latLng.lat();
-          document.getElementById('points').value = 5;
-          alert(document.getElementById('points').value);
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
@@ -102,14 +98,17 @@
           });
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
+          document.getElementById('Longitude').value = clickCoordsLon;
+          document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
         });
+        /*
         google.maps.event.addListener(map, 'rightclick', function(event) {
           document.getElementById('points').value = event.latLng.lat();
           document.getElementById('Longitude').value = event.latLng.lng();
           document.getElementById('Latitude').value = 5;
           alert(document.getElementById('points').value);
-        });
+        });*/
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
@@ -143,8 +142,6 @@
         }
         
       }
-      document.getElementById('Longitude').value = clickCoordsLon;
-      document.getElementById('Latitude').value = clickCoordsLat;
       function deleteMarkers() {
         if (markers) {
          for (i=0; i < markers.length; i++) {
