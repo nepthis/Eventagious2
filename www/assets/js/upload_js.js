@@ -17,20 +17,22 @@ $(document).ready(function (e) {
       {
     if(data=='invalid file')
     {
+      console.log("del i datan...");
      // invalid file format.
-     $("#err").html("Invalid File !").fadeIn();
+     //$("#err").html("Invalid File !").fadeIn();
     }
     else
     {
      // view uploaded file.
-     
-     $("#preview").html(data).fadeIn();
-     $("#form")[0].reset(); 
+     console.log("det funkar...");
+     //$("#preview").html(data).fadeIn();
+     //$("#form")[0].reset(); 
     }
       },
      error: function(e) 
       {
-    $("#err").html(e).fadeIn();
+      console.log("Error!...");
+    //$("#err").html(e).fadeIn();
       }          
     });
  }));
