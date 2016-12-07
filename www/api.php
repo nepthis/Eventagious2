@@ -1,5 +1,10 @@
 <?php
+header('Access-Control-Allow-Origin: http://localhost:8080');
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Headers "origin, x-requested-with, content-type"');
+header('Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"');
 use google\appengine\api\cloud_storage\CloudStorageTools;
+
 /*$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($path == '/help') {
