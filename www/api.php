@@ -132,8 +132,12 @@ if ($path == '/help') {
     $grayscale=$_POST["grayscale"];
     $grayscale_thumb=$_POST["grayscale_thumb"];
 
+    echo "Test2";
+    print_r($_FILES);
+    print_r($_REQUEST);
+    echo json_encode($_FILES);
 
-
+/*
     //Filen måste heta file annars kommer det inte att gå att ladda upp...
         $sth = $connection->prepare('INSERT INTO EventIMG
           SET EventID=:EventID,Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb');
@@ -159,7 +163,7 @@ if ($path == '/help') {
           );
         }
     header('Content-Type: application/json');
-    echo json_encode($response);
+    echo json_encode($response);*/
   }
 
 
