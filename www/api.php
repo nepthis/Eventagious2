@@ -213,6 +213,7 @@ if ($path == '/help') {
     $sth->bindParam(':Description',$Description);
     $sth->bindParam(':Section',$Section);
     $sth->bindParam(':Eventname',$Eventname);
+    $sth->bindParam(':EventDate',$EventDate);
 
     if($sth->execute())
     {
