@@ -153,9 +153,11 @@
               document.getElementById('Adress').value = results[1].formatted_address;
             } else {
               window.alert('No results found');
+              console.log("status");
             }
           } else {
             window.alert('Geocoder failed due to: ' + status);
+            console.log("resp");
           }
         });
       }
