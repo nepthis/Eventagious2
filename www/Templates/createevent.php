@@ -37,14 +37,14 @@
         <input type="text" class="form-control" name="Adress" id="Adress" placeholder="Adress" aria-describedby="sizing-addon1">
       </div>
       <p>Fylla i vart eventet ska vara </p>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon5">@</span>
-        <input type="text" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon6">@</span>
-        <input type="text" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
-      </div>
+     <!-- <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon5">@</span>-->
+        <input type="hidden" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
+     <!-- </div>-->
+      <!--<div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon6">@</span>-->
+        <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
+      <!--</div>-->
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
