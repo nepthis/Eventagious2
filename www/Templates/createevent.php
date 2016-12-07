@@ -145,8 +145,8 @@
       }
       function geocodeLatLng(geocoder, map) {
         var geocoder = new google.maps.Geocoder;
-        var latlng = {lat: parseFloat(clickCoordsLat), lng: parseFloat(clickCoordsLon)};
-        geocoder.geocode({'location': latlng}, function(results, status) {
+        var clickCoords = {lat: parseFloat(clickCoordsLat), lng: parseFloat(clickCoordsLon)};
+        geocoder.geocode({'location': clickCoords}, function(results, status) {
           if (status === 'OK') {
             if (results[1]) {
               console.log(results[1].formatted_address);
