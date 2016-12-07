@@ -11,27 +11,35 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 		$url = 'https://eventagious3.appspot.com/api/?insert_img=1';
 		$header = array('Content-Type: multipart/form-data');
-		$fileName = $_FILES['file_upl']['name'];
-		$filePath = $_FILES['file_upl']['tmp_name'];
+		
+		echo $_FILES['file']['name'];
+		echo $_FILES['file']['tmp_name'];
 
-		$fields = array(
+		echo $_FILES['file']['type'];
+
+		$data = array(
 			'EventID' => $EventID,
-			'file' => '@' . $filePath,
-			'fileName' =>$fileName,
-			'FileName'=>'file');
+			'FileName'=>'file',
+			'file' => '@'.$_FILES['file']['tmp_name'].';filename='. $_FILES['file']['name']. ';type='.$_FILES['file']['type'].'');
 		 
 		$resource = curl_init();
-		curl_setopt($resource, CURLOPT_URL, $url);
-		curl_setopt($resource, CURLOPT_HTTPHEADER, $header);
-		curl_setopt($resource, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($resource, CURLOPT_POST, 1);
-		curl_setopt($resource, CURLOPT_POSTFIELDS, $fields);
-		$response_json = json_decode(curl_exec($resource));
-		curl_close($resource);
+		curl_setopt($ch, CURLOPT_POST, true);
+    	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    	$response_json = curl_exec($ch);
+    	curl_close($ch);
+    	$response=json_decode($response_json, true);
 
 		$response=json_decode($response_json, true);
-		print_r($response);
+		
+		echo $response['status'];
 
+
+
+
+
+
+}
 /*
 	$EventID= $_POST['EventID'];
 	$bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
