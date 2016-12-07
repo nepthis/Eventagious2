@@ -333,7 +333,7 @@ if ($path == '/help') {
     if($EventID != 0)
     {
       $sth = $connection->prepare('SELECT *
-          FROM Event
+          FROM EventIMG
           WHERE EventID = :id');
       $sth->bindParam(':id',$EventID);
       
@@ -360,7 +360,7 @@ if ($path == '/help') {
     //$query="SELECT * FROM events";
 
     $sth = $connection->prepare('SELECT *
-          FROM EventIMG
+          FROM Event
           WHERE EventID = :id');
     $sth->bindParam(':id',$EventID);
     
