@@ -96,7 +96,7 @@
           });
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
-          alert("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
+          console.log("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
           //document.getElementById('Longitude').value = clickCoordsLon;
           //document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
