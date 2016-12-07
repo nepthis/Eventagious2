@@ -127,11 +127,11 @@ if ($path == '/help') {
     global $connection;
 
     //$UserID=$_POST["UserID"];
-    $EventID=$_POST["EventID"];
+    /*$EventID=$_POST["EventID"];
     $original=$_POST["original"];
     $original_thumb=$_POST["original_thumb"];
     $grayscale=$_POST["grayscale"];
-    $grayscale_thumb=$_POST["grayscale_thumb"];
+    $grayscale_thumb=$_POST["grayscale_thumb"];*/
 
     echo "Test2";
     print_r($_FILES);
@@ -142,8 +142,8 @@ if ($path == '/help') {
     echo $EventID;
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
     $root_path = 'gs://' .$bucket. '/img/'.$EventID.'/';
-    echo $root_path;
-    echo $bucket;
+    //echo $root_path;
+
     $public_urls = [];
     foreach($_FILES['file']['name'] as $idx => $name) {
       if ($_FILES['file']['type'][$idx] === 'image/jpeg') {
@@ -155,21 +155,15 @@ if ($path == '/help') {
         $original = $root_path . 'original/' . $name;
         move_uploaded_file($_FILES['file']['tmp_name'][$idx], $original);
      
-        $public_urls[] = [
-            'name' => $name,
-            'original' => CloudStorageTools::getImageServingUrl($original),
-            'original_thumb' => CloudStorageTools::getImageServingUrl($original, ['size' => 75]),
-            'grayscale' => CloudStorageTools::getImageServingUrl($grayscale),
-            'grayscale_thumb' => CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]),
-        ];
+        $original = CloudStorageTools::getImageServingUrl($original);
+        $original_thumb =CloudStorageTools::getImageServingUrl($original, ['size' => 75]);
+        $grayscale = CloudStorageTools::getImageServingUrl($grayscale);
+        $grayscale_thumb = CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]);
+        echo("test inifran")
       } 
     }
-
-
-
-
-
-/*
+}
+    /*
     //Filen måste heta file annars kommer det inte att gå att ladda upp...
         $sth = $connection->prepare('INSERT INTO EventIMG
           SET EventID=:EventID,Image_URL=:original,Image_Thumbnail_URL=:original_thumb,Image_Gray_URL=:grayscale, Image_Gray_Thumbnail_URL=:grayscale_thumb');
@@ -195,8 +189,8 @@ if ($path == '/help') {
           );
         }
     header('Content-Type: application/json');
-    echo json_encode($response);*/
-  }
+    echo json_encode($response);
+  }*/
 
 
   function insert_Event()
