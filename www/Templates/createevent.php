@@ -52,7 +52,7 @@
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
-        <input type="text" class="form-control" name="EventDate" id="EventDate" placeholder="Date" aria-describedby="sizing-addon1">
+        <input type="text" class="form-control" name="EventDate" id="EventDate" placeholder="Date YYYY-MM-DD" aria-describedby="sizing-addon1">
       </div>
       <input type="button" 
                    value="Create" 
