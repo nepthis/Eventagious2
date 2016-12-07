@@ -10,7 +10,6 @@
       </div>
     </div>
 <?php
-        echo("asdasd");
       $url = 'https://eventagious3.appspot.com/api/?get_All_users=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -22,12 +21,12 @@
       echo("<div class=\"row\">");
       foreach($response as $row){
         echo("<div class=\"col-md-4\">");
-        echo("<h2>".$row['username']."</h2>");
-        echo("<p>".$row['email']."</p>");
-        echo("<p>".$row['firstname']."</p>");
-        echo("<p>".$row['surname']."</p>");
-        echo("<p>".$row['section']."</p>");
-        echo("<p>".$row['isAdmin']."</p>");
+        echo("<h2>Username:".$row['username']."</h2>");
+        echo("<p>E-mail:".$row['email']."</p>");
+        echo("<p>First name:".$row['firstname']."</p>");
+        echo("<p>Surname:".$row['surname']."</p>");
+        echo("<p>Section:".$row['section']."</p>");
+        echo("<p>Admin:".$row['isAdmin']."</p>");
         echo("</div>");
     }
 
