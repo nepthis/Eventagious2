@@ -23,6 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     );
     echo $Longitude;
     echo $Latitude;
+    echo "cancer";
     $url = 'https://eventagious3.appspot.com/api/?event=1';
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POST, true);
