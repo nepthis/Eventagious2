@@ -23,6 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     'Eventname' => $Eventname,
     'EventDate' => $EventDate,
     );
+    echo ($EventDate);
     $url = 'https://eventagious3.appspot.com/api/?event=1';
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POST, true);
