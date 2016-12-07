@@ -155,12 +155,12 @@ if ($path == '/help') {
         $original = $root_path . 'original/' . $name;
         move_uploaded_file($_FILES['file']['tmp_name'][$idx], $original);
      
-        $original = CloudStorageTools::getImageServingUrl($original);
-        $original_thumb =CloudStorageTools::getImageServingUrl($original, ['size' => 75]);
-        $grayscale = CloudStorageTools::getImageServingUrl($grayscale);
-        $grayscale_thumb = CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]);
+        $original2 = CloudStorageTools::getImageServingUrl($original);
+        $original_thumb2 =CloudStorageTools::getImageServingUrl($original, ['size' => 75]);
+        $grayscale2 = CloudStorageTools::getImageServingUrl($grayscale);
+        $grayscale_thumb2 = CloudStorageTools::getImageServingUrl($grayscale, ['size' => 75]);
         echo("test inifran")
-        echo $original;
+        echo $original2;
       } 
     }
 }
