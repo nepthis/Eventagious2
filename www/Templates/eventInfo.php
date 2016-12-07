@@ -1,4 +1,6 @@
+<script type="text/javascript" src="assets/js/upload_js.js"></script>
 <?php
+
 		$EventID = $_GET['EventID'];
 	    $user_id = $_SESSION['user_id'];
 
@@ -29,7 +31,26 @@
 	        echo("<p>".$row['Section']."</p>");
 	        echo("</div>");
 	    }
+	    //Måste fixa så att den hämtar rätt ifrån APIn och så att den läggaer till rätt...
+
+	   	$url = 'https://eventagious3.appspot.com/api/?event_id='.$EventID.'';
+	    $ch = curl_init($url);
+	    curl_setopt($ch, CURLOPT_HTTPGET, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    $response_json = curl_exec($ch);
+	    curl_close($ch);
+	    $response=json_decode($response_json, true);
+
 		echo ("<div class=\"col-lg-6\">");
 	     	echo ("<img src=\"assets/img/Afterski.jpg\" style=\"width: 100%; height: 100%\">");
 		echo ("</div>");
+
+		echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");
+  		echo ("Send these files:<p/>");
+  		echo ("<input name=\"file\" type=\"file\" id =\"file\" multiple=\"multiple\"/><p/>");
+  		echo ("<input name=\"EventID\" type=\"hidden\" id=\"EventID\" placeholder=\"EventID\" value=".$EventID."/><p/>");
+  		echo ("<input name=\"FileName\" type=\"hidden\" id=\"FileName\" placeholder=\"FileName\" value=\"file\"/><p/>");
+  		echo ("<input id= \"button\" type=\"submit\" value=\"Send files\" />");
+
+
 		echo ("</div>");
