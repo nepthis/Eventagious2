@@ -47,8 +47,8 @@
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
           markers.push(lastMarker);
-          document.getElementById("#Latitude").value = parseInt(4);
-          document.getElementById("#Longitude").value = parseInt(5);
+          document.getElementById("#Latitude").value = parseInt("4");
+          document.getElementById("#Longitude").value = parseInt("5");
         });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
