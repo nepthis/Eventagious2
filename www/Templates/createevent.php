@@ -77,7 +77,7 @@
       var clickCoordsLon;
       var clickCoords;
       function initMap() {
-
+        var geocoder = new google.maps.Geocoder;
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
@@ -102,6 +102,7 @@
           document.getElementById('Longitude').value = clickCoordsLon;
           document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
+          geocodeLatLng(geocoder, map);
         });
         /*
         google.maps.event.addListener(map, 'rightclick', function(event) {
@@ -144,7 +145,6 @@
         
       }
       function geocodeLatLng(geocoder, map) {
-        var geocoder = new google.maps.Geocoder;
         var clickCoords = {lat: parseFloat(clickCoordsLat), lng: parseFloat(clickCoordsLon)};
         geocoder.geocode({'location': clickCoords}, function(results, status) {
           if (status === 'OK') {
