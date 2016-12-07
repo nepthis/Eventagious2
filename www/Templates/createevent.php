@@ -75,8 +75,6 @@
       var markers = [];
       var clickCoordsLat;
       var clickCoordsLon;
-      document.getElementById('Longitude').value = 10;
-      document.getElementById('Latitude').value = 100;
       function initMap() {
 
         var mapObject = ["Test", 65.619179, 22.138556]
