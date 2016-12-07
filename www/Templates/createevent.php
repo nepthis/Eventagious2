@@ -103,6 +103,11 @@
           clickCoordsLon = event.latLng.lng();
           markers.push(lastMarker);
         });
+        google.maps.event.addListener(map, 'rightclick', function(event) {
+          document.getElementById('points').value = event.latLng.lat();
+          document.getElementById('Longitude').value = event.latLng.lng();
+          document.getElementById('Latitude').value = 5;
+        });
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
