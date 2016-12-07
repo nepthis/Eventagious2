@@ -15,9 +15,6 @@
         <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
       </div>
     </div>
-    <form>
-      <input type="number" id="points" value="0">
-    </form>
 
   <div class="container">
     <form action="event/create" method="post">
@@ -40,14 +37,14 @@
         <input type="text" class="form-control" name="Adress" id="Adress" placeholder="Adress" aria-describedby="sizing-addon1">
       </div>
       <p>Fylla i vart eventet ska vara </p>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon5">@</span>
-        <input type="text" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon6">@</span>
-        <input type="text" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
-      </div>
+     <!-- <div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon5">@</span>-->
+        <input type="hidden" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
+     <!-- </div>-->
+      <!--<div class="input-group input-group-lg" style="padding-top: 5px">
+        <span class="input-group-addon" id="sizing-addon6">@</span>-->
+        <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
+      <!--</div>-->
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
@@ -75,15 +72,16 @@
       var markers = [];
       var clickCoordsLat;
       var clickCoordsLon;
+      var clickCoords;
       function initMap() {
-
+        var geocoder = new google.maps.Geocoder;
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
         var lastMarker;
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 65.617734, lng: 22.140293},
+          center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
 
@@ -96,10 +94,11 @@
           });
           clickCoordsLat = event.latLng.lat();
           clickCoordsLon = event.latLng.lng();
-          console.log("Lat=" + clickCoordsLat + "; Lng=" + clickCoordsLon);
+          clickCoords = event.latLng;
           document.getElementById('Longitude').value = clickCoordsLon;
           document.getElementById('Latitude').value = clickCoordsLat;
           markers.push(lastMarker);
+          geocodeLatLng(geocoder, map);
         });
         /*
         google.maps.event.addListener(map, 'rightclick', function(event) {
@@ -140,6 +139,21 @@
           handleLocationError(false, myMarker, map.getCenter());
         }
         
+      }
+      function geocodeLatLng(geocoder, map) {
+        var clickCoords = {lat: parseFloat(clickCoordsLat), lng: parseFloat(clickCoordsLon)};
+        geocoder.geocode({'location': clickCoords}, function(results, status) {
+          if (status === 'OK') {
+            if (results[1]) {
+              console.log(results[1].formatted_address);
+              document.getElementById('Adress').value = results[1].formatted_address;
+            } else {
+              window.alert('No results found');
+            }
+          } else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        });
       }
       function deleteMarkers() {
         if (markers) {
@@ -184,4 +198,3 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
     </script>
-  <script type="text/javascript">document.getElementById('points').value = 10;</script>
