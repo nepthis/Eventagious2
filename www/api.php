@@ -136,7 +136,7 @@ if ($path == '/help') {
     echo "Test2";
     print_r($_FILES);
     print_r($_REQUEST);
-    echo $_FILES['file']['name'];
+    echo $_FILES['file']['name'][0];
     $EventID= $_REQUEST['EventID'];
     echo $EventID;
     $bucket = CloudStorageTools::getDefaultGoogleStorageBucketName();
