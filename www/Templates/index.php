@@ -41,15 +41,16 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var markers = [];
-      var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 65.617771028118, lng: 22.1387557980779},
-          zoom: 14
-        });
+      var map;
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 65.617771028118, lng: 22.1387557980779},
+          zoom: 14
+        });
         var mapCord = [mapObject,mapObject2,mapObject3];
         
         for (var i = mapCord.length - 1; i >= 0; i--) {
