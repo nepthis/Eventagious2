@@ -65,7 +65,7 @@
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
-
+        
         google.maps.event.addListener(map, 'click', function(event) {
           //setMapOnAll(null);
           deleteMarkers();
