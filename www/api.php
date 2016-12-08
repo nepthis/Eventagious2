@@ -455,6 +455,7 @@ if ($path == '/help') {
   function get_event_location($product_id)
   { 
     $Eventname = $product_id;
+    echo ($Eventname);
     global $connection;
     if(!empty($Eventname))
     {
