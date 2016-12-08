@@ -107,7 +107,7 @@
       }
       var data = [];
       $.get( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
-        alert( "Data Loaded: " + data );
+        alert( "Data Loaded: " + data.Latitude );
       });
     </script>
     <script async defer
