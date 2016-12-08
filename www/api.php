@@ -459,6 +459,7 @@ if ($path == '/help') {
     global $connection;
     if(!empty($Eventname))
     {
+      echo ($Eventname)
       $sth = $connection->prepare('SELECT Longitude, Latitude
           FROM Event
           WHERE Eventname = :Eventname');
