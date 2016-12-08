@@ -64,6 +64,9 @@ if ($path == '/help') {
       else if(!empty($_GET["get_All_users"])){
         get_All_users();
       }
+      else if(!empty($_GET["get_event_location"])){
+        get_event_location($Eventname);
+      }
       else
       {
         echo json_encode("fel i GET");
@@ -448,7 +451,31 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+  function get_event_location($product_id)
+  { 
+    $Eventname = $product_id;
+    global $connection;
+    if(!empty($Eventname))
+    {
+      $sth = $connection->prepare('SELECT Longitude, Latitude
+          FROM Event
+          WHERE Eventname = :Eventname');
+      $sth->bindParam(':Eventname',$Eventname);
+      
+    }else{
+      echo json_encode("Fel i eventname");
+    }
+    
+    $response=array();
+    $sth->execute();
 
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
 
 
   function delete_User($product_id)
