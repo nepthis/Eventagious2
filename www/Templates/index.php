@@ -105,10 +105,9 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-      var data = [];
-      $.get( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
-        var obj = JSON.parse(data);
-        alert( "Data Loaded: " + obj.Longitude );
+
+      $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
+        alert( "Data Loaded: " + data );
       });
       //data.latitude
     </script>
