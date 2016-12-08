@@ -61,6 +61,9 @@ if ($path == '/help') {
       else if(!empty($_GET["get_all_events"])){
         get_All_events();
       }
+      else if(!empty($_GET["get_All_users"])){
+        get_All_users();
+      }
       else
       {
         echo json_encode("fel i GET");
@@ -279,8 +282,22 @@ if ($path == '/help') {
     echo json_encode($response);
   }
 
+  function get_All_users(){ 
+    global $connection;
 
-  // get function for events
+    $sth = $connection->prepare('SELECT *
+          FROM members');
+
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
   function get_All_events_user($product_id=0){ 
     $UserID = $product_id;
     global $connection;
