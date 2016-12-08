@@ -105,7 +105,7 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-      $.get( "https://eventagious3.appspot.com/api/?get_event_location=ANANASFEST", function( data ) {
+      $.get( "https://eventagious3.appspot.com/api/?get_event_location='ANANASFEST'", function( data ) {
         alert( "Data Loaded: " + data );
       });
     </script>
