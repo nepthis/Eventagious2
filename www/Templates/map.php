@@ -1,8 +1,8 @@
-    <div class="jumbotron">
+    <!--<div class="jumbotron">
       <div class="container">
           <!-- <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>-->
-      </div>
-    </div>
+      <!--</div>
+    </div>-->
     <div class="container">
           <div id="map" style="height: 500px; width:1200px; text-align: center; padding-top: 0px;"></div>
       </div>
