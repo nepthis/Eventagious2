@@ -90,7 +90,6 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-          //setMapOnAll(null);
           deleteMarkers();
           var lastMarker = new google.maps.Marker({
             position: event.latLng,
@@ -104,13 +103,6 @@
           markers.push(lastMarker);
           geocodeLatLng(geocoder, map);
         });
-        /*
-        google.maps.event.addListener(map, 'rightclick', function(event) {
-          document.getElementById('points').value = event.latLng.lat();
-          document.getElementById('Longitude').value = event.latLng.lng();
-          document.getElementById('Latitude').value = 5;
-          alert(document.getElementById('points').value);
-        });*/
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
@@ -167,37 +159,12 @@
       markers.length = 0;
       }
       }
-      /*
-      function addMarker(location) {
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-        markers.push(marker);
-      }*/
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-      /*
-      $.ajax({
-        type: 'POST',
-        url: 'coords_handler.php',
-        data: {'longitude': clickCoordsLon},
-      });
-      $.ajax({
-        type: 'POST',
-        url: '´coords_handler.php',
-        data: {'latitude': clickCoordsLat},
-      });*/
-    //document.forms[0].elements["Latitude"].value = getValue("latitude1");
-    //document.forms[0].elements["Longitude"].value = getValue("longitude1");
-    //document.getElementById('Latitude').value = 4;
-    //document.getElementById('Longitude').value = 5;
-    //$("#Latitude").attr("value", latitude1);
-    //$("#Longitude").attr("value", longitude1);
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">

@@ -105,6 +105,9 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+      $.get( "https://eventagious3.appspot.com/api/?get_event_location=ANANASFEST", function( data ) {
+        alert( "Data Loaded: " + data );
+      });
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
