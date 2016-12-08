@@ -6,7 +6,7 @@ $(document).ready(function() {
   var url = "https://eventagious3.appspot.com/api/?delete_event_id="+ EventID;
   $.ajax({
    url: url,
-   type: 'DELETE',
+   method: 'DELETE',
 
    beforeSend : function()
    {
