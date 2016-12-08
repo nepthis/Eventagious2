@@ -117,15 +117,15 @@ if ($path == '/help') {
       break;
     case 'DELETE':
       //delete event
-      if(!empty($_GET["event_id"]))
+      if(!empty($_GET["delete_event_id"]))
       {
-          $event_id=intval($_GET["event_id"]);
+          $event_id=intval($_GET["delete_event_id"]);
           delete_Event($event_id);
       }
       //delete User to User table
-       else if(!empty($_GET["user_id"]))
+       else if(!empty($_GET["delete_user_id"]))
       {
-        $user_id=intval($_GET["user_id"]);
+        $user_id=intval($_GET["delete_user_id"]);
         delete_User($user_id);
       }else
       {
