@@ -110,6 +110,13 @@
         //alert( "Data Loaded: " + data.Longitude);
         alert(data[0].Longitude);
         alert(data[4].Longitude);
+        for (var i = data.length - 1; i >= 0; i--) {
+          var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(data[i][Longitude], data[i][Latitude]),
+          map: map,
+          title: mapCord[i][Eventname]
+          });
+        }
 
       });
       //data.latitude
