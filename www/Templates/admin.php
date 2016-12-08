@@ -2,14 +2,43 @@
       <div class="container">
         <h1>ADMINSIDA</h1>
         <p>HEJ ADMIN DU ÄR SÖT </p>
-        <p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
-        <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
-        <a class="btn btn-primary btn-lg" href="index.php?action=index" role="button">Register &raquo;</a>
-        </p>
       </div>
     </div>
+
+
+      <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 <?php
+  
+
+
+
       $url = 'https://eventagious3.appspot.com/api/?get_All_users=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
