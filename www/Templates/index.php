@@ -118,7 +118,7 @@
           var allMarkers = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][0], data[i][1]),
           map: map,
-          title: mapCord[i][2]
+          title: data[i][2]
           });
         }
       });
