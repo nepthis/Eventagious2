@@ -28,9 +28,11 @@
 	        echo("<h2>".$row['Eventname']."</h2>");
 	        echo("<p>".$row['Description']."</p>");
 	        echo("<p>".$row['Adress']."</p>");
+	        echo("<p>".$row['EventDate']."</p>");
 	        echo("<p>".$row['Section']."</p>");
 	        echo("</div>");
 	    }
+	    echo ("</div>");
 	    //Måste fixa så att den hämtar rätt ifrån APIn och så att den läggaer till rätt...
 
 	   	$url = 'https://eventagious3.appspot.com/api/?eventImg='.$EventID.'';
@@ -47,12 +49,12 @@
 	     	echo ("<img src=".$row['Image_Thumbnail_URL'].">");
 		}
 		echo ("</div>");
+
 		echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");
   		echo ("Send these files:<p/>");
   		echo ("<input name=\"file\" type=\"file\" id =\"file\" multiple=\"multiple\"/><p/>");
   		echo ("<input name=\"EventID\" type=\"text\" id=\"EventID\" placeholder=\"EventID\" value=".$EventID."><p/>");
   		echo ("<input name=\"FileName\" type=\"text\" id=\"FileName\" placeholder=\"FileName\" value=\"file\"/><p/>");
   		echo ("<input id= \"button\" type=\"submit\" value=\"Send files\" />");
-
 
 		echo ("</div>");
