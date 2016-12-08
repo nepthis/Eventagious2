@@ -65,6 +65,7 @@ if ($path == '/help') {
         get_All_users();
       }
       else if(!empty($_GET["get_event_location"])){
+        $Eventname=$_GET["get_event_location"];
         get_event_location($Eventname);
       }
       else
