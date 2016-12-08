@@ -41,6 +41,7 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var markers = [];
+      var allMarkers = [];
       var map;
       function initMap() {
         var geocoder = new google.maps.Geocoder;
@@ -118,11 +119,12 @@
           console.log(data[i][0]);
           console.log(data[i][1]);
           console.log(data[i][2]);
-          var allMarkers = new google.maps.Marker({
+          var allMarkers[i] = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][0], data[i][1]),
           map: map,
           title: data[i][2]
           });
+          allMarkers[i].index = i;
         }
       });
       //data.latitude
