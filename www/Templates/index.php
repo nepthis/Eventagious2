@@ -105,9 +105,21 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-      $.get( "https://eventagious3.appspot.com/api/?get_event_location='ANANASFEST'", function( data ) {
-        alert( "Data Loaded: " + data );
+
+      $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
+        //alert( "Data Loaded: " + data.Longitude);
+        alert(data[0].Longitude);
+        alert(data[4].Longitude);
+        for (var i = data.length - 1; i >= 0; i--) {
+          var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(data[i][Longitude], data[i][Latitude]),
+          map: map,
+          title: mapCord[i][Eventname]
+          });
+        }
+
       });
+      //data.latitude
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
