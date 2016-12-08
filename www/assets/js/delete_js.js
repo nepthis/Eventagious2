@@ -9,7 +9,7 @@ $(document).ready(function() {
     method: "DELETE",
     url: url,
     success: function(msg){
-        alert("Data Deleted: " + msg);
+        location.reload();
     }
 });
 
