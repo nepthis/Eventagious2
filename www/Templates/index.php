@@ -93,12 +93,11 @@
           console.log(data[i][0]);
           console.log(data[i][1]);
           console.log(data[i][2]);
-          allMarkers[i] = new google.maps.Marker({
+          var allamarkers = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][0], data[i][1]),
           map: map,
           title: data[i][2]
           });
-          allMarkers[i].index = i;
         }
       });
         
