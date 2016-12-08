@@ -1,3 +1,4 @@
+<script type="text/javascript" src="assets/js/delete_js.js"></script>
     <div class="jumbotron">
       <div class="container">
         <h1>ADMINSIDA</h1>
@@ -6,9 +7,9 @@
     </div>
 
 
-      
+
 <?php
-    $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
+      $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,7 +23,7 @@
             echo ("<tr>");
               echo ("<th>Event Name</th>");
               echo ("<th>UserID</th>");
-              echo ("<th>Lastname</th>");
+              echo ("<th>Delete</th>");
 
             echo ("</tr>");
           echo ("</thead>");
@@ -31,7 +32,9 @@
               echo ("<tr>");
                 echo ("<td>".$rowEvent['Eventname']."</td>");
                 echo ("<td>".$rowEvent['UserID']."</td>");
-                echo ("<td>".$rowEvent['Eventname']."</td>");
+                      echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=".$rowEvent["EventID"].">");
+                      echo ("<p>DELETE </p>");
+                      echo ("</button></td>");
               echo ("</tr>");
             }
             echo ("</tbody>");
@@ -58,7 +61,7 @@
         echo("<p>Section: ".$row['section']."</p>");
         echo("<p>Admin: ".$row['isAdmin']."</p>");
         echo("</div>");
-    }
+      }
 
     
 
