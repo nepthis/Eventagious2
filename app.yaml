@@ -7,6 +7,9 @@
  - url: /test2
    script: www/test2.php
 
+ - url: /delete_event
+   script: www/delete_event.php
+   
  - url: /upload_handler
    script: www/upload_handler.php
 

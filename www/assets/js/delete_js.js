@@ -3,35 +3,23 @@ $(document).ready(function() {
   e.preventDefault();
 
   var EventID = $(this).data("action");
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://eventagious3.appspot.com/api/?delete_event_id="+ EventID,
-    "method": "DELETE",
-    "headers": {
-      "cache-control": "no-cache",
-      }
-    }
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-    });
-  });
-});    
-
-/*
-
-$(document).ready(function() {
-    $("button.remove").on('click', function(e){
-  e.preventDefault();
-
-  var EventID = $(this).data("action");
   var url = "https://eventagious3.appspot.com/api/?delete_event_id="+ EventID;
+
   $.ajax({
-   type: "POST",
+    method: "DELETE",
+    url: url,
+    success: function(msg){
+        alert("Data Deleted: " + msg);
+    }
+});
+
+
+
+  /*$.ajax({
+   method: "DELETE",
    async: true,
    crossDomain: true,
    url: url,
-   data: {_method: 'DELETE'},
 
    beforeSend : function()
    {
@@ -59,6 +47,6 @@ $(document).ready(function() {
       console.log("Error!...");
     //$("#err").html(e).fadeIn();
       }          
-    });
+    });*/
  });
-});*/
+});
