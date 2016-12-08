@@ -107,8 +107,9 @@
       }
       var data = [];
       $.get( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
-        alert( "Data Loaded: " + data.Latitude );
+        alert( "Data Loaded: " + data );
       });
+      //data.latitude
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
