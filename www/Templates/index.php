@@ -109,8 +109,8 @@
       $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
         //alert( "Data Loaded: " + data.Longitude);
         alert(data[0].Longitude);
-        alert(data[4].Longitude);
-        alert(data[5].Eventname);
+        alert(data[4].Latitude);
+        alert(data[3].Eventname);
         for (var i = data.length - 1; i >= 0; i--) {
           var allMarkers = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][Longitude], data[i][Latitude]),
