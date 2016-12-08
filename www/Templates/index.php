@@ -109,6 +109,7 @@
       $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
         //alert( "Data Loaded: " + data.Longitude);
         alert(data[0].Longitude);
+        alert(data[4].Longitude);
 
       });
       //data.latitude

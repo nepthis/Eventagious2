@@ -455,8 +455,7 @@ if ($path == '/help') {
   { 
     global $connection;
     $sth = $connection->prepare('SELECT Longitude
-          FROM Event
-          WHERE EventID=17');
+          FROM Event');
     
     $response=array();
     $sth->execute();
