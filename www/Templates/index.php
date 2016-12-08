@@ -85,16 +85,13 @@
           handleLocationError(false, myMarker, map.getCenter());
         }
         $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
-        alert(data[0].Longitude);
-        alert(data[4].Latitude);
-        alert(data[3].Eventname);
         for (var i = data.length - 1; i >= 0; i--) {
           console.log(data.length);
           console.log(data[i][0]);
           console.log(data[i][1]);
           console.log(data[i][2]);
           var allamarkers = new google.maps.Marker({
-          position: new google.maps.LatLng(data[i][0], data[i][1]),
+          position: new google.maps.LatLng(data[i][1], data[i][0]),
           map: map,
           title: data[i][2]
           });
