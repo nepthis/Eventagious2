@@ -64,7 +64,7 @@ if ($path == '/help') {
       else if(!empty($_GET["get_All_users"])){
         get_All_users();
       }
-      else if(!empty($_GET["get__all_event_location"])){
+      else if(!empty($_GET["get_all_event_location"])){
         get_all_event_location();
       }
       else
