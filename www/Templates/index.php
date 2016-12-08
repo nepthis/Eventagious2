@@ -112,13 +112,15 @@
         alert(data[4].Latitude);
         alert(data[3].Eventname);
         for (var i = data.length - 1; i >= 0; i--) {
+          console.log(data.length);
+          console.log(data[0].Longitude);
+          console.log(data[2].Longitude);
           var allMarkers = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][Longitude], data[i][Latitude]),
           map: map,
           title: mapCord[i][Eventname]
           });
         }
-
       });
       //data.latitude
     </script>
