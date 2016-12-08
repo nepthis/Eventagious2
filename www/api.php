@@ -454,14 +454,8 @@ if ($path == '/help') {
   function get_all_event_location()
   { 
     global $connection;
-    if(!empty($Eventname))
-    {
-      $sth = $connection->prepare('SELECT Longitude, Latitude
+    $sth = $connection->prepare('SELECT Longitude, Latitude
           FROM Event');
-      
-    }else{
-      echo json_encode("Fel i eventname");
-    }
     
     $response=array();
     $sth->execute();
