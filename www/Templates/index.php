@@ -41,43 +41,16 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var markers = [];
-      var clickCoordsLat;
-      var clickCoordsLon;
-      var clickCoords;
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
-        var lastMarker;
         var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
-
-        google.maps.event.addListener(map, 'click', function(event) {
-          //setMapOnAll(null);
-          deleteMarkers();
-          var lastMarker = new google.maps.Marker({
-            position: event.latLng,
-            map: map
-          });
-          clickCoordsLat = event.latLng.lat();
-          clickCoordsLon = event.latLng.lng();
-          clickCoords = event.latLng;
-          document.getElementById('Longitude').value = clickCoordsLon;
-          document.getElementById('Latitude').value = clickCoordsLat;
-          markers.push(lastMarker);
-          geocodeLatLng(geocoder, map);
-        });
-        /*
-        google.maps.event.addListener(map, 'rightclick', function(event) {
-          document.getElementById('points').value = event.latLng.lat();
-          document.getElementById('Longitude').value = event.latLng.lng();
-          document.getElementById('Latitude').value = 5;
-          alert(document.getElementById('points').value);
-        });*/
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
@@ -126,45 +99,12 @@
           }
         });
       }
-      function deleteMarkers() {
-        if (markers) {
-         for (i=0; i < markers.length; i++) {
-              markers[i].setMap(null);
-          }
-      markers.length = 0;
-      }
-      }
-      /*
-      function addMarker(location) {
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-        markers.push(marker);
-      }*/
       function handleLocationError(browserHasGeolocation, myMarker, pos) {
         myMarker.setPosition(pos);
         myMarker.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-      /*
-      $.ajax({
-        type: 'POST',
-        url: 'coords_handler.php',
-        data: {'longitude': clickCoordsLon},
-      });
-      $.ajax({
-        type: 'POST',
-        url: '´coords_handler.php',
-        data: {'latitude': clickCoordsLat},
-      });*/
-    //document.forms[0].elements["Latitude"].value = getValue("latitude1");
-    //document.forms[0].elements["Longitude"].value = getValue("longitude1");
-    //document.getElementById('Latitude').value = 4;
-    //document.getElementById('Longitude').value = 5;
-    //$("#Latitude").attr("value", latitude1);
-    //$("#Longitude").attr("value", longitude1);
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
