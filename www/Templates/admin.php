@@ -86,7 +86,7 @@
                 echo ("<td>".$row['email']."</td>");
                 echo ("<td>".$row['section']."</td>");
                 echo ("<td>".$row['isAdmin']."</td>");
-                echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=\"delete_user_id\" data-id=".$rowEvent["id"]."/>");
+                echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=\"delete_user_id\" data-id=".$row["id"]."/>");
                 echo ("<p>DELETE </p>");
                 echo ("</button></td>");
               echo ("</tr>");
