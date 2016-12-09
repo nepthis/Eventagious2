@@ -6,8 +6,6 @@
 		  $EventID = $_GET['EventID'];
 	    $user_id = $_SESSION['user_id'];
 
-      echo $user_id;
-
 	    $url = 'https://eventagious3.appspot.com/api/?event_id='.$EventID.'';
 	    $ch = curl_init($url);
 	    curl_setopt($ch, CURLOPT_HTTPGET, true);
