@@ -78,7 +78,7 @@
             content: data[i][2]
           });
 
-          google.maps.event.addListener(allamarkers, 'mouseover', function() {
+          google.maps.event.addListener(allamarkers, 'click', function() {
               this['infowindow'].open(map, this);
           });
           markerArray.push(allamarkers);
