@@ -72,6 +72,12 @@
           map: map,
           title: data[i][2]
           });
+          var infowindow = new google.maps.InfoWindow({
+            content: data[i][2]
+          });
+          allamarkers.addListener('click', function() {
+            infowindow.open(map, allamarkers);
+          });
         }
       });
         
