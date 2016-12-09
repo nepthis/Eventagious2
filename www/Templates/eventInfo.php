@@ -1,6 +1,5 @@
 <script type="text/javascript" src="assets/js/upload_js.js"></script>
 <?php
-session_start();
 
 		  $EventID = $_GET['EventID'];
 	    $user_id = $_SESSION['user_id'];
