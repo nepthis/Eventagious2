@@ -36,7 +36,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header('Location: index.php?action=myPage');
         exit;
     }else if ($response['status']==0){
-        echo $response['status'];
         echo "Det gick fel någonstans! försök igen";
     }
   }else{
