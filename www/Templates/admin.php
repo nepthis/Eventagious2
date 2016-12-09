@@ -17,6 +17,10 @@
       curl_close($ch);
       $responseEvent=json_decode($response_json, true);
 
+
+        echo ("<div class=\"page-header\">");
+          echo ("<h1>Event List</h1>");
+        echo ("</div>");
     echo ("<div class=\"table-responsive\">");
           echo ("<table class=\"table table-hover\">");
             echo ("<thead>");
@@ -24,7 +28,6 @@
               echo ("<th>Event Name</th>");
               echo ("<th>UserID</th>");
               echo ("<th>Delete</th>");
-
             echo ("</tr>");
           echo ("</thead>");
           echo ("<tbody>");
@@ -36,7 +39,9 @@
                   echo ("<input name=\"EventID\" type=\"text\" id=\"EventID\" placeholder=\"EventID\" value=".$rowEvent['EventID'].">");
                   echo ("<input type= \"button\" value=\"Delete\" />");
                   echo ("</form></td>");*/
-                      echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=".$rowEvent["EventID"].">");
+
+                  //HAR FEL MÅSTE FIXAS...
+                      echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=\"delete_event_id\" data-id=".$rowEvent["EventID"].">");
                       echo ("<p>DELETE </p>");
                       echo ("</button></td>");
               echo ("</tr>");
@@ -55,17 +60,40 @@
       curl_close($ch);
       $response=json_decode($response_json, true);
 
-      echo("<div class=\"row\">");
-      foreach($response as $row){
-        echo("<div class=\"col-md-4\">");
-        echo("<h2>Username: ".$row['username']."</h2>");
-        echo("<p>E-mail: ".$row['email']."</p>");
-        echo("<p>First name: ".$row['firstname']."</p>");
-        echo("<p>Surname: ".$row['surname']."</p>");
-        echo("<p>Section: ".$row['section']."</p>");
-        echo("<p>Admin: ".$row['isAdmin']."</p>");
-        echo("</div>");
-      }
+        echo ("<div class=\"page-header\">");
+          echo ("<h1>User table</h1>");
+        echo ("</div>");
+      echo ("<div class=\"table-responsive\">");
+          echo ("<table class=\"table table-hover\">");
+            echo ("<thead>");
+            echo ("<tr>");
+              echo ("<th>User Name</th>");
+              echo ("<th>First Name</th>");
+              echo ("<th>Sur Name</th>");
+              echo ("<th>Email</th>");
+              echo ("<th>Section</th>");
+              echo ("<th>Admin</th>");
+              echo ("<th>Delete</th>");
+
+            echo ("</tr>");
+          echo ("</thead>");
+          echo ("<tbody>");
+            foreach($response as $row){
+              echo ("<tr>");
+                echo ("<td>".$row['username']."</td>");
+                echo ("<td>".$row['firstname']."</td>");
+                echo ("<td>".$row['surname']."</td>");
+                echo ("<td>".$row['email']."</td>");
+                echo ("<td>".$row['section']."</td>");
+                echo ("<td>".$row['isAdmin']."</td>");
+                echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=\"delete_user_id\" data-id=".$rowEvent["UserID"]."/>");
+                echo ("<p>DELETE </p>");
+                echo ("</button></td>");
+              echo ("</tr>");
+            }
+            echo ("</tbody>");
+          echo ("</table>");
+    echo ("</div>");
 
     
 
