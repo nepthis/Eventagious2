@@ -20,7 +20,7 @@
   <div class="container">
     <form action="event/create" method="post">
 
-        <input type="hidden" class="form-control" name="UserID" id="UserID" placeholder="UserID" value= <?php $_SESSION['user_id']?> aria-describedby="sizing-addon1">
+        <!--<input type="hidden" class="form-control" name="UserID" id="UserID" placeholder="UserID" value= <?php $_SESSION['user_id']?> aria-describedby="sizing-addon1">-->
 
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon2">@</span>
@@ -52,7 +52,7 @@
       <p>Fylla i vilken sektion som det ska vara </p>
       <div class="input-group input-group-lg" style="padding-top: 5px">
         <span class="input-group-addon" id="sizing-addon7">@</span>
-        <input type="text" class="form-control" name="EventDate" id="EventDate" placeholder="Date YYYY-MM-DD" aria-describedby="sizing-addon1">
+        <input type="date" class="form-control" name="EventDate" id="EventDate" placeholder="Date YYYY-MM-DD" aria-describedby="sizing-addon1">
       </div>
       <input type="button" 
                    value="Create" 
@@ -79,11 +79,7 @@
       var clickCoords;
       function initMap() {
         var geocoder = new google.maps.Geocoder;
-        var mapObject = ["Test", 65.619179, 22.138556]
-        var mapObject2 = ["Test2", 65.619099, 22.141174]
-        var mapObject3 = ["Test3", 65.620003, 22.149404]
         var lastMarker;
-        var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
@@ -103,13 +99,15 @@
           markers.push(lastMarker);
           geocodeLatLng(geocoder, map);
         });
-        for (var i = mapCord.length - 1; i >= 0; i--) {
-          var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
-          map: map,
-          title: mapCord[i][0]
-          });
-        }
+        $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
+          for (var i = data.length - 1; i >= 0; i--) {
+            var allamarkers = new google.maps.Marker({
+            position: new google.maps.LatLng(data[i][1], data[i][0]),
+            map: map,
+            title: data[i][2]
+            });
+          }
+        });
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
