@@ -10,8 +10,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $Adress=$_POST["Adress"];
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
-    $Section=$_POST["Section"];
     $EventDate=$_POST["EventDate"];
+    $Section=$_POST["Section"];
 
     $data=array(
     'UserID' => $UserID,
@@ -19,9 +19,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     'Latitude' => $Latitude,
     'Adress' => $Adress,
     'Description' => $Description,
-    'Section' => $Section,
     'Eventname' => $Eventname,
     'EventDate' => $EventDate,
+    'Section' => $Section,
     );
     $url = 'https://eventagious3.appspot.com/api/?event=1';
     $ch = curl_init($url);
@@ -36,6 +36,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header('Location: index.php?action=myPage');
         exit;
     }else if ($response['status']==0){
+        echo $response['status'];
         echo "Det gick fel någonstans! försök igen";
     }
   }else{
