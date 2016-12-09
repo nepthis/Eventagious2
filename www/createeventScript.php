@@ -2,9 +2,9 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
     //Funkar inte riktigt som den ska... den gå in i if satsen fast den inte borde göra detta.
-  if (isset($_POST['UserID'], $_POST['Description'], $_POST['Adress'], $_POST['Longitude'], $_POST['Latitude'], $_POST['Eventname'], $_POST['EventDate'], $_POST['Section'])) {
+  if (isset($_POST['Description'], $_POST['Adress'], $_POST['Longitude'], $_POST['Latitude'], $_POST['Eventname'], $_POST['EventDate'], $_POST['Section'])) {
     //$Username=$_SESSION["username"];
-    $UserID=$_POST["UserID"];
+    //$UserID=$_POST["UserID"];
     $Description=$_POST["Description"];
     $Adress=$_POST["Adress"];
     $Longitude=$_POST["Longitude"];
@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $Section=$_POST["Section"];
 
     $data=array(
-    'UserID' => $UserID,
+    //'UserID' => $UserID,
     'Longitude' => $Longitude,
     'Latitude' => $Latitude,
     'Adress' => $Adress,
