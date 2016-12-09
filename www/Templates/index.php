@@ -41,16 +41,18 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var markers = [];
+      var allMarkers = [];
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var mapObject = ["Test", 65.619179, 22.138556]
         var mapObject2 = ["Test2", 65.619099, 22.141174]
         var mapObject3 = ["Test3", 65.620003, 22.149404]
-        var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
+        var mapCord = [mapObject,mapObject2,mapObject3];
+        
         for (var i = mapCord.length - 1; i >= 0; i--) {
           var marker = new google.maps.Marker({
           position: new google.maps.LatLng(mapCord[i][1], mapCord[i][2]),
@@ -82,6 +84,19 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, myMarker, map.getCenter());
         }
+        $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
+        for (var i = data.length - 1; i >= 0; i--) {
+          console.log(data.length);
+          console.log(data[i][0]);
+          console.log(data[i][1]);
+          console.log(data[i][2]);
+          var allamarkers = new google.maps.Marker({
+          position: new google.maps.LatLng(data[i][1], data[i][0]),
+          map: map,
+          title: data[i][2]
+          });
+        }
+      });
         
       }
       function geocodeLatLng(geocoder, map) {
@@ -105,23 +120,6 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-
-      $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
-        //alert( "Data Loaded: " + data.Longitude);
-        alert(data[0].Longitude);
-        alert(data[4].Latitude);
-        alert(data[3].Eventname);
-        for (var i = data.length - 1; i >= 0; i--) {
-          console.log(data.length);
-          console.log(data[0].Longitude);
-          console.log(data[2].Longitude);
-          var allMarkers = new google.maps.Marker({
-          position: new google.maps.LatLng(data[i][0], data[i][1]),
-          map: map,
-          title: mapCord[i][2]
-          });
-        }
-      });
       //data.latitude
     </script>
     <script async defer
