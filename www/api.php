@@ -54,6 +54,12 @@ if ($path == '/help') {
         $event_id=intval($_GET["event_id"]);
         get_event($event_id);
       }
+      //Get event bast on eventName
+      else if(!empty($_GET["event_name"]))
+      {
+        $event_name=intval($_GET["event_name"]);
+        get_event_name($event_name);
+      }
       else if(!empty($_GET["user_id_events"]))
       {
         $user_id=intval($_GET["user_id_events"]);
@@ -445,6 +451,27 @@ if ($path == '/help') {
           FROM Event
           WHERE EventID = :id');
     $sth->bindParam(':id',$EventID);
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+  //Getting the event baste on name
+  function get_event_name($product_id=0){ 
+    $EventName = $product_id;
+    global $connection;
+    //$query="SELECT * FROM events";
+
+    $sth = $connection->prepare('SELECT *
+          FROM Event
+          WHERE Eventname = :Eventname');
+    $sth->bindParam(':Eventname',$EventName);
     
     $response=array();
     $sth->execute();
