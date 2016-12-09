@@ -1,3 +1,18 @@
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to Eventagious</h1>
+        <p>This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to
+           create events as well as those who want to attend events. On this site, users will be able to make an event and specify what
+           kind of event it is, where it's located, make a description of the event and put a cool picture to lure people.
+           All the code is written in HTML, CSS, Javascript and PHP. We are currently using Google App Engine to power the site,
+           both front-end and back-end with a MySQL-server setup. </p>
+        <p>
+        <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="index.php?action=login" role="button">Login &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="index.php?action=register" role="button">Register &raquo;</a>
+        </p>
+      </div>
+    </div>
       <div class="container">
           <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
       </div>
@@ -5,27 +20,6 @@
       </div>
 
       <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Event 1</h2>
-            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-            <p><a class="btn btn-default" href="index.php?action=eventInfo" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Event 2</h2>
-            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-            <p><a class="btn btn-default" href="index.php?action=eventInfo" role="button">View details &raquo;</a></p>
-         </div>
-          <div class="col-md-4">
-            <h2>Event 3</h2>
-            <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-            <p><a class="btn btn-default" href="index.php?action=eventInfo" role="button">View details &raquo;</a></p>
-          </div>
-        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>

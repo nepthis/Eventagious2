@@ -92,7 +92,6 @@
             </button>
             <a class="navbar-brand" href="index.php?action=index">Eventagious</a>
             <a class="navbar-brand" href="index.php?action=map">Maps</a>
-            <a class="navbar-brand" href="index.php?action=about">About</a>
             <a class="navbar-brand" href="index.php?action=event">Events</a>
             <a class="navbar-brand" href="index.php?action=register">Register</a>
             <a class="navbar-brand" href="index.php?action=login">Login</a>
