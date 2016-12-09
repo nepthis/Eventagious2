@@ -18,7 +18,7 @@
       <div class="container">
 <?php
       $user_id = $_SESSION['user_id'];
-      echo $user_id;
+      //echo $user_id;
       $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -42,7 +42,4 @@
 
 ?>
 
-<?php
-  //Måste fixa en som tar han dom sökningen. och vi måste fixa en till funktion i API som söker på namn i event tabellen.
-  ?>
         
