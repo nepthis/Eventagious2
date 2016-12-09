@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+echo $_SESSION['user_id'];
+?>
+
       <div class="jumbotron">
         <div class="container">
           <h1>Skapa ett event</h1>
@@ -19,6 +25,7 @@
 
   <div class="container">
     <form action="event/create" method="post">
+        <input type="hidden" name="UserID" id="UserID" value= <?php $_SESSION['user_id']?> >
 
         <!--<input type="hidden" class="form-control" name="UserID" id="UserID" placeholder="UserID" value= <?php $_SESSION['user_id']?> aria-describedby="sizing-addon1">-->
 

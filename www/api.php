@@ -216,7 +216,7 @@ if ($path == '/help') {
   function insert_Event()
   {
     global $connection;
-    //$UserID=$_POST["UserID"];
+    $UserID=$_POST["UserID"];
     $Longitude=$_POST["Longitude"];
     $Latitude=$_POST["Latitude"];
     $Adress=$_POST["Adress"];
@@ -226,9 +226,9 @@ if ($path == '/help') {
     $Section=$_POST["Section"];
 
     $sth = $connection->prepare('INSERT INTO Event
-          SET Longitude=:Longitude,Latitude=:Latitude,Adress=:Adress,Description=:Description,Eventname=:Eventname,EventDate=:EventDate,Section=:Section');
+          SET UserID=:UserID,Longitude=:Longitude,Latitude=:Latitude,Adress=:Adress,Description=:Description,Eventname=:Eventname,EventDate=:EventDate,Section=:Section');
     //$sth->bindParam(':EventID',$EventID);
-    //$sth->bindParam(':UserID',$UserID);
+    $sth->bindParam(':UserID',$UserID);
     $sth->bindParam(':Longitude',$Longitude);
     $sth->bindParam(':Latitude',$Latitude);
     $sth->bindParam(':Adress',$Adress);
