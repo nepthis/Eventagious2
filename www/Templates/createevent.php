@@ -80,7 +80,6 @@
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var lastMarker;
-        var mapCord = [mapObject,mapObject2,mapObject3];
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
