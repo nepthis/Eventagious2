@@ -17,7 +17,7 @@
         echo("<p>".$row['Description']."</p>");
         echo("<p>".$row['Adress']."</p>");
         echo("<p>".$row['Section']."</p>");
-        echo("<p><a class=\"btn btn-default\" href=\"index.php?action=eventInfo\" role=\"button\">View details &raquo;</a></p>");
+        echo("<p><a class=\"btn btn-default\" href=\"index.php?action=eventInfo&EventID=".$row['EventID']."\" role=\"button\">View details &raquo;</a></p>");
         echo("</div>");
     }
       ?>
