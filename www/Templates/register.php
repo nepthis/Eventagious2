@@ -1,9 +1,9 @@
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Register</h3>
+        <h3 class="panel-title"><center>Register</center></h3>
       </div>
       <div class="panel-body">
-        Register your user to Eventagious by filling all the fields below and pressing Submit.
+        <center>Register your user to Eventagious by filling all the fields below and pressing Submit.</center>
       </div>
     </div>
       <div class="container">
