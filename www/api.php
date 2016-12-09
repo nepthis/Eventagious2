@@ -4,6 +4,7 @@ header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Headers "origin, x-requested-with, content-type"');
 header('Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"');
 use google\appengine\api\cloud_storage\CloudStorageTools;
+use vendor\firebase\JWT\JWT;
 
 /*$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -83,6 +84,11 @@ if ($path == '/help') {
       {
           insert_Event();
       }
+     /* //Login
+      else if(!empty($_GET["login"]))
+      {
+          login();
+      }*/
       //Insert User to User table
        else if(!empty($_GET["user"]))
       {
@@ -243,6 +249,63 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+
+/*
+  function login()
+  {
+    global $connection;
+    $id=$_POST["id"];
+    $username=$_POST["username"];
+    $password=$_POST["password"];
+   
+
+    $sth = $connection->prepare('SELECT username,password
+          FROM members
+          WHERE id=:id');
+    $sth->bindParam(':id',$id);
+
+    $response=array();
+    $sth->execute();
+
+    $db_username = $sth[0]['username'];
+    $db_password = $sth[0]['password'];
+
+    if(password_verify($password, $db_password)){
+        $authid = $id; 
+        $key = "example_key"; // CHANGE THIS
+
+        $token = array(
+             "authid" => $authid
+        );
+
+        $jwt = vendor\firebase\JWT\JWT::encode($token, $key);
+
+        }
+
+    if($sth->execute())
+    {
+      $response=array(
+        'status' => 1,
+        'status_message' =>'Product Added Successfully.'
+      );
+    }
+    else
+    {
+      $response=array(
+        'status' => 0,
+        'status_message' =>'Product Addition Failed.'
+      );
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }*/
+
+
+
+
+
+
+
 
   function insert_User()
   {

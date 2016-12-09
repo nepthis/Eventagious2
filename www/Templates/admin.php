@@ -35,12 +35,6 @@
               echo ("<tr>");
                 echo ("<td>".$rowEvent['Eventname']."</td>");
                 echo ("<td>".$rowEvent['UserID']."</td>");
-                  /*echo ("<td><form method=\"post\" action=\"delete_event\" id=\"form\" >");
-                  echo ("<input name=\"EventID\" type=\"text\" id=\"EventID\" placeholder=\"EventID\" value=".$rowEvent['EventID'].">");
-                  echo ("<input type= \"button\" value=\"Delete\" />");
-                  echo ("</form></td>");*/
-
-                  //HAR FEL MÅSTE FIXAS...
                       echo ("<td><button class=\"btn btn-circle btn-danger remove\" data-action=\"delete_event_id\" data-id=".$rowEvent["EventID"].">");
                       echo ("<p>DELETE </p>");
                       echo ("</button></td>");
