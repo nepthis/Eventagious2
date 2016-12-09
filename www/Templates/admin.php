@@ -1,5 +1,6 @@
-<?php
 <script type="text/javascript" src="assets/js/delete_js.js"></script>
+<?php
+
 session_start();
 
 echo $_SESSION['isAdmin'];
