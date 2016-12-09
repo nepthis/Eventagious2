@@ -18,11 +18,6 @@ $(document).ready(function() {
     success: function(msg){
         location.reload();
     }
-    error: function (xhr, ajaxOptions, thrownError,msg) {
-        alert(xhr.status);
-        alert(thrownError);
-        alert(msg);
-      }
   });
  });
 });
