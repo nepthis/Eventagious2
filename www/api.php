@@ -74,6 +74,11 @@ if ($path == '/help') {
       else if(!empty($_GET["get_all_event_location"])){
         get_all_event_location();
       }
+      else if(!empty($_GET["get_user_events"]))
+      {
+        $user_id=intval($_GET["get_user_events"]);
+        get_user_events($user_id);
+      }
       else
       {
         echo json_encode("fel i GET");
@@ -462,6 +467,27 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+  function get_user_events($product_id=0){ 
+    $UserID = $product_id;
+    global $connection;
+    //$query="SELECT * FROM events";
+
+    $sth = $connection->prepare('SELECT Longitude, Latitude, Eventname
+          FROM Event
+          WHERE UserID = :UserID');
+    $sth->bindParam(':UserID',$UserID);
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+
   //Getting the event baste on name
   function get_event_name($product_id=0){ 
     $EventName = $product_id;
