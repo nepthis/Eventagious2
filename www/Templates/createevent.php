@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-echo $_SESSION['user_id'];
 ?>
 
       <div class="jumbotron">
@@ -25,7 +24,7 @@ echo $_SESSION['user_id'];
 
   <div class="container">
     <form action="event/create" method="post">
-        <input type="text" name="UserID" id="UserID" value= <?php echo($_SESSION['user_id']);?> >
+        <input type="hidden" name="UserID" id="UserID" value= <?php echo($_SESSION['user_id']);?> >
 
         <!--<input type="hidden" class="form-control" name="UserID" id="UserID" placeholder="UserID" value= <?php $_SESSION['user_id']?> aria-describedby="sizing-addon1">-->
 
