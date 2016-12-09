@@ -494,7 +494,7 @@ if ($path == '/help') {
     //$query="SELECT * FROM events";
     if(!empty($username))
     {
-      $sth = $connection->prepare('SELECT id, password
+      $sth = $connection->prepare('SELECT id, password,isAdmin
           FROM members
           WHERE username = :username');
       $sth->bindParam(':username',$username);

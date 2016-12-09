@@ -1,14 +1,30 @@
-<script type="text/javascript" src="assets/js/delete_js.js"></script>
-    <div class="jumbotron">
-      <div class="container">
-        <h1>ADMINSIDA</h1>
-        <p>HEJ ADMIN DU ÄR SÖT </p>
-      </div>
-    </div>
-
-
-
 <?php
+session_start();
+
+echo $_SESSION['isAdmin'];
+echo "string";
+      if(!isset($_SESSION['isAdmin'])){
+        echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
+          echo ("<div class=\"jumbotron\">");
+            echo ("<div class=\"container\">");
+              echo ("<h1>You are not admin</h1>");
+          echo ("</div>");
+        echo ("</div>");
+
+      }else{
+
+
+      echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
+         echo ("<div class=\"jumbotron\">");
+            echo ("<div class=\"container\">");
+              echo ("<h1>ADMINSIDA</h1>");
+              echo ("<p>HEJ ADMIN DU ÄR SÖT </p>");
+          echo ("</div>");
+        echo ("</div>");
+
+
+
+
       $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -90,5 +106,5 @@
     echo ("</div>");
 
     
-
+}
 ?>

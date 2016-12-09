@@ -46,6 +46,7 @@
 
       $user_id = $response[0]['id']; //Or do what ever instead of echo
       $db_password = $response[0]['password'];
+      $db_isAdmin = $response[0]['isAdmin'];
 
       /*$sth = $database->prepare('SELECT id, password
           FROM members
@@ -82,6 +83,8 @@
                     $user_id = preg_replace("/[^0-9]+/", "", $user_id);
 
                     $_SESSION['user_id'] = $user_id;
+                    $_SESSION['isAdmin'] = $db_isAdmin;
+
                     // XSS protection as we might print this value
                     //$username = preg_replace("/[^a-zA-Z0-9_\-]+/","",$username);
 
