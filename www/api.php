@@ -54,6 +54,11 @@ if ($path == '/help') {
         $event_id=intval($_GET["event_id"]);
         get_event($event_id);
       }
+      else if(!empty($_GET["get_user_events"]))
+      {
+        $user_id=intval($_GET["get_user_events"]);
+        get_user_events($user_id);
+      }
       //Get event bast on eventName
       else if(!empty($_GET["event_name"]))
       {
@@ -74,11 +79,7 @@ if ($path == '/help') {
       else if(!empty($_GET["get_all_event_location"])){
         get_all_event_location();
       }
-      else if(!empty($_GET["get_user_events"]))
-      {
-        $user_id=intval($_GET["get_user_events"]);
-        get_user_events($user_id);
-      }
+      
       else
       {
         echo json_encode("fel i GET");
