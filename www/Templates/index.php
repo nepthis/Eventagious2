@@ -74,12 +74,14 @@
           title: data[i][2]
           });
           markerArray.push(allamarkers);
-          var infowindow = new google.maps.InfoWindow({
+          allamarkers['infowindow'] = new google.maps.InfoWindow({
             content: data[i][2]
           });
-          allamarkers.addListener('click', function() {
-            infowindow.open(map, markerArray[i]);
+
+          google.maps.event.addListener(allamarkers, 'mouseover', function() {
+              this['infowindow'].open(map, this);
           });
+          markerArray.push(allamarkers);
         }
       });
         
