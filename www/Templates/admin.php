@@ -2,8 +2,8 @@
 session_start();
 
 echo $_SESSION['isAdmin'];
-echo "string";
-      if(!isset($_SESSION['isAdmin'])){
+
+      if($_SESSION['isAdmin'] == 0){
         echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
           echo ("<div class=\"jumbotron\">");
             echo ("<div class=\"container\">");
