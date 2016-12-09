@@ -35,6 +35,7 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
+      markerArray = [];
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -72,11 +73,12 @@
           map: map,
           title: data[i][2]
           });
+          markerArray.push(allamarkers);
           var infowindow = new google.maps.InfoWindow({
             content: data[i][2]
           });
           allamarkers.addListener('click', function() {
-            infowindow.open(map, allamarkers);
+            infowindow.open(map, markerArray[i]);
           });
         }
       });
