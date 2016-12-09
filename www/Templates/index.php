@@ -1,11 +1,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Welcome to Eventagious</h1>
-        <p>This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to
-           create events as well as those who want to attend events. On this site, users will be able to make an event and specify what
-           kind of event it is, where it's located, make a description of the event and put a cool picture to lure people.
-           All the code is written in HTML, CSS, Javascript and PHP. We are currently using Google App Engine to power the site,
-           both front-end and back-end with a MySQL-server setup. </p>
+        
         <p>
         <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
         <a class="btn btn-primary btn-lg" href="index.php?action=login" role="button">Login &raquo;</a>
@@ -18,7 +14,12 @@
       </div>
 
       </div>
-
+      <div class="container">
+      <p><center>This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to
+           create events as well as those who want to attend events. On this site, users will be able to make an event and specify what
+           kind of event it is, where it's located, make a description of the event and put a cool picture to lure people.
+           All the code is written in HTML, CSS, Javascript and PHP. We are currently using Google App Engine to power the site,
+           both front-end and back-end with a MySQL-server setup. </p></center></div>
       <div class="container">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

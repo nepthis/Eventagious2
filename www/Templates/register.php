@@ -1,4 +1,11 @@
-
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><center>Register</center></h3>
+      </div>
+      <div class="panel-body">
+        <center>Register your user to Eventagious by filling all the fields below and pressing Submit.</center>
+      </div>
+    </div>
       <div class="container">
     <form action="index.php?action=register" method="POST">
       <div class="input-group input-group-lg">
