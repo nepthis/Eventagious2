@@ -41,8 +41,7 @@
           //echo("</div>");
 	        	
 	    }
-	    		
-	    //Måste fixa så att den hämtar rätt ifrån APIn och så att den läggaer till rätt...
+
 
 	   	$url = 'https://eventagious3.appspot.com/api/?eventImg='.$EventID.'';
 	    $ch = curl_init($url);
@@ -57,10 +56,8 @@
 	    foreach($response as $row){
 
         echo("<p> <a href=".$row['Image_URL']."> <img src=".$row['Image_Thumbnail_URL']." title=\"Click to ...\" style=\"float:right;width:100px;height:100px;\">");
-        /*echo("<li><a href=".$row['Image_URL']."><img src=".$row['Image_Thumbnail_URL']."
-                 alt=\"Photo of ...\" title=\"Click to ...\"></a>");*/
         }
-	     	//echo ("<img src=".$row['Image_Thumbnail_URL'].">");
+
 
         echo("</div>");
 				echo("</div>");

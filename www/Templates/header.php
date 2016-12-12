@@ -25,6 +25,8 @@
     <!-- Custom styles for this template -->
     <link href="/assets/css/jumbotron.css" rel="stylesheet">
 
+    <link href="/assets/css/bgcss.css" rel="stylesheet">
+
     <!-- Just for debugging purposes. Dont actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="/assets/js/ie-emulation-modes-warning.js"></script>

@@ -1,25 +1,26 @@
-    <div class="jumbotron">
+    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;">
       <div class="container">
         <h1>Welcome to Eventagious</h1>
-        
         <p>
         <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
         <a class="btn btn-primary btn-lg" href="index.php?action=login" role="button">Login &raquo;</a>
         <a class="btn btn-primary btn-lg" href="index.php?action=register" role="button">Register &raquo;</a>
         </p>
-      </div>
-    </div>
-      <div class="container">
-          <div id="map" style="height: 500px; width:1200px; text-align: center; "></div>
-      </div>
-
-      </div>
-      <div class="container">
-      <h3><center>This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to
+        <h4>
+          This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to
            create events as well as those who want to attend events. On this site, users will be able to make an event and specify what
            kind of event it is, where it's located, make a description of the event and put a cool picture to lure people.
            All the code is written in HTML, CSS, Javascript and PHP. We are currently using Google App Engine to power the site,
-           both front-end and back-end with a MySQL-server setup. </h3></center></div>
+           both front-end and back-end with a MySQL-server setup. 
+        </h4>
+      </div>
+    </div>
+
+    
+    <div style="position:absolute;z-index:1000;">
+        <img src="/assets/img/bg_1.png" alt="/assets/img/bg_1.png" style="width:100%;height: 100%">
+    </div>
+
       <div class="container">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
