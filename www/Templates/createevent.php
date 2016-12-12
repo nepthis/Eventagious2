@@ -2,6 +2,8 @@
 session_start();
 
 ?>
+  <link href="test.css" rel="stylesheet">
+  <div id="fusktest">
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
         <div class="container">
           <h1>Skapa ett event</h1>
@@ -182,3 +184,4 @@ session_start();
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
     </script>
+</div>
