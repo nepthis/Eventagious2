@@ -1,6 +1,5 @@
 <script type="text/javascript" src="assets/js/upload_js.js"></script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap"></script>
+
 <?php
 
 		  $EventID = $_GET['EventID'];
@@ -78,21 +77,29 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      var markers = [];
+      var EventID = '<?php echo $EventID; ?>';
+      var markerArray = [];
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
-        $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
-          for (var i = data.length - 1; i >= 0; i--) {
+        $.getJSON( "https://eventagious3.appspot.com/api/?get_event_location="+EventID, function( data ) {
             var allamarkers = new google.maps.Marker({
-            position: new google.maps.LatLng(data[i][1], data[i][0]),
+            position: new google.maps.LatLng(data[0][1], data[0][0]),
             map: map,
-            title: data[i][2]
+            title: data[0][2]
             });
-          }
+          markerArray.push(allamarkers);
+          allamarkers['infowindow'] = new google.maps.InfoWindow({
+            content: data[0][2]
+          });
+
+          google.maps.event.addListener(allamarkers, 'click', function() {
+              this['infowindow'].open(map, this);
+          });
+          markerArray.push(allamarkers);
         });
 
         // Try HTML5 geolocation.
@@ -143,3 +150,5 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
     </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap"></script>
