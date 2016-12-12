@@ -91,7 +91,8 @@
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
             content: data[i][2]
-            window.location.href = 'http://www.google.com';
+            var str = "Free Web Building Tutorials!";
+            var result = str.link("http://www.w3schools.com");
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
