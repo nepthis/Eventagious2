@@ -82,8 +82,6 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var EventID = '<?php echo $EventID; ?>';
-      alert(EventID);
-      var markers = [];
       var markerArray = [];
       function initMap() {
         var geocoder = new google.maps.Geocoder;
@@ -92,22 +90,20 @@
           zoom: 14
         });
         $.getJSON( "https://eventagious3.appspot.com/api/?get_event_location="+EventID, function( data ) {
-          for (var i = data.length - 1; i >= 0; i--) {
             var allamarkers = new google.maps.Marker({
-            position: new google.maps.LatLng(data[i][1], data[i][0]),
+            position: new google.maps.LatLng(data[0][1], data[0][0]),
             map: map,
-            title: data[i][2]
+            title: data[0][2]
             });
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
-            content: data[i][2]
+            content: data[0][2]
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
               this['infowindow'].open(map, this);
           });
           markerArray.push(allamarkers);
-          }
         });
 
         // Try HTML5 geolocation.
