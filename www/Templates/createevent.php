@@ -16,7 +16,7 @@ session_start();
     
     <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;padding-left: 140; padding-top: 750px ">
       <div class="container">
-        <form action="event/create" method="post">
+        <form action="event/create" method="post" id=createEvent >
             <input type="hidden" name="UserID" id="UserID" value= <?php echo($_SESSION['user_id']);?> >
 
           <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
@@ -26,7 +26,8 @@ session_start();
 
           <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
             <span class="input-group-addon" id="sizing-addon3">@</span>
-            <input type="text" class="form-control" name="Description" id="Description" placeholder="Description" aria-describedby="sizing-addon1" style="height: 100">
+            <input type="hidden" name="Description" ">
+            <textarea rows="4" cols="50" name="Description" class="form-control" form="createEvent" placeholder="Description text here" style="height: 100"></textarea>
           </div>
 
           <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
