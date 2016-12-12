@@ -59,6 +59,11 @@ if ($path == '/help') {
         $user_id=intval($_GET["get_user_events"]);
         get_user_events($user_id);
       }
+      else if(!empty($_GET["get_event_location"]))
+      {
+        $EventID=intval($_GET["get_event_location"]);
+        get_event_location($EventID);
+      }
       //Get event bast on eventName
       else if(!empty($_GET["event_name"]))
       {
@@ -572,6 +577,24 @@ if ($path == '/help') {
     global $connection;
     $sth = $connection->prepare('SELECT Longitude, Latitude, Eventname
           FROM Event');
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+  function get_event_location($product_id)
+  { 
+    $EventID = $product_id;
+    global $connection;
+    $sth = $connection->prepare('SELECT Longitude, Latitude, Eventname
+          FROM Event
+          WHERE EventID=:EventID');
     
     $response=array();
     $sth->execute();
