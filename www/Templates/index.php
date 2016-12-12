@@ -1,11 +1,6 @@
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
       <div class="container">
         <h1>Welcome to Eventagious</h1>
-        <p>
-        <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
-        <a class="btn btn-primary btn-lg" href="index.php?action=login" role="button">Login &raquo;</a>
-        <a class="btn btn-primary btn-lg" href="index.php?action=register" role="button">Register &raquo;</a>
-        </p>
         <h4>
           This is an eventwebsite created by Christian Uhlan and Viktor Carlsson. We want to reach out to both people who would like to
            create events as well as those who want to attend events. On this site, users will be able to make an event and specify what
@@ -13,6 +8,12 @@
            All the code is written in HTML, CSS, Javascript and PHP. We are currently using Google App Engine to power the site,
            both front-end and back-end with a MySQL-server setup. 
         </h4>
+        <p>
+        <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="index.php?action=login" role="button">Login &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="index.php?action=register" role="button">Register &raquo;</a>
+        </p>
+
       </div>
     </div>
 
