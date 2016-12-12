@@ -4,6 +4,7 @@ session_start();
 ?>
   <!--<link href="test.css" rel="stylesheet">-->
   <style>.body{background-color=black;}</style>
+  <link href="test.css" rel="stylesheet" type="text.css">
   <div id="fusktest">
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
         <div class="container">
