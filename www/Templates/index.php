@@ -76,7 +76,7 @@
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
             content: data[i][2]
-            window.location.href = 'https://eventagious3.appspot.com/index.php?action=eventInfo&EventID='+data[i][3];
+            window.location.href = 'https://eventagious3.appspot.com/index.php?action=eventInfo&EventID=19';
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
