@@ -72,7 +72,7 @@ if ($path == '/help') {
       }
       else if(!empty($_GET["search_event"]))
       {
-        echo ("sd");
+        echo json_encode("Test!");
         $event_name=($_GET["search_event"]);
         search_event($event_name);
       }
@@ -479,6 +479,10 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+
+
+
+
   function search_event($product_id=0){ 
     $Eventname = $product_id;
     echo ($Eventname);
@@ -501,6 +505,9 @@ if ($path == '/help') {
     header('Content-Type: application/json');
     echo json_encode($response);
   }
+
+
+
   function get_user_events($product_id=0){ 
     $UserID = $product_id;
     global $connection;
