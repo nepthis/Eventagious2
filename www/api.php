@@ -72,6 +72,7 @@ if ($path == '/help') {
       }
       else if(!empty($_GET["search_event"]))
       {
+        echo ("sd");
         $event_name=($_GET["search_event"]);
         search_event($event_name);
       }
