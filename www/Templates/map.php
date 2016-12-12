@@ -51,6 +51,8 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       markerArray = [];
+      var str = "Free Web Building Tutorials!";
+      var result = str.link("http://www.w3schools.com");
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -90,9 +92,7 @@
           });
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
-            content: data[i][2]
-            var str = "Free Web Building Tutorials!";
-            var result = str.link("http://www.w3schools.com");
+            content: data[i][2] + result
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
