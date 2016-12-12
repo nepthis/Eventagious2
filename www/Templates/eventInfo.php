@@ -32,9 +32,9 @@
     			echo("<div class=\"row\">");
 	        		echo("<div class=\"col-lg-3\">");
 	        			//echo("<h2>".$row['Eventname']."</h2>");
-				        echo("<p>".$row['Adress']."</p>");
-				        echo("<p>".$row['EventDate']."</p>");
-				        echo("<p>".$row['Section']."</p>");
+				        echo("<p>Adress: ".$row['Adress']."</p>");
+				        echo("<p>Date: ".$row['EventDate']."</p>");
+				        echo("<p>Section: ".$row['Section']."</p>");
 	        		echo("</div>");
           //echo("</div>");
 	        	
