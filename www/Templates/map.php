@@ -93,7 +93,7 @@
           });
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
-            content: data[i][2] + "\n" + result
+            content: data[i][2] + "<p><br /></p>" + result
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
