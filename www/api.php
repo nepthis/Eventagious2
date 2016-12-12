@@ -484,9 +484,9 @@ if ($path == '/help') {
     global $connection;
     //$query="SELECT * FROM events";
 
-    $sth = $connection->prepare('SELECT *
+    $sth = $connection->prepare("SELECT *
           FROM Event
-          WHERE Eventname LIKE '%$Eventname%'');
+          WHERE Eventname LIKE '%{$Eventname}%'");
     $sth->bindParam(':Eventname',$Eventname);
     
     $response=array();
