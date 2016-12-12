@@ -1,43 +1,51 @@
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><center>Register</center></h3>
+    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;padding-left: 140">
+        <div class="container">
+          <h1>Register to Eventagious</h1>
+        </div>
       </div>
-      <div class="panel-body">
-        <center>Register your user to Eventagious by filling all the fields below and pressing Submit.</center>
-      </div>
-    </div>
-      <div class="container">
-    <form action="index.php?action=register" method="POST">
-      <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon1">@</span>
-        <input type="text" class="form-control" name="username" id="username" placeholder="Username" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="password" class="form-control" name="password" id="password" placeholder="Password" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First name" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="adress" id="adress" placeholder="Adress" aria-describedby="sizing-addon1">
-      </div>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="section" id="section" placeholder="Section" aria-describedby="sizing-addon1">
-      </div>
-      <center><input id="button" type="submit" name="submit" value="Submit"></center>
-    </form>
+
+      <center>
+        <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;padding-left: 140 ">
+          <div class="container" >
+            <form action="index.php?action=register" method="POST">
+              <div class="input-group input-group-lg" style="width:50%; ">
+                <span class="input-group-addon" id="sizing-addon1">@</span>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username" aria-describedby="sizing-addon1">
+              </div>
+              <div class="input-group input-group-lg" style="width:50%;">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" aria-describedby="sizing-addon1">
+              </div>
+              <div class="input-group input-group-lg" style=" width:50%;">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" aria-describedby="sizing-addon1">
+              </div>
+              <div class="input-group input-group-lg" style=" width:50%;">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First name" aria-describedby="sizing-addon1">
+              </div>
+              <div class="input-group input-group-lg" style=" width:50%;">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname" aria-describedby="sizing-addon1">
+              </div>
+              <div class="input-group input-group-lg" style=" width:50%;">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" name="adress" id="adress" placeholder="Adress" aria-describedby="sizing-addon1">
+              </div>
+              <div class="input-group input-group-lg" style=" width:50%;">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" name="section" id="section" placeholder="Section" aria-describedby="sizing-addon1">
+              </div>
+              <input class="btn btn-primary" id="button" type="submit" name="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </center>
+
+  <div style="position:absolute;z-index:1000;">
+      <img src="/assets/img/festivalgirl.png" alt="/assets/img/bg_4.png" style="width:100%;height: 94%">
+  </div>
+
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 

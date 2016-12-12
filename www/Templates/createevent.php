@@ -2,69 +2,67 @@
 session_start();
 
 ?>
-
-      <div class="jumbotron">
+    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;padding-left: 140">
         <div class="container">
           <h1>Skapa ett event</h1>
-          <p>Detta är en sida för att skapa event! </p>
-          <p>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</p>
+          <h4>Detta är en sida för att skapa event! </h4>
+          <h4>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</h4>
         </div>
       </div>
-
-      <div class="container">
+      <center>
+      <div class="container" style="position:absolute;z-index:1001; padding-top: 220px;padding-left: 140;">
           <div id="map" style="height: 500px; width:1200px; text-align: center; padding-top: 0px;"></div>
       </div>
-
-
-
-      <div class="container">
-      </div>
     
+    <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;padding-left: 140; padding-top: 750px ">
+      <div class="container">
+        <form action="event/create" method="post">
+            <input type="hidden" name="UserID" id="UserID" value= <?php echo($_SESSION['user_id']);?> >
+
+          <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
+            <span class="input-group-addon" id="sizing-addon2">@</span>
+            <input type="text" class="form-control" name="Eventname" id="Eventname" placeholder="Eventname" aria-describedby="sizing-addon1">
+          </div>
+
+          <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
+            <span class="input-group-addon" id="sizing-addon3">@</span>
+            <input type="text" class="form-control" name="Description" id="Description" placeholder="Description" aria-describedby="sizing-addon1" style="height: 100">
+          </div>
+
+          <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
+            <span class="input-group-addon" id="sizing-addon4">@</span>
+            <input type="text" class="form-control" name="Adress" id="Adress" placeholder="Adress" aria-describedby="sizing-addon1">
+          </div>
+
+         <!-- <div class="input-group input-group-lg" style="padding-top: 5px">
+            <span class="input-group-addon" id="sizing-addon5">@</span>-->
+            <input type="hidden" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
+         <!-- </div>-->
+          <!--<div class="input-group input-group-lg" style="padding-top: 5px">
+            <span class="input-group-addon" id="sizing-addon6">@</span>-->
+            <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
+          <!--</div>-->
+          <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
+            <span class="input-group-addon" id="sizing-addon7">@</span>
+            <input type="text" class="form-control" name="Section" id="Section" placeholder="Section" aria-describedby="sizing-addon1">
+          </div>
+
+          <div class="input-group input-group-lg" style="padding-top: 5px;width:50%">
+            <span class="input-group-addon" id="sizing-addon7">@</span>
+            <input type="date" class="form-control" name="EventDate" id="EventDate" placeholder="Date YYYY-MM-DD" aria-describedby="sizing-addon1">
+          </div>
+          <input class="btn btn-primary"
+                        type="button" 
+                       value="Create" 
+                       onclick="form.submit();" /> 
+        </form>
+      </div>
     </div>
-
-  <div class="container">
-    <form action="event/create" method="post">
-        <input type="hidden" name="UserID" id="UserID" value= <?php echo($_SESSION['user_id']);?> >
-
-        <!--<input type="hidden" class="form-control" name="UserID" id="UserID" placeholder="UserID" value= <?php $_SESSION['user_id']?> aria-describedby="sizing-addon1">-->
-
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon2">@</span>
-        <input type="text" class="form-control" name="Eventname" id="Eventname" placeholder="Eventname" aria-describedby="sizing-addon1">
-      </div>
-      <p>Fylla i vad eventet ska heta</p>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon3">@</span>
-        <input type="text" class="form-control" name="Description" id="Description" placeholder="Description" aria-describedby="sizing-addon1">
-      </div>
-      <p>Fylla i vad eventet ska handla om</p>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon4">@</span>
-        <input type="text" class="form-control" name="Adress" id="Adress" placeholder="Adress" aria-describedby="sizing-addon1">
-      </div>
-      <p>Fylla i vart eventet ska vara </p>
-     <!-- <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon5">@</span>-->
-        <input type="hidden" class="form-control" name="Longitude" id="Longitude" aria-describedby="sizing-addon1">
-     <!-- </div>-->
-      <!--<div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon6">@</span>-->
-        <input type="hidden" class="form-control" name="Latitude" id="Latitude" aria-describedby="sizing-addon1">
-      <!--</div>-->
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon7">@</span>
-        <input type="text" class="form-control" name="Section" id="Section" placeholder="Section" aria-describedby="sizing-addon1">
-      </div>
-      <p>Fylla i vilken sektion som det ska vara </p>
-      <div class="input-group input-group-lg" style="padding-top: 5px">
-        <span class="input-group-addon" id="sizing-addon7">@</span>
-        <input type="date" class="form-control" name="EventDate" id="EventDate" placeholder="Date YYYY-MM-DD" aria-describedby="sizing-addon1">
-      </div>
-      <input type="button" 
-                   value="Create" 
-                   onclick="form.submit();" /> 
-    </form>
+    </center>
+  <div style="position:absolute;z-index:1000;">
+      <img src="/assets/img/bg_4.png" alt="/assets/img/bg_4.png" style="width:100%;height: 94%">
   </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
