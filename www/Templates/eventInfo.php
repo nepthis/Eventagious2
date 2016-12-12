@@ -24,7 +24,7 @@
       		echo ("<div class=\"container\">");
 	        	//echo ("<div id=\"map\" style=\"height: 500px; width:1200px; text-align: center;\"></div>");
 	        	echo ("<h1>".$row['Eventname']."</h1>");
-	        	echo ("<p>Detta är en korkad test som ingen vad vad vi ska ha den till men va faN!. Heja TRUMP!.</p>");
+            echo ("<p>".$row['Description']."</p>");
       			echo ("</div>");
     		echo ("</div>");
     		echo ("</div>");
@@ -32,10 +32,9 @@
     			echo("<div class=\"row\">");
 	        		echo("<div class=\"col-lg-3\">");
 	        			//echo("<h2>".$row['Eventname']."</h2>");
-				        echo("<p>".$row['Description']."</p>");
-				        echo("<p>".$row['Adress']."</p>");
-				        echo("<p>".$row['EventDate']."</p>");
-				        echo("<p>".$row['Section']."</p>");
+				        echo("<p>Adress: ".$row['Adress']."</p>");
+				        echo("<p>Date: ".$row['EventDate']."</p>");
+				        echo("<p>Section: ".$row['Section']."</p>");
 	        		echo("</div>");
           //echo("</div>");
 	        	

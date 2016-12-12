@@ -15,28 +15,7 @@
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Event 1</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="index.php?action=eventInfo" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Event 2</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="index.php?action=eventInfo role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Event 3</h2>
-          <p>Här kommer då De eventen som man ska gå på eller som man själva har skapat. </p>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
-          <p><a class="btn btn-default" href="index.php?action=eventInfo role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -51,7 +30,7 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       markerArray = [];
-      var str = "Free Web Building Tutorials!";
+      var str = "Go to event!";
       var result = str.link("http://www.w3schools.com");
       function initMap() {
         var geocoder = new google.maps.Geocoder;
@@ -85,6 +64,7 @@
         }
         $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
         for (var i = data.length - 1; i >= 0; i--) {
+          result = str.link("https://eventagious3.appspot.com/index.php?action=eventInfo&EventID="+data[i][3]); //ändra till rätt link + EventID SÅ ÄRE KLARTTTT data[i][3]
           var allamarkers = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][1], data[i][0]),
           map: map,
@@ -92,7 +72,7 @@
           });
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
-            content: data[i][2] + result
+            content: data[i][2] + "<p><br /></p>" + result
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
