@@ -479,7 +479,7 @@ if ($path == '/help') {
     echo json_encode($response);
   }
   function search_event($product_id=0){ 
-    $EventName = $product_id;
+    $Eventname = $product_id;
     global $connection;
     //$query="SELECT * FROM events";
 
