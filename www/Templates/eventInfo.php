@@ -82,6 +82,7 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var EventID = '<?php echo $EventID; ?>';
+      alert(EventID);
       var markers = [];
       var markerArray = [];
       function initMap() {
