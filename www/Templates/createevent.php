@@ -2,7 +2,7 @@
 session_start();
 
 ?>
-    <link href="../test.css" rel="stylesheet">
+    <link href="test.css" rel="stylesheet">
 
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;padding-left: 140">
         <div class="container">
