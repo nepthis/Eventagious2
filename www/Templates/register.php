@@ -1,11 +1,11 @@
-    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;padding-left: 140">
+    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
         <div class="container">
           <h1>Register to Eventagious</h1>
         </div>
       </div>
 
       <center>
-        <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;padding-left: 140 ">
+        <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;width: 100% ">
           <div class="container" >
             <form action="index.php?action=register" method="POST">
               <div class="input-group input-group-lg" style="width:50%; ">

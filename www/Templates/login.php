@@ -4,12 +4,12 @@
         }
     ?>
   <center>
-  <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;">
+  <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
       <div class="container">
         <h1>Login to Eventagious</h1>
       </div>
     </div>
-  <div class="input-group" style="position:absolute;z-index:1001; ">
+  <div class="input-group" style="position:absolute;z-index:1001; width: 100%">
       <!--<div class="media-left">
         <a href="#">
          <img class="media-object" style="height: 50px" src="assets/img/google.jpg" alt="">
