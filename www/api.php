@@ -595,6 +595,7 @@ if ($path == '/help') {
     $sth = $connection->prepare('SELECT Longitude, Latitude, Eventname
           FROM Event
           WHERE EventID=:EventID');
+    $sth->bindParam(':EventID',$EventID);
     
     $response=array();
     $sth->execute();
