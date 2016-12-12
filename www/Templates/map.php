@@ -45,11 +45,12 @@
 
     <!-- Maps scrips -->
 
-    <script>
+   <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
+      markerArray = [];
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -87,6 +88,16 @@
           map: map,
           title: data[i][2]
           });
+          markerArray.push(allamarkers);
+          allamarkers['infowindow'] = new google.maps.InfoWindow({
+            content: data[i][2]
+            window.location.href = 'http://www.google.com';
+          });
+
+          google.maps.event.addListener(allamarkers, 'click', function() {
+              this['infowindow'].open(map, this);
+          });
+          markerArray.push(allamarkers);
         }
       });
         
@@ -112,6 +123,7 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+      //data.latitude
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
