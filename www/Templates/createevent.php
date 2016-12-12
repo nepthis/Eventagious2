@@ -2,7 +2,7 @@
 session_start();
 
 ?>
-    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;padding-left: 140">
+    <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
         <div class="container">
           <h1>Skapa ett event</h1>
           <h4>Detta är en sida för att skapa event! </h4>
@@ -10,11 +10,11 @@ session_start();
         </div>
       </div>
       <center>
-      <div class="container" style="position:absolute;z-index:1004; padding-top: 220px;padding-left: 140;">
+      <div class="container" style="position:absolute;z-index:1004; padding-top: 220px;width: 100%">
           <div id="map" style="height: 500px; width:1200px; text-align: center; padding-top: 0px;"></div>
       </div>
     
-    <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;padding-left: 140; padding-top: 750px ">
+    <div class="input-group" style="position:absolute;z-index:1001;padding-top: 175;width: 100%; padding-top: 750px ">
       <div class="container">
         <form action="event/create" method="post" id=createEvent >
             <input type="hidden" name="UserID" id="UserID" value= <?php echo($_SESSION['user_id']);?> >
