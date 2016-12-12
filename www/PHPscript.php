@@ -66,6 +66,7 @@
             //if (checkbrute($user_id,$database) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
+                $_SESSION['errorGard'] = "brutforcGard";
                 return false;
             } else {
                 // Check if the password in the database matches
@@ -94,7 +95,7 @@
                     // Login successful.
                     return true;
                 } else {
-                    echo "Fel passord12";
+                    $_SESSION['errorPassword'] = "wrong password";
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
@@ -107,8 +108,7 @@
         
 
     }else{
-        echo "fel atal rader";
-        //return false;
+        return false;
     }
 }
 
