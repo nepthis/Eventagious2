@@ -2,11 +2,15 @@
 session_start();
 
 ?>
+  <!--<link href="test.css" rel="stylesheet">-->
+  <style>.body{background-color=black;}</style>
+  <link href="test.css" rel="stylesheet" type="text.css">
+  <div id="fusktest">
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
         <div class="container">
-          <h1>Skapa ett event</h1>
-          <h4>Detta är en sida för att skapa event! </h4>
-          <h4>Man fyller i vad event ska heta, vad eventet ska handla om och vart det ska vara</h4>
+          <h1>Create an event</h1>
+          <h4>This is a page to create events</h4>
+          <h4>Click the map for a location and fill the fields below!</h4>
         </div>
       </div>
       <center>
@@ -182,3 +186,4 @@ session_start();
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqlg8Lpg9t90hUKNPE_SPJLqgUfa27ETU&callback=initMap">
     </script>
+</div>
