@@ -2,13 +2,10 @@
 session_start();
 
 ?>
-<<<<<<< HEAD
-    <link href="test.css" rel="stylesheet">
+
 
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;padding-left: 140">
-=======
     <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
->>>>>>> 278e49d737efc24d92b974916acfe22acf64e23a
         <div class="container">
           <h1>Skapa ett event</h1>
           <h4>Detta är en sida för att skapa event! </h4>
