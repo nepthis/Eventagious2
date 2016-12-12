@@ -70,6 +70,11 @@ if ($path == '/help') {
         $event_name=intval($_GET["event_name"]);
         get_event_name($event_name);
       }
+      else if(!empty($_GET["search_event"]))
+      {
+        $event_name=intval($_GET["search_event"]);
+        search_event($event_name);
+      }
       else if(!empty($_GET["user_id_events"]))
       {
         $user_id=intval($_GET["user_id_events"]);
@@ -462,6 +467,26 @@ if ($path == '/help') {
           FROM Event
           WHERE EventID = :id');
     $sth->bindParam(':id',$EventID);
+    
+    $response=array();
+    $sth->execute();
+
+    while($r = $sth->fetch())
+    {
+      $response[]=$r;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
+  function search_event($product_id=0){ 
+    $EventName = $product_id;
+    global $connection;
+    //$query="SELECT * FROM events";
+
+    $sth = $connection->prepare('SELECT *
+          FROM Event
+          WHERE Eventname LIKE :Eventname');
+    $sth->bindParam(':Eventname',$Eventname);
     
     $response=array();
     $sth->execute();
