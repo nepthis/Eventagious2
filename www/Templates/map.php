@@ -51,7 +51,7 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       markerArray = [];
-      var str = "Free Web Building Tutorials!";
+      var str = "Go to event!";
       var result = str.link("http://www.w3schools.com");
       function initMap() {
         var geocoder = new google.maps.Geocoder;
@@ -85,6 +85,7 @@
         }
         $.getJSON( "https://eventagious3.appspot.com/api/?get_all_event_location=1", function( data ) {
         for (var i = data.length - 1; i >= 0; i--) {
+          result = str.link("https://eventagious3.appspot.com/index.php?action=eventInfo&EventID="+data[i][3]); //ändra till rätt link + EventID SÅ ÄRE KLARTTTT data[i][3]
           var allamarkers = new google.maps.Marker({
           position: new google.maps.LatLng(data[i][1], data[i][0]),
           map: map,
@@ -92,7 +93,7 @@
           });
           markerArray.push(allamarkers);
           allamarkers['infowindow'] = new google.maps.InfoWindow({
-            content: data[i][2] + result
+            content: data[i][2] + " " result
           });
 
           google.maps.event.addListener(allamarkers, 'click', function() {
