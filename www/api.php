@@ -72,7 +72,7 @@ if ($path == '/help') {
       }
       else if(!empty($_GET["search_event"]))
       {
-        $event_name=intval($_GET["search_event"]);
+        $event_name=($_GET["search_event"]);
         search_event($event_name);
       }
       else if(!empty($_GET["user_id_events"]))
