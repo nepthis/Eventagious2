@@ -83,6 +83,7 @@
       // locate you.
       var EventID = '<?php echo $EventID; ?>';
       var markers = [];
+      var markerArray = [];
       function initMap() {
         var geocoder = new google.maps.Geocoder;
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -96,6 +97,15 @@
             map: map,
             title: data[i][2]
             });
+          markerArray.push(allamarkers);
+          allamarkers['infowindow'] = new google.maps.InfoWindow({
+            content: data[i][2]
+          });
+
+          google.maps.event.addListener(allamarkers, 'click', function() {
+              this['infowindow'].open(map, this);
+          });
+          markerArray.push(allamarkers);
           }
         });
 

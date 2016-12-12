@@ -80,6 +80,7 @@ session_start();
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var markers = [];
+      var markerArray = [];
       var clickCoordsLat;
       var clickCoordsLon;
       var clickCoords;
@@ -112,6 +113,15 @@ session_start();
             map: map,
             title: data[i][2]
             });
+          markerArray.push(allamarkers);
+          allamarkers['infowindow'] = new google.maps.InfoWindow({
+            content: data[i][2]
+          });
+
+          google.maps.event.addListener(allamarkers, 'click', function() {
+              this['infowindow'].open(map, this);
+          });
+          markerArray.push(allamarkers);
           }
         });
 
