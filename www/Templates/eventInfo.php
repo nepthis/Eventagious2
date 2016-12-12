@@ -89,7 +89,7 @@
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
-        $.getJSON( "https://eventagious3.appspot.com/api/?get_event_location"+EventID, function( data ) {
+        $.getJSON( "https://eventagious3.appspot.com/api/?get_event_location="+EventID, function( data ) {
           for (var i = data.length - 1; i >= 0; i--) {
             var allamarkers = new google.maps.Marker({
             position: new google.maps.LatLng(data[i][1], data[i][0]),
