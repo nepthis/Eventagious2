@@ -10,7 +10,7 @@ session_start();
         </div>
       </div>
       <center>
-      <div class="container" style="position:absolute;z-index:1001; padding-top: 220px;padding-left: 140;">
+      <div class="container" style="position:absolute;z-index:1004; padding-top: 220px;padding-left: 140;">
           <div id="map" style="height: 500px; width:1200px; text-align: center; padding-top: 0px;"></div>
       </div>
     
