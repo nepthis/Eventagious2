@@ -63,7 +63,7 @@
 
 		echo ("<div class=\"container\">");
 			echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");
-	  		echo ("<h4>Uppload a picture:<h4/>");
+	  		echo ("<h4>Upload a picture:<h4/>");
 	  		echo ("<input name=\"file\" type=\"file\" id =\"file\" multiple=\"multiple\"/><p/>");
 	  		echo ("<input name=\"EventID\" type=\"hidden\" id=\"EventID\" placeholder=\"EventID\" value=".$EventID."><p/>");
 	  		echo ("<input name=\"FileName\" type=\"hidden\" id=\"FileName\" placeholder=\"FileName\" value=\"file\"/><p/>");
