@@ -2,6 +2,14 @@
         <div class="container">
           <h1>Browse all events currently available at Eventagious</h1>
            <div class="col-sm-3 col-md-3 ">
+            <form class="navbar-form" role="search" action="index.php?action=searchevent" method="post">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                  <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" onclick="form.submit();"></i></button>
+                  </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
