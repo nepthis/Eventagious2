@@ -3,16 +3,16 @@
       //$user_id = $_SESSION['user_id'];
       //echo $user_id;
 
-if($_SERVER['REQUEST_METHOD'] === 'GET'){
-  $srch=$_GET["srch-term"];
-}
+//if($_SERVER['REQUEST_METHOD'] === 'GET'){
+//  $srch=$_GET["srch-term"];
+//}
 
 
 
 
 
 
-      $url = 'https://eventagious3.appspot.com/api/?search_event='+$srch;
+      $url = 'https://eventagious3.appspot.com/api/?search_event=';//+$srch;
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
