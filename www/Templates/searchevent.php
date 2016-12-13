@@ -1,3 +1,12 @@
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Browse all events currently available at Eventagious</h1>
+           <div class="col-sm-3 col-md-3 ">
+          </div>
+        </div>
+      </div>
+
+
       <div class="container">
 <?php
       //$user_id = $_SESSION['user_id'];
