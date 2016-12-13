@@ -36,7 +36,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header('Location: index.php?action=myPage');
         exit;
     }else if ($response['status']==0){
-        echo "Det gick fel någonstans! försök igen";
+        $_SESSION['errorEvent'] = "wrong in event";
+        header('Location: index.php?action=createevent');
+        exit;
     }
   }else{
     echo "Allt är inte ifyllt";

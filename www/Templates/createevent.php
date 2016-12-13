@@ -7,8 +7,14 @@ session_start();
       <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
           <div class="container">
             <h1>Create an event</h1>
-            <h4>This is a page to create events</h4>
-            <h4>Click the map for a location and fill the fields below!</h4>
+            <?php if($_SESSION['errorEvent'] == "wrong in event"){
+              echo ("<h4>The input was wrong, please try again</h4>");
+              $_SESSION['errorEvent'] = "";
+            }else{
+              echo ("<h4>This is a page to create events</h4>");
+              echo ("<h4>Click the map for a location and fill the fields below!</h4>");
+            }
+            ?>
           </div>
         </div>
         <center>
