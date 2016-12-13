@@ -1,1 +1,6 @@
-.input-mysize { width: 150px }
+.blackOut {
+	width: 100%;
+	height: 1200;
+	background-color: #000;
+	z-index:1006;
+}

@@ -41,7 +41,10 @@
     
   </head>
 
-  <body>
+  <body style="    
+    height:100%;
+    margin:0;
+    padding:0;">
   
 <script>
   /*window.fbAsyncInit = function() {
