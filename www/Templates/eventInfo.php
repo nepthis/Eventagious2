@@ -21,7 +21,7 @@
 
 	    foreach($response as $row){
 	      	echo ("<div class=\"jumbotron\">");
-      		echo ("<div class=\"containerstyle=\"word-wrap: break-word;\">");
+      		echo ("<div class=\"container\" style=\"word-wrap: break-word;\">");
 	        	//echo ("<div id=\"map\" style=\"height: 500px; width:1200px; text-align: center;\"></div>");
 	        	echo ("<h1>".$row['Eventname']."</h1>");
             echo ("<h4>".$row['Description']."<h4>");
@@ -30,14 +30,15 @@
     		echo ("</div>");
     		echo ("<div class=\"container\">");
     			echo("<div class=\"row\">");
-	        		echo("<div class=\"col-lg-3\">");
-	        			//echo("<h2>".$row['Eventname']."</h2>");
-				        echo("<p>Adress: ".$row['Adress']."</p>");
-				        echo("<p>Date: ".$row['EventDate']."</p>");
-				        echo("<p>Section: ".$row['Section']."</p>");
+	        		echo("<div class=\"col-lg-6\">");
+
+                echo("<h4>Date: ".$row['EventDate']."</h4>");
+				        echo("<h4>Adress: ".$row['Adress']."</h4>");
+				        echo("<h4>Section: ".$row['Section']."</h4>");
 	        		echo("</div>");
           //echo("</div>");
-	        	
+	       echo("</div>");
+
 	    }
 
 
@@ -50,23 +51,23 @@
 	    $response=json_decode($response_json, true);
 
 
+      echo("<div class=\"col-lg-4\">");  
 
 	    foreach($response as $row){
 
         echo("<p> <a href=".$row['Image_URL']."> <img src=".$row['Image_Thumbnail_URL']." title=\"Click to ...\" style=\"float:right;width:100px;height:100px;\">");
         }
 
+      echo("</div>"); 
+    echo("</div>"); 
 
-        echo("</div>");
-				echo("</div>");
-		echo("</div>");
 		echo ("<div class=\"container\">");
 			echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");
-	  		echo ("Send these files:<p/>");
+	  		echo ("<h4>Uppload a picture:<h4/>");
 	  		echo ("<input name=\"file\" type=\"file\" id =\"file\" multiple=\"multiple\"/><p/>");
 	  		echo ("<input name=\"EventID\" type=\"hidden\" id=\"EventID\" placeholder=\"EventID\" value=".$EventID."><p/>");
 	  		echo ("<input name=\"FileName\" type=\"hidden\" id=\"FileName\" placeholder=\"FileName\" value=\"file\"/><p/>");
-	  		echo ("<input id= \"button\" type=\"submit\" value=\"Upload\" />");
+	  		echo ("<input class=\"btn btn-primary\" id= \"button\" type=\"submit\" value=\"Upload\" />");
 		echo ("</div>");
 
 ?>

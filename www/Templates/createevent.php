@@ -4,13 +4,19 @@ session_start();
 ?>
 <div style="z-index:100; width: 100%;height: 1200;background-color: #000;">
 
-      <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
+      <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%"> 
           <div class="container">
             <h1>Create an event</h1>
+
             <?php if($_SESSION['errorEvent'] == "wrong in db"){
               echo ("<h4>The input was wrong, please try again</h4>");
               $_SESSION['errorEvent'] = "";
-            }else{
+            }
+            else if($_SESSION['errorEvent'] == "not all input"){
+              echo ("<h4>You didn't fill in all the info, please try again</h4>");
+              $_SESSION['errorEvent'] = "";
+            }
+            else{
               echo ("<h4>This is a page to create events</h4>");
               echo ("<h4>Click the map for a location and fill the fields below!</h4>");
             }
