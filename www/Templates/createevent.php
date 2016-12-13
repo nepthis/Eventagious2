@@ -7,7 +7,7 @@ session_start();
       <div class="jumbotron p" style="position:absolute;z-index:1001;text-align: center;background-color: transparent;width: 100%">
           <div class="container">
             <h1>Create an event</h1>
-            <?php if($_SESSION['errorEvent'] == "wrong in event"){
+            <?php if($_SESSION['errorEvent'] == "wrong in db"){
               echo ("<h4>The input was wrong, please try again</h4>");
               $_SESSION['errorEvent'] = "";
             }else{

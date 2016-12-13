@@ -1,8 +1,8 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
-    //Funkar inte riktigt som den ska... den gå in i if satsen fast den inte borde göra detta.
-  if (isset($_POST['Description'], $_POST['Adress'], $_POST['Longitude'], $_POST['Latitude'], $_POST['Eventname'], $_POST['EventDate'], $_POST['Section'])) {
+
+  if (!empty($_POST['Description']) and !empty($_POST['Adress']) and !empty($_POST['Longitude']) and !empty($_POST['Latitude']) and !empty($_POST['Eventname']) and !empty($_POST['EventDate']) and !empty($_POST['Section'])) {
     //$Username=$_SESSION["username"];
     $UserID=$_POST["UserID"];
     $Description=$_POST["Description"];
@@ -36,11 +36,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header('Location: index.php?action=myPage');
         exit;
     }else if ($response['status']==0){
-        $_SESSION['errorEvent'] = "wrong in event";
+        $_SESSION['errorEvent'] = "wrong in db";
         header('Location: index.php?action=createevent');
         exit;
     }
   }else{
-    echo "Allt är inte ifyllt";
+    $_SESSION['errorEvent'] = "not all input";
+    header('Location: index.php?action=createevent');
   }
 }
+
+?>
