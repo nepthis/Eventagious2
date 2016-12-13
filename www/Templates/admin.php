@@ -14,15 +14,12 @@ echo $_SESSION['isAdmin'];
         echo ("</div>");
 
       }else{
-
-
-      echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
-         echo ("<div class=\"jumbotron\">");
-            echo ("<div class=\"container\">");
-              echo ("<h1>ADMINSIDA</h1>");
-              echo ("<p>HEJ ADMIN DU ÄR SÖT </p>");
-          echo ("</div>");
-        echo ("</div>");
+        echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
+           echo ("<div class=\"jumbotron\">");
+              echo ("<div class=\"container\">");
+                echo ("<h1>ADMINSIDA</h1>");
+              echo ("</div>");
+            echo ("</div>");
 
 
 
