@@ -22,14 +22,7 @@
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $srch=$_POST["srch-term"];
-  echo($srch);
 }
-
-
-
-
-
-      echo($srch);
       $url = 'https://eventagious3.appspot.com/api/?search_event='.$srch.'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
