@@ -480,8 +480,6 @@ if ($path == '/help') {
   }
 
 
-
-
   function search_event($product_id=0){ 
     $Eventname = $product_id;
     global $connection;
