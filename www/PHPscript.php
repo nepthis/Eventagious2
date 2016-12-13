@@ -94,7 +94,7 @@
                     // Login successful.
                     return true;
                 } else {
-                    echo "Fel passord12";
+                    echo "Fel passord1";
                     // Password is not correct
                     // We record this attempt in the database
                     $now = time();
