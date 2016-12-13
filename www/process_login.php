@@ -5,7 +5,7 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-      if (isset($_POST['username'], $_POST['password'])) {
+      if (!empty($_POST['username']) and !empty($_POST['password'])) {
       $username = $_POST['username'];
       $password = $_POST['password']; // The hashed password.
 
@@ -17,12 +17,12 @@
           exit;
         } else {
           // Login failed
-          header('Location: index.php');
+          header('Location: index.php?action=login');
           exit;
         }
       } else {
-      // The correct POST variables were not sent to this page. 
-      echo 'Invalid Request ifrån login';
+      // The correct POST variables were not sent to this page.
+      header('Location: index.php?action=login');
       }
     }
     ?>

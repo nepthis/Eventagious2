@@ -8,6 +8,7 @@
         </h4>
         <p>
         <a class="btn btn-primary btn-lg" href="index.php?action=map" role="button">Map &raquo;</a>
+        
         <a class="btn btn-primary btn-lg" href="index.php?action=login" role="button">Login &raquo;</a>
         <a class="btn btn-primary btn-lg" href="index.php?action=register" role="button">Register &raquo;</a>
         </p>
