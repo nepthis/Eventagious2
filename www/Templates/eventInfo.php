@@ -25,6 +25,7 @@
 	        	//echo ("<div id=\"map\" style=\"height: 500px; width:1200px; text-align: center;\"></div>");
 	        	echo ("<h1>".$row['Eventname']."</h1>");
             echo ("<h4>".$row['Description']."<h4>");
+            echo ("</div>");
     		echo ("</div>");
     		echo ("</div>");
     		echo ("<div class=\"container\">");
