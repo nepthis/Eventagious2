@@ -21,7 +21,7 @@
 
 	    foreach($response as $row){
 	      	echo ("<div class=\"jumbotron\">");
-      		echo ("<div class=\"container\">");
+      		echo ("<div class=\"container\" style=\"width:1200px; text-align: center; padding-top: 0px;\">");
 	        	//echo ("<div id=\"map\" style=\"height: 500px; width:1200px; text-align: center;\"></div>");
 	        	echo ("<h1>".$row['Eventname']."</h1>");
             echo ("<p>".$row['Description']."</p>");
