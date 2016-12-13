@@ -25,6 +25,7 @@ $(document).ready(function (e) {
     {
      // view uploaded file.
      console.log("det funkar...");
+     location.reload();
      //$("#preview").html(data).fadeIn();
      //$("#form")[0].reset(); 
     }

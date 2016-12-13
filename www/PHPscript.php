@@ -96,8 +96,6 @@
                     return true;
                 } else {
 
-                    echo "Fel passord1";
-
                     $_SESSION['errorPassword'] = "wrong password";
                     // Password is not correct
                     // We record this attempt in the database
