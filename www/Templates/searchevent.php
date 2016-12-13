@@ -1,18 +1,29 @@
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Browse all events currently available at Eventagious</h1>
+           <div class="col-sm-3 col-md-3 ">
+            <form class="navbar-form" role="search" action="index.php?action=searchevent" method="post">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                  <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" onclick="form.submit();"></i></button>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
       <div class="container">
 <?php
       //$user_id = $_SESSION['user_id'];
       //echo $user_id;
 
-//if($_SERVER['REQUEST_METHOD'] === 'GET'){
-//  $srch=$_GET["srch-term"];
-//}
-
-
-
-
-
-
-      $url = 'https://eventagious3.appspot.com/api/?search_event=data';//+$srch;
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $srch=$_POST["srch-term"];
+}
+      $url = 'https://eventagious3.appspot.com/api/?search_event='.$srch.'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
