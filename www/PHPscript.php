@@ -109,6 +109,7 @@
         
 
     }else{
+        $_SESSION['errorUser'] = "no user";
         return false;
     }
 }
