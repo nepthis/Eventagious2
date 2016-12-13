@@ -72,7 +72,6 @@ if ($path == '/help') {
       }
       else if(!empty($_GET["search_event"]))
       {
-        echo json_encode("Test!");
         $event_name=$_GET["search_event"];
         search_event($event_name);
       }
@@ -485,8 +484,6 @@ if ($path == '/help') {
 
   function search_event($product_id=0){ 
     $Eventname = $product_id;
-    echo ($Eventname);
-    echo ("sad");
     global $connection;
     //$query="SELECT * FROM events";
 

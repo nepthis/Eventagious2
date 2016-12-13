@@ -38,7 +38,7 @@
           center: {lat: 65.617771028118, lng: 22.1387557980779},
           zoom: 14
         });
-        
+        //df
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
