@@ -51,19 +51,19 @@
 	    $response=json_decode($response_json, true);
 
 
-      echo("<div class=\"col-lg-4\">");  
+  
 
 	    foreach($response as $row){
 
         echo("<p> <a href=".$row['Image_URL']."> <img src=".$row['Image_Thumbnail_URL']." title=\"Click to ...\" style=\"float:right;width:100px;height:100px;\">");
         }
 
-      echo("</div>"); 
+ 
     echo("</div>"); 
 
 		echo ("<div class=\"container\">");
 			echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");
-	  		echo ("<h4>Upload a picture:<h4/>");
+	  		echo ("Upload a picture:<p/>");
 	  		echo ("<input name=\"file\" type=\"file\" id =\"file\" multiple=\"multiple\"/><p/>");
 	  		echo ("<input name=\"EventID\" type=\"hidden\" id=\"EventID\" placeholder=\"EventID\" value=".$EventID."><p/>");
 	  		echo ("<input name=\"FileName\" type=\"hidden\" id=\"FileName\" placeholder=\"FileName\" value=\"file\"/><p/>");
