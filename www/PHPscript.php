@@ -1,5 +1,6 @@
 <?php
     //include_once "database.php";
+    $init = parse_ini_file('configUrl.ini');
 
 
     //https://www.apptha.com/blog/how-to-build-a-rest-api-using-php/
@@ -36,7 +37,7 @@
     // Using prepared statements means that SQL injection is not possible. 
       $username = $username;
       //$HashAndSalt = password_hash($password, PASSWORD_BCRYPT);
-      $url = 'https://eventagious3.appspot.com/api/?user_id_username='.$username.'';
+      $url = $init[app_url].'/api/?user_id_username='.$username.'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -115,7 +116,7 @@
 }
 
 
-//Fixa så att den funkar...
+/*
 
 function checkbrute($user_id, $database) {
     // Get timestamp of current time 
@@ -141,9 +142,9 @@ function checkbrute($user_id, $database) {
         }
     }
 }
+*/
 
-
-
+/*
 function login_check($database) {
     // Check if all session variables are set 
     if (isset($_SESSION['user_id'], 
@@ -192,40 +193,8 @@ function login_check($database) {
     }
 }
 
-
-//Oklart
-/*
-function esc_url($url) {
- 
-    if ('' == $url) {
-        return $url;
-    }
- 
-    $url = preg_replace('|[^a-z0-9-~+_.?#=!&;,/:%@$\|*\'()\\x80-\\xff]|i', '', $url);
- 
-    $strip = array('%0d', '%0a', '%0D', '%0A');
-    $url = (string) $url;
- 
-    $count = 1;
-    while ($count) {
-        $url = str_replace($strip, '', $url, $count);
-    }
- 
-    $url = str_replace(';//', '://', $url);
- 
-    $url = htmlentities($url);
- 
-    $url = str_replace('&amp;', '&#038;', $url);
-    $url = str_replace("'", '&#039;', $url);
- 
-    if ($url[0] !== '/') {
-        // We're only interested in relative links from $_SERVER['PHP_SELF']
-        return '';
-    } else {
-        return $url;
-    }
-}
 */
+
 
 
 

@@ -1,4 +1,6 @@
-
+<?php
+  $init = parse_ini_file('configUrl.ini');
+  ?>
   <head>
     <meta charset="utf-8">
 

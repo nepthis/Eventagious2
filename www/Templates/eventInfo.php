@@ -5,7 +5,7 @@
 		  $EventID = $_GET['EventID'];
 	    $user_id = $_SESSION['user_id'];
 
-	    $url = 'https://eventagious3.appspot.com/api/?event_id='.$EventID.'';
+	    $url = $init[app_url].'/api/?event_id='.$EventID.'';
 	    $ch = curl_init($url);
 	    curl_setopt($ch, CURLOPT_HTTPGET, true);
 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -42,7 +42,7 @@
 	    }
 
 
-	   	$url = 'https://eventagious3.appspot.com/api/?eventImg='.$EventID.'';
+	   	$url = $init[app_url].'/api/?eventImg='.$EventID.'';
 	    $ch = curl_init($url);
 	    curl_setopt($ch, CURLOPT_HTTPGET, true);
 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

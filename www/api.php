@@ -256,15 +256,16 @@ if ($path == '/help') {
     if($sth->execute())
     {
       $response=array(
+        //Borde byta till 200..
         'status' => 1,
-        'status_message' =>'Product Added Successfully.'
+        'status_message' =>'Event Added Successfully.'
       );
     }
     else
     {
       $response=array(
         'status' => 0,
-        'status_message' =>'Product Addition Failed.'
+        'status_message' =>'Event Addition Failed.'
       );
     }
     header('Content-Type: application/json');
@@ -589,7 +590,7 @@ if ($path == '/help') {
       $sth->bindParam(':username',$username);
       
     }else{
-      echo json_encode("Fel i passorden");
+      echo json_encode("422");
     }
     
     $response=array();
@@ -651,14 +652,14 @@ if ($path == '/help') {
     {
       $response=array(
         'status' => 1,
-        'status_message' =>'Product Deleted Successfully.'
+        'status_message' =>'User Deleted Successfully.'
       );
     }
     else
     {
       $response=array(
         'status' => 0,
-        'status_message' =>'Product Deletion Failed.'
+        'status_message' =>'User Deletion Failed.'
       );
     }
     header('Content-Type: application/json');
@@ -740,7 +741,7 @@ function update_Event($product_id)
   }
 
 
-
+//Vi bord elägga till så att den kollar så att lösenordet är samma så att man inte kan ändra något utan att veta det gamla lösenordet...
   function update_User($product_id)
   {
     global $connection;
@@ -755,10 +756,11 @@ function update_Event($product_id)
     $surname=$post_vars["surname"];
     $adress=$post_vars["adress"];
     $section=$post_vars["section"];
+    $old_Password=$post_vars["old_Password"];
 
     $sth = $connection->prepare('UPDATE members
           SET username=:username,email=:email,password=:password,firstname=:firstname,surname=:surname,adress=:adress,section=:section
-          WHERE id=:id');
+          WHERE id=:id, password=:old_Password');
     $sth->bindParam(':id',$id);
     $sth->bindParam(':username',$username);
     $sth->bindParam(':email',$email);
@@ -767,6 +769,7 @@ function update_Event($product_id)
     $sth->bindParam(':surname',$surname);
     $sth->bindParam(':adress',$adress);
     $sth->bindParam(':section',$section);
+    $sth->bindParam(':old_Password',$old_Password);
 
     if($sth->execute())
     {

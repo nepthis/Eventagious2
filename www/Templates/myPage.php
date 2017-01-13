@@ -6,7 +6,7 @@
 
       <?php
       $user_id = $_SESSION['user_id'];
-      $url = 'https://eventagious3.appspot.com/api/?user_id_events='.$_SESSION['user_id'].'';
+      $url = $init[app_url].'api/?user_id_events='.$_SESSION['user_id'].'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
