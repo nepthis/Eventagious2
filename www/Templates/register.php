@@ -104,7 +104,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $response_json = curl_exec($ch);
     curl_close($ch);
     $response=json_decode($response_json, true);
+    
   }
 }
-//}
 ?>
