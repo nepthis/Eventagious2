@@ -1,6 +1,6 @@
 <?php
-  $init = parse_ini_file('configUrl.ini');
-  ?>
+$init = parse_ini_file('configUrl.ini');
+?>
   <head>
     <meta charset="utf-8">
 
@@ -55,34 +55,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
-      <?php
-      
-           /*env_variables:
-          # Replace project, instance, database, user and password with the values obtained
-          # when configuring your Cloud SQL instance.
-          MYSQL_DSN: mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 'root123'*/
-
-
-        //$app['database'] = function () use ($app) {
-          // Connect to CloudSQL from App Engine.
-/*
-          $dsn = 'mysql:unix_socket=/cloudsql/eventagious3:us-central1:mysql;dbname=EventagiousProject';
-          $user = 'root';
-          $password = 'root123';
-          if (!isset($dsn, $user) || false === $password) {
-              throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
-          }
-
-        $db = new PDO($dsn, $user, $password);
-*/
-        //return $db;
-        //};
-      ?>
-
-
      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -101,7 +73,4 @@
           </div>
         </div>
       </nav>
-
-
-
     <div id="content">

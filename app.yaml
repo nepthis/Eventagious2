@@ -10,11 +10,8 @@
  - url: /upload_handler
    script: www/upload_handler.php
 
- - url: /test2
-   script: www/test2.php
-
- - url: /registertest
-   script: www/registertest.php
+ - url: /register
+   script: www/register_script.php
 
  - url: /api/.*
    script: www/api.php
