@@ -1,43 +1,6 @@
-
-	  <center>
-
-      <div id="Registration">
-      <fieldset style="width:30%"><legend>Registration Form</legend>
-      <table border="0">
-        <tr>
-        <form method="POST" action="register">
-        <td>Username</td><td> <input type="text" name="username"></td>
-        </tr>
-        <tr>
-        <td>Email</td><td> <input type="text" name="email"></td>
-        </tr>
-        <tr>
-        <td>Password</td><td> <input type="password" name="password"></td>
-        </tr>
-        <tr>
-        <td>First name</td><td> <input type="text" name="firstname"></td>
-        </tr>
-        <tr>
-        <td>Surname</td><td><input type="text" name="surname"></td>
-        </tr>
-        <tr>
-        <td>Adress</td><td><input type="text" name="adress"></td>
-        </tr>
-        <tr>
-        <td>Section</td><td><input type="text" name="section"></td>
-        </tr>
-        <tr>
-        <td><input id="button" type="submit" name="submit" value="Submit"></td>
-        </tr>
-      </form>
-      </table>
-      </fieldset>
-    </div>
-	  </center>
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  //$error_msg = "";
-  //if(isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['firstname'], $_POST['surname'], $_POST['adress'], $_POST['section'])) {
+
     if($_REQUEST['username']==''){
       echo "Please fill the username field.";
     }
@@ -87,7 +50,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $response_json = curl_exec($ch);
     curl_close($ch);
     $response=json_decode($response_json, true);
+
+    if($response['status']=1 ){
+      header('Location: index.php?action=login',true, 303);
+      exit;
+    }
+    if($response['status']=0 ){
+      header('Location: index.php?action=register',true, 303);
+      exit;
+    }
   }
 }
-//}
 ?>

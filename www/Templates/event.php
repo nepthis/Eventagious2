@@ -19,7 +19,7 @@
 <?php
       $user_id = $_SESSION['user_id'];
       //echo $user_id;
-      $url = 'https://eventagious3.appspot.com/api/?get_all_events=1';
+      $url = $init[app_url].'/api/?get_all_events=1';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

@@ -6,18 +6,18 @@ session_start();
 echo $_SESSION['isAdmin'];
 
       if($_SESSION['isAdmin'] == 0){
-        echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
-          echo ("<div class=\"jumbotron\">");
+        //echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
+          echo ("<div class=\"jumbotron\" style= \"text-align: center;\">");
             echo ("<div class=\"container\">");
               echo ("<h1>You are not admin</h1>");
           echo ("</div>");
         echo ("</div>");
 
       }else{
-        echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
-           echo ("<div class=\"jumbotron\">");
+        //echo ("<script type=\"text/javascript\" src=\"assets/js/delete_js.js\"></script>");
+           echo ("<div class=\"jumbotron\" style= \"text-align: center;\">");
               echo ("<div class=\"container\">");
-                echo ("<h1>ADMINSIDA</h1>");
+                echo ("<h1>ADMIN PAGE</h1>");
               echo ("</div>");
             echo ("</div>");
 
@@ -33,9 +33,9 @@ echo $_SESSION['isAdmin'];
       $responseEvent=json_decode($response_json, true);
 
 
-        echo ("<div class=\"page-header\">");
+        echo ("<div class=\"page-header\" style= \"text-align: center;\">");
           echo ("<h1>Event List</h1>");
-        echo ("</div>");
+        
     echo ("<div class=\"table-responsive\">");
           echo ("<table class=\"table table-hover\">");
             echo ("<thead>");
@@ -103,7 +103,7 @@ echo $_SESSION['isAdmin'];
             echo ("</tbody>");
           echo ("</table>");
     echo ("</div>");
-
+  echo ("</div>");
     
 }
 ?>

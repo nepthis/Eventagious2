@@ -13,16 +13,16 @@
             // Login success
 
           //header('Location: https://eventagious3.appspot.com/index.php');
-          header('Location: index.php');
+          header('Location: index.php',ture, 303);
           exit;
         } else {
           // Login failed
-          header('Location: index.php?action=login');
+          header('Location: index.php?action=login',true,303);
           exit;
         }
       } else {
       // The correct POST variables were not sent to this page.
-      header('Location: index.php?action=login');
+      header('Location: index.php?action=login', ture, 303);
       }
     }
     ?>
