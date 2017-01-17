@@ -55,6 +55,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       header('Location: index.php?action=login',true, 303);
       exit;
     }
+    if($response['status']=0 ){
+      header('Location: index.php?action=register',true, 303);
+      exit;
+    }
   }
 }
 ?>
