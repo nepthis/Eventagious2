@@ -14,6 +14,7 @@
       curl_close($ch);
       $response=json_decode($response_json, true);
 
+      if(sizeof($response) > 0){
       echo("<div class=\"row\">");
       foreach($response as $row){
         echo("<div class=\"col-md-4\">");
@@ -22,15 +23,19 @@
         echo("<p> Section: ".$row['Section']."</p>");
         echo("<p><a class=\"btn btn-default\" href=\"index.php?action=eventInfo&EventID=".$row['EventID']."\" role=\"button\">View details &raquo;</a></p>");
         echo("</div>");
-    }
+       }
+     }else{
+      echo("<h2>You have no events</h2>");
+
+     }
       ?>
 
     <div class="container">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 
 
     <!-- Maps scrips -->

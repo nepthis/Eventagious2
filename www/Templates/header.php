@@ -20,8 +20,8 @@
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
+    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
 
     <!-- Custom styles for this template -->
     <link href="/assets/css/jumbotron.css" rel="stylesheet">
@@ -29,8 +29,8 @@
     <link href="/assets/css/bgcss.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Dont actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>-->
     <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
