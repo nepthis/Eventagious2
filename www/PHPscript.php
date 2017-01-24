@@ -1,6 +1,6 @@
 <?php
     //include_once "database.php";
-    $init = parse_ini_file('configUrl.ini');
+    //$init = parse_ini_file('configUrl.ini');
 
 
     //https://www.apptha.com/blog/how-to-build-a-rest-api-using-php/
@@ -37,7 +37,7 @@
     // Using prepared statements means that SQL injection is not possible. 
       $username = $username;
       //$HashAndSalt = password_hash($password, PASSWORD_BCRYPT);
-      $url = $init[app_url].'/api/?user_id_username='.$username.'';
+      $url = 'https://eventagious3.appspot.com/api/?user_id_username='.$username.'';
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HTTPGET, true);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -59,7 +59,6 @@
     $user_id = $r['id']; //Or do what ever instead of echo
     $db_password = $r['password'];
     }*/
-
         if (sizeof($response) == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
