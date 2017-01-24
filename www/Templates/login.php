@@ -53,12 +53,11 @@
   </div>
 </center>
 
-<<<<<<< HEAD
+
   <div style="position:absolute;z-index:1000;">
       <img src="/assets/img/bg_4.png" alt="/assets/img/bg_4.png" style="width:100%;height: 94%">
 =======
   <div style="position:absolute;z-index:1000;width:100%;height: 94%">
       <img src="/assets/img/bg_4.png" alt="/assets/img/bg_4.png" style="width:100%;height: 100%">
->>>>>>> 7d21ba2a00293aa4301609ebbd69df83a80d168c
   </div>
   
