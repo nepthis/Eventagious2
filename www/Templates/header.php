@@ -1,10 +1,6 @@
 <?php
-    //include_once "createeventScript.php";
     include_once "PHPscript.php";
-    $init = parse_ini_file('configUrl.ini');
-    //include_once "process_login.php";
-    session_start();
-?>
+    session_start();?>
   <head>
     <meta charset="utf-8">
 
