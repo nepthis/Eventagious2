@@ -1,5 +1,14 @@
 <?php
+session_start();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $url = 'https://eventagious3.appspot.com/api/?user_id_username='.$_REQUEST['username'].'';
+      $ch = curl_init($url);
+      curl_setopt($ch, CURLOPT_HTTPGET, true);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      $response_json = curl_exec($ch);
+      curl_close($ch);
+      $response=json_decode($response_json, true);
+  if(sizeof($response) == 0){
 
     if($_REQUEST['username']==''){
       echo "Please fill the username field.";
@@ -59,6 +68,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       header('Location: index.php?action=register',true, 303);
       exit;
     }
+  }
+}else{
+  $_SESSION['errorUserReg'] = "User exist";
+  header('Location: index.php?action=register',true, 303);
+  exit;
   }
 }
 ?>

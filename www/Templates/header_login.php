@@ -1,5 +1,6 @@
 <?php
-$init = parse_ini_file('configUrl.ini');
+//$init = parse_ini_file('configUrl.ini');
+session_start();
 ?>
   <head>
     <meta charset="utf-8">
