@@ -14,7 +14,6 @@
       curl_close($ch);
       $response=json_decode($response_json, true);
 
-      echo sizeof($response);
       if(sizeof($response) == 0){
         echo("<h2>You have no events</h2>");
       }else{
