@@ -60,7 +60,7 @@
 
     echo("</a>"); 
     if($_SESSION['user_id'] ==""){
-
+      
     }else{
 		echo ("<div class=\"container\">");
 			echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");

@@ -1,6 +1,9 @@
 <?php
-session_start();
-
+if($_SESSION['user_id']==""){
+  echo "<div style=\"center\"";
+  echo ("<h4>You are not logged in, please try to login</h4>");
+  echo "</div>";
+}else{
 ?>
 <div style="z-index:100; width: 100%;height: 1200;background-color: #000;">
 
@@ -81,6 +84,9 @@ session_start();
         <img src="/assets/img/bg_4.png" alt="/assets/img/bg_4.png" style="width:100%;height: 94%">
     </div>
 </div>
+<?php
+}
+?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
