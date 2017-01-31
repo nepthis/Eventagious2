@@ -55,12 +55,13 @@
 
 	    foreach($response as $row){
 
-        echo("<p> <a href=".$row['Image_URL']."> <img src=".$row['Image_Thumbnail_URL']." title=\"Click to ...\" style=\"float:right;width:100px;height:100px;\">");
+        echo("<p> <a href=".$row['Image_URL']."> <img src=".$row['Image_Thumbnail_URL']." title=\"Click to ...\" style=\"float:right;width:100px;height:100px;\"> </p>");
         }
 
- 
-    echo("</div>"); 
+    echo("</a>"); 
+    if($_SESSION['user_id'] ==""){
 
+    }else{
 		echo ("<div class=\"container\">");
 			echo ("<form method=\"post\" enctype=\"multipart/form-data\" id=\"form\" >");
 	  		echo ("Upload a picture:<p/>");
@@ -69,7 +70,7 @@
 	  		echo ("<input name=\"FileName\" type=\"hidden\" id=\"FileName\" placeholder=\"FileName\" value=\"file\"/><p/>");
 	  		echo ("<input class=\"btn btn-primary\" id= \"button\" type=\"submit\" value=\"Upload\" />");
 		echo ("</div>");
-
+  }
 ?>
 
     <script>
