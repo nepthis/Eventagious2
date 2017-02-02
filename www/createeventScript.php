@@ -1,4 +1,5 @@
 <?php
+session_start();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   //$error_msg = "";
 
@@ -33,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $response=json_decode($response_json, true);
 
     if ($response['status']==1){
-        header('Location: index.php?action=myPage');
+        header('Location: https://eventagious3.appspot.com/index.php?action=myPage');
         exit;
     }else if ($response['status']==0){
         $_SESSION['errorEvent'] = "wrong in db";
@@ -43,6 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   }else{
     $_SESSION['errorEvent'] = "not all input";
     header('Location: https://eventagious3.appspot.com/index.php?action=createevent');
+
   }
 }
 
