@@ -37,12 +37,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         exit;
     }else if ($response['status']==0){
         $_SESSION['errorEvent'] = "wrong in db";
-        header('Location: index.php?action=createevent');
+        header('Location: https://eventagious3.appspot.com/index.php?action=createevent');
         exit;
     }
   }else{
     $_SESSION['errorEvent'] = "not all input";
-    header('Location: index.php?action=createevent');
+    header('Location: https://eventagious3.appspot.com/index.php?action=createevent');
   }
 }
 
